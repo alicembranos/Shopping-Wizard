@@ -1,0 +1,59 @@
+/* header */
+
+header {
+  background-color: #E6E9EB;
+  padding: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+/* Progress status bar*/
+.status-bar {
+  width: 100%;
+}
+
+.progress-bar li{
+  list-style-type: none;
+  width: 25%;
+  text-align: center;
+}
+
+.progress-bar li:before {
+  
+}
+
+/* Porduct page */
+.product_page {
+  display: flex;
+}
+
+.image_carousel {
+  /* width: 30%; */
+}
+.image_carousel img {
+  width: 35px;
+  height: 35px;
+}
+.product_image  {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.selected_porduct_image {
+
+}
+.selected_porduct_image img {
+  width: 100%;
+  height: 420px;
+}
+.product_details {
+  width: 50%;
+}
+

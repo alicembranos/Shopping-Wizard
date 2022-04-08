@@ -13,7 +13,7 @@
       <div class="logo">
         <p>LOGO</p>
       </div>
-      <div class="status_bar">
+      <div class="status_bar" hidden>
             <ul class="progress-bar">
                 <li class="active">Step 1</li>
                 <li>Step 2</li>
@@ -23,8 +23,11 @@
       </div>
   </header>
   <main>
-    <section class="product_page">
+    <section class="product_page" >
       <div class="product_image">
+        <div class="display_content">
+          <img src="" alt="" width="250px" height="250px" hidden>
+        </div>
         <div class="image_carousel">
           <ul>
             <li>
@@ -52,49 +55,53 @@
         <h4>Brown t-shirt</h4>
         <p>Price</p>
         <h4>14.55&#x20AC;</h4>
-        <label for="size">Size:</label>
+        <label for="size">Size:</label><br>
         <select name="size" id="size">
-          <option value="xs">XS</option>
-          <option value="s">S</option>
-          <option value="m">M</option>
-          <option value="l">L</option>
-          <option value="xl">XL</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
         </select>
-        <div class="color-option">
+        <div class="color_option">
           <p>Color</p>
           <ul>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="red">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="blue">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="yellow">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="brown">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="white">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="black">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="pink">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="orange">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="navy-blue">
             </li>
             <li>
-              <img src="" alt="">
+              <img src="./assets/product-img/image1.webp" alt="" id="grey">
             </li>
           </ul>
         </div>
+        <div class="error_message">
+          <h4></h4>
+        </div>
+        <button id="buy_btn">Buy</button>
       </div>
     </section>
     <section class="form_page" hidden>

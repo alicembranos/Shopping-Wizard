@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,21 +9,24 @@
   <script src="./script.js" defer></script>
   <title>JS Shopping Wizard</title>
 </head>
+
 <body>
   <header>
-      <div class="logo">
-        <p>LOGO</p>
-      </div>
-      <div class="status_bar">
-            <ul class="progress-bar">
-                <li class="active">Step 1</li>
-                <li>Step 2</li>
-                <li>Step 3</li>
-                <li>Step 4</li>
-            </ul>
-      </div>
+    <div class="logo">
+      <a href="#">
+        <img class="logo-icon" src="assets/corporative/logo.png" alt="image-logo">
+      </a>
+    </div>
   </header>
   <main>
+    <section class="header-main">
+      <ul class="progress-bar">
+        <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/location.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/shipping.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/ok.png" alt=""></li>
+      </ul>
+    </section>
     <section class="product_page">
       <div class="product_image">
         <div class="image_carousel">
@@ -98,121 +102,122 @@
       </div>
     </section>
     <section class="form_page" hidden>
-            <form action="">
+      <form action="">
 
-              <!-- Form step 1 -->
-              <div class="step-page1"></div>
-                <h1>Profile</h1>
-                <div class="form-group">
-                  <label for="username">Username</label>
-                  <input type="text" name="username" id="username">
-                </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" name="email" id="email">
-                </div>
-                <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" name="password" id="password">
-                </div>
-                <div class="form-group">
-                  <label for="confirm-password">Confirm password</label>
-                  <input type="password" name="confirm-password" id="confirm-password">
-                </div>
-                <!-- Form step 2 -->
-              <div class="step-page2">
-                  <h1>Address</h1>
-                  
-                  <div class="form-group">
-                    <label for="first-name">First Name</label>
-                    <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Fisrt Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="birthday">Birthday</label>
-                    <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
-                  </div>
-                  <div class="form-group">
-                    <label for="address1">Address 1</label>
-                    <input type="text" name="address1" id="address1" class="form-control" placeholder="Address 1">
-                  </div>
-                  <div class="form-group">
-                    <label for="address2">Address 2</label>
-                    <input type="text" name="address2" id="address2" class="form-control" placeholder="Address 2">
-                  </div>
-                    <div class="form-group">
-                      <label for="postal-code">Postal Code</label>
-                      <input type="number" name="postal-code" id="postal-code">
-                    </div>
-                  <div class="form-group">
-                    <label for="country">Country</label>
-                    <select name="country" id="country">
-                      <option value="andorra">Andorra</option>
-                      <option value="spain">Spain</option>
-                      <option value="france">France</option>
-                      <option value="germany">Germany</option>
-                      <option value="greece">Greece</option>
-                      <option value="israel">Israel</option>
-                    </select>
-                    </div>
-                    <div class="form-group">
-                      <label for="phone">Phone</label>
-                      <select name="prefix" id="prefix">
-                          <option value="376">AND</option>
-                          <option value="34">SPA</option>
-                          <option value="33">FRA</option>
-                          <option value="49">GER</option>
-                          <option value="30">GRE</option>
-                          <option value="972">ISR</option>
-                      </select>
-                      <input type="tel" name="phone" id="phone">
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="reg-address" id="reg-address">
-                        <label for="reg-address">This is my regular address</label>
-                    </div>
-                </div>
-                <!-- Form step 3 -->
-                <div class="step-page3">
-                    <h1>Shipping</h1>
-                    <h3>Shipping type</h3>
-                    <div class="form-group">
-                        <input type="radio" id="free" name="shi_type" value="free_shipment">
-                        <label for="free">Free shipment (72h)</label><br>
-                        <input type="radio" id="extra" name="shi_type" value="extra_shipping">
-                        <label for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
-                        <input type="radio" id="premium" name="shi_type" value="premium">
-                        <label for="premium">Premium (24h)<span>9,99€</span></label>
-                        <br>
-                    </div>
-                    <div class="dates_text">
-                        <h3>Your order will arrive</h3>
-                        <p>Estimate delivery date</p>
-                        <P>Between <span id="date_shipment"></span></p>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="gif-option" id="gif-option">
-                        <label for="gif-option">Is it  gift?</label><br>
-                        <div class="gift-container">
-                            <label for="gift-title">Gift Title</label><br>
-                            <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>
-                            <label for="gift-message">Gift Message</label><br>
-                            <textarea name="gift-message" id="gift-message" cols="30" rows="10"></textarea><br>
-                            <label for="gift-image">Gift wrapper image</label><br>
-                            <input type="file" name="gift-image" id="gift-image" accept="image/png, image/jpeg">
-                        </div>
-                    </div>
-                </div>
+        <!-- Form step 1 -->
+        <div class="step-page1"></div>
+        <h1>Profile</h1>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm password</label>
+          <input type="password" name="confirm-password" id="confirm-password">
+        </div>
+        <!-- Form step 2 -->
+        <div class="step-page2">
+          <h1>Address</h1>
 
-                <!-- Form step 4 -->
-                <div class="step-page4">
-                </div>
-              </form>
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Fisrt Name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
+          </div>
+          <div class="form-group">
+            <label for="address1">Address 1</label>
+            <input type="text" name="address1" id="address1" class="form-control" placeholder="Address 1">
+          </div>
+          <div class="form-group">
+            <label for="address2">Address 2</label>
+            <input type="text" name="address2" id="address2" class="form-control" placeholder="Address 2">
+          </div>
+          <div class="form-group">
+            <label for="postal-code">Postal Code</label>
+            <input type="number" name="postal-code" id="postal-code">
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country">
+              <option value="andorra">Andorra</option>
+              <option value="spain">Spain</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="greece">Greece</option>
+              <option value="israel">Israel</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <select name="prefix" id="prefix">
+              <option value="376">AND</option>
+              <option value="34">SPA</option>
+              <option value="33">FRA</option>
+              <option value="49">GER</option>
+              <option value="30">GRE</option>
+              <option value="972">ISR</option>
+            </select>
+            <input type="tel" name="phone" id="phone">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="reg-address" id="reg-address">
+            <label for="reg-address">This is my regular address</label>
+          </div>
+        </div>
+        <!-- Form step 3 -->
+        <div class="step-page3">
+          <h1>Shipping</h1>
+          <h3>Shipping type</h3>
+          <div class="form-group">
+            <input type="radio" id="free" name="shi_type" value="free_shipment">
+            <label for="free">Free shipment (72h)</label><br>
+            <input type="radio" id="extra" name="shi_type" value="extra_shipping">
+            <label for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
+            <input type="radio" id="premium" name="shi_type" value="premium">
+            <label for="premium">Premium (24h)<span>9,99€</span></label>
+            <br>
+          </div>
+          <div class="dates_text">
+            <h3>Your order will arrive</h3>
+            <p>Estimate delivery date</p>
+            <P>Between <span id="date_shipment"></span></p>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="gif-option" id="gif-option">
+            <label for="gif-option">Is it gift?</label><br>
+            <div class="gift-container">
+              <label for="gift-title">Gift Title</label><br>
+              <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>
+              <label for="gift-message">Gift Message</label><br>
+              <textarea name="gift-message" id="gift-message" cols="30" rows="10"></textarea><br>
+              <label for="gift-image">Gift wrapper image</label><br>
+              <input type="file" name="gift-image" id="gift-image" accept="image/png, image/jpeg">
+            </div>
+          </div>
+        </div>
+
+        <!-- Form step 4 -->
+        <div class="step-page4">
+        </div>
+      </form>
     </section>
   </main>
   <footer></footer>
 </body>
+
 </html>

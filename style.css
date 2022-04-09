@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital@1&family=Mulish&family=Roboto+Mono:wght@600&display=swap');
+
 /*General*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+
 }
 
 /* Header */
@@ -16,9 +20,7 @@ header {
 }
 
 /*Logo*/
-.logo {
-  
-}
+.logo {}
 
 .logo-icon {
   height: 60px;
@@ -39,7 +41,7 @@ header {
   flex-direction: row;
 }
 
-.progress-bar li{
+.progress-bar li {
   width: 23%;
   text-align: center;
 }
@@ -86,7 +88,7 @@ header {
   border-color: #0b1a7d;
 }
 
-.progress-bar li.active::before{
+.progress-bar li.active::before {
   background-color: #0b1a7d;
 }
 
@@ -98,23 +100,78 @@ header {
 .image_carousel {
   /* width: 30%; */
 }
+
 .image_carousel img {
   width: 35px;
   height: 35px;
 }
-.product_image  {
+
+.product_image {
   width: 50%;
   display: flex;
   justify-content: space-evenly;
 }
-.selected_porduct_image {
 
-}
+.selected_porduct_image {}
+
 .selected_porduct_image img {
   width: 100%;
   height: 420px;
 }
+
 .product_details {
   width: 50%;
 }
 
+
+
+/* Footer Main Area*/
+.footer-main {
+  height: 90px;
+  display: flex;
+  padding: 30px;
+  justify-content: flex-end;
+}
+
+.footer-main button {
+  padding: 0.35em 1.2em;
+  cursor: pointer;
+  border: none;
+  border: 0.1em solid #35363a;
+  margin: 0 1em 0.3em 0;
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  border-radius: 0.3em;
+  background: #35363a;
+  font-family: 'Roboto', sans-serif;
+  color: aliceblue;
+}
+
+.footer-main button:hover {
+  background: aliceblue;
+  color: #35363a;
+}
+
+#clear-form {
+  background: aliceblue;
+  color: #35363a;
+}
+
+#clear-form:hover {
+  background: #35363a;
+  color: aliceblue;
+}
+
+
+/* Responsive Main Footer*/
+@media all and (max-width:30em) {
+  .footer-main {
+    display: block;
+  }
+
+  .footer-main button {
+    display: block;
+    margin: 0.4em auto;
+  }
+}

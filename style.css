@@ -10,10 +10,11 @@
 
 /* Header */
 header {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,33 +23,22 @@ header {
   background-color: #010e20;
 }
 
-/*Logo*/
-header .logo {
-  position: relative;
-  font-size: 1.5em;
-  color: rgb(255, 255, 255);
-  text-decoration: none;
-  font-weight: 600;
-  width: 30%;
+header a img{
+  height: 50px;
+  width: 50px;
 }
 
-header .logo img {
-  height: 20%;
-  width: 20%;
-}
-
-/* Navigation bar*/
 header .navigation {
-  display: flex;
+  /* display: flex; */
   justify-content: center;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   margin: 10px 0;
 }
 
 header .navigation li {
   list-style: none;
+  display: inline-flex;
   margin: 0 10px;
-  font-size: 10px;
 }
 
 header .navigation li a {
@@ -56,6 +46,7 @@ header .navigation li a {
   text-decoration: none;
   font-weight: 500;
   letter-spacing: 1px;
+  font-size: 12px;
 }
 
 header .navigation li a:hover {
@@ -68,6 +59,29 @@ header .search {
   height: 40px;
 }
 
+header .search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0 10px 0 45px;
+}
+
+header .search input::placeholder {
+  color: white;
+}
+
+header .search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
 
 header .search input {
   position: absolute;
@@ -512,7 +526,7 @@ footer {
 
 
 /* Responsive Main Footer*/
-@media all and (max-width:30em) {
+@media all and (/*max-width:30em*/max-width: 600px) {
   .footer-main {
     display: block;
   }
@@ -521,9 +535,16 @@ footer {
     display: block;
     margin: 0.4em auto;
   }
+
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+    height: 180px;
+  }
+
 }
 
-/* Responsive Header*/
+/* Responsive Header
 @media (max-width: 991px) {
   header {
     padding: 10px 20px;
@@ -537,4 +558,4 @@ footer {
     width: 100%;
   }
 
-}
+} */

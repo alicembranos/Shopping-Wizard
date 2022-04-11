@@ -8,3 +8,10 @@ const expressions = {
 
 
 }
+
+let startTime = new Date().getTime();
+
+setTimeout(function () {
+    let endTime = new Date().getTime();
+    console.log("duration [ms] = " + (endTime - startTime));
+}, 1500);

@@ -23,7 +23,7 @@ header {
   background-color: #010e20;
 }
 
-header a img{
+header a img {
   height: 50px;
   width: 50px;
 }
@@ -183,7 +183,7 @@ header .search img {
   display: flex;
 }
 
-/* Display image */ 
+/* Display image */
 .display_content {
   margin-right: 5%;
 }
@@ -194,11 +194,12 @@ header .search img {
   margin-right: 5%;
 
 }
+
 .image_carousel img {
   width: 35px;
   height: 35px;
 
-  
+
 }
 
 .product_image {
@@ -209,10 +210,9 @@ header .search img {
   left: -10%;
 }
 
-}
 /* Size seleciton */
 
-.product_details > label {
+.product_details>label {
   font-weight: bold;
 }
 
@@ -235,20 +235,25 @@ header .search img {
 .product_details {
   width: 50%;
 }
+
 .product_details p {
   font-weight: bold;
 }
+
 /* Color selection */
 .color_option {
   margin-bottom: 5%;
 }
-.color_option ul{
+
+.color_option ul {
   display: flex;
 }
+
 .color_option img {
   width: 35px;
   height: 35px;
 }
+
 .selected_color {
   border: 2px solid rgb(255, 111, 0);
 }
@@ -256,6 +261,7 @@ header .search img {
 .error_message {
   color: red;
 }
+
 /* Buy button */
 #buy_btn {
   width: 7%;
@@ -268,17 +274,22 @@ header .search img {
   opacity: 0.8;
   cursor: pointer;
 }
+
 #buy_btn:hover {
   color: black;
   background-color: rgb(255, 111, 0);
 }
+
 #buy_btn:active {
   color: white;
 }
 
 /* Steps of form*/
+#form {
+  width: 100%;
+}
+
 .form_page {
-  min-height: 100vh;
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -302,10 +313,6 @@ header .search img {
   font-size: 13px;
 }
 
-form {
-  width: 50%;
-}
-
 .form-group label {
   display: block;
   margin-bottom: 10px;
@@ -314,7 +321,7 @@ form {
 .form-group input,
 .form-group select {
   display: block;
-  width: 50%;
+  width: 30em;
   border: 1.5px solid black;
   border-radius: 4px;
   padding: 3px 10px;
@@ -324,18 +331,19 @@ form {
 #prefix {
   display: inline-block;
   padding: 2px;
-  width: 12%;
+  width: 5em;
 }
 
 #phone {
   display: inline-block;
-  width: 37%;
+  width: 24.7em;
 }
 
 #reg-address {
   display: inline-block;
-  width: 5%;
-  margin-inline-end: 10px;
+  width: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
   background-color: #eee;
   height: 15px;
   border: 0.3px solid black;
@@ -345,24 +353,26 @@ form {
   display: inline-block;
 }
 
-.step h4 {
+.step h2 {
   margin-top: 25px;
+  font-size: 15px;
 }
 
 input.radio-buttom,
 label.radio-buttom {
   display: inline-block;
-  width: 5%;
+  width: 2em;
 }
 
 label.radio-buttom {
   width: 80%;
 }
 
-.dates-text h6 {
+.dates-text h3 {
   margin-bottom: 1.5em;
   font-weight: bold;
   text-decoration: underline;
+  font-size: 10px;
 }
 
 .dates-text p {
@@ -373,6 +383,40 @@ label.radio-buttom {
 .dates-text span {
   font-weight: bold;
 }
+
+#reg-address,
+#gif-option {
+  display: inline-block;
+  width: 20px;
+  margin-top: 10px;
+  margin-right: 20px;
+  background-color: #eee;
+  height: 15px;
+  border: 0.3px solid black;
+}
+
+#red-address-label,
+#gif-option-label {
+  display: inline-block;
+}
+
+.gift-container {
+  margin-top: 25px;
+}
+
+.gift-container label {
+  font-weight: bold;
+}
+
+.gift-container textarea {
+  width: 30em;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
 
 /* Footer Main Area*/
 .footer-main {
@@ -394,22 +438,22 @@ label.radio-buttom {
   border-radius: 0.3em;
   background: #35363a;
   font-family: 'Roboto', sans-serif;
-  color: aliceblue;
+  color: white;
 }
 
 .footer-main button:hover {
-  background: aliceblue;
+  background: white;
   color: #35363a;
 }
 
 #clear-form {
-  background: aliceblue;
+  background: white;
   color: #35363a;
 }
 
 #clear-form:hover {
   background: #35363a;
-  color: aliceblue;
+  color: white;
 }
 
 /* Footer */
@@ -526,7 +570,10 @@ footer {
 
 
 /* Responsive Main Footer*/
-@media all and (/*max-width:30em*/max-width: 600px) {
+@media all and (
+
+  /*max-width:30em*/
+  max-width: 600px) {
   .footer-main {
     display: block;
   }

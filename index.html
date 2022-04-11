@@ -135,7 +135,7 @@
           </div>
         </div>
         <!-- Form step 2 -->
-        <div class="step step-page2">
+        <div class="step step-page2 active">
           <h1>Address</h1>
 
           <div class="form-group">
@@ -148,7 +148,7 @@
           </div>
           <div class="form-group">
             <label for="birthday">Birthday</label>
-            <input type="text" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
+            <input type="date" name="birthday" id="birthday" class="form-control">
           </div>
           <div class="form-group">
             <label for="address1">Address 1</label>
@@ -193,26 +193,26 @@
           </div>
         </div>
         <!-- Form step 3 -->
-        <div class="step step-page3">
+        <div class="step step-page3 active">
           <h1>Shipping</h1>
-          <h4>Shipping type</h4>
+          <h2>Shipping type</h2>
           <div class="form-group">
             <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
             <label class="radio-buttom" for="free">Free shipment (72h)</label><br>
             <input class="radio-buttom" type="radio" id="extra" name="shi_type" value="extra_shipping">
-            <label class="radio-buttom" for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
+            <label class="radio-buttom" for="extra">Extra shipping (48h) <span>4,99€</span></label><br>
             <input class="radio-buttom" type="radio" id="premium" name="shi_type" value="premium">
-            <label class="radio-buttom" for="premium">Premium (24h)<span>9,99€</span></label>
+            <label class="radio-buttom" for="premium">Premium (24h) <span>9,99€</span></label>
             <br>
           </div>
           <div class="dates-text">
-            <h6>Your order will arrive:</h6>
+            <h3>Your order will arrive:</h3>
             <p>Estimate delivery date:</p>
             <P>Between <span id="date_shipment">something something</span></p>
           </div>
           <div class="form-group">
             <input type="checkbox" name="gif-option" id="gif-option">
-            <label for="gif-option">Is it gift?</label><br>
+            <label for="gif-option" id="gif-option-label">Is it gift?</label><br>
             <div class="gift-container">
               <label for="gift-title">Gift Title</label><br>
               <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>

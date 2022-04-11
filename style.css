@@ -1,35 +1,104 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla:ital@1&family=Mulish&family=Roboto+Mono:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap");
 
 /*General*/
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Mulish', sans-serif;
-
+  font-family: "poppins", sans-serif;
 }
 
 /* Header */
 header {
-  background-color: #E6E9EB;
-  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  justify-content: space-around;
+  padding: 15px 100px;
+  z-index: 10;
+  background-color: #010e20;
 }
 
 /*Logo*/
-.logo {}
+header .logo {
+  position: relative;
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  font-weight: 600;
+  width: 30%;
+}
 
-.logo-icon {
-  height: 60px;
+header .logo img {
+  height: 20%;
+  width: 20%;
+}
+
+/* Navigation bar*/
+header .navigation {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+header .navigation li {
+  list-style: none;
+  margin: 0 10px;
+  font-size: 10px;
+}
+
+header .navigation li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+header .navigation li a:hover {
+  color: #7ea5b5;
+}
+
+header .search {
+  position: relative;
+  width: 300px;
+  height: 40px;
+}
+
+
+header .search input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: white;
+  background: transparent;
+  outline: none;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0 5px 0 40px;
+  font-size: 10px;
+}
+
+header .search input::placeholder {
+  color: white;
+}
+
+header .search img {
+  width: 100px;
+  height: 100px;
 }
 
 /* Progress status bar*/
 .header-main {
+  position: relative;
   width: 100%;
   padding: 30px 0;
+  margin-top: 50px;
 }
 
 .progress-bar {
@@ -57,7 +126,7 @@ header {
   width: 100%;
   height: 2px;
   background-color: #ddd;
-  top: 52px;
+  top: 55px;
   z-index: -1;
   width: 27%;
 }
@@ -71,13 +140,16 @@ header {
   counter-increment: step;
   width: 25px;
   height: 25px;
-  line-height: 25px;
+  line-height: 26px;
   border: 2px solid #ddd;
   display: block;
   text-align: center;
   margin: 0 auto 10px auto;
   border-radius: 50%;
   background-color: white;
+  font-weight: 200;
+  color: #35363a;
+  font-size: 13px;
 }
 
 .progress-bar li.active {
@@ -92,7 +164,7 @@ header {
   background-color: #0b1a7d;
 }
 
-/* Porduct page */
+/* Product page */
 .product_page {
   display: flex;
 }
@@ -132,11 +204,13 @@ header {
   margin: 50px 50px 20px 50px;
 }
 
-.step { /* Hidden step*/
-  display:none;
+.step {
+  /* Hidden step*/
+  display: none;
 }
 
-.step.active { /* Displayed step*/
+.step.active {
+  /* Displayed step*/
   display: block;
 }
 
@@ -166,7 +240,7 @@ form {
   font-size: 12px;
 }
 
-#prefix{
+#prefix {
   display: inline-block;
   padding: 2px;
   width: 12%;
@@ -204,7 +278,7 @@ label.radio-buttom {
   width: 80%;
 }
 
-.dates-text h6{
+.dates-text h6 {
   margin-bottom: 1.5em;
   font-weight: bold;
   text-decoration: underline;
@@ -257,6 +331,118 @@ label.radio-buttom {
   color: aliceblue;
 }
 
+/* Footer */
+.container {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.row {
+  display: flex;
+}
+
+ul {
+  list-style: none;
+}
+
+footer {
+  background-color: #010e20;
+  padding: 40px 0;
+}
+
+.footer-col {
+  width: 25%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  font-size: 12px;
+  color: white;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: white;
+  height: 1px;
+  box-sizing: border-box;
+  width: border;
+  background: rgb(109, 169, 253);
+  width: 20px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.footer-col ul li a {
+  font-size: 10px;
+  text-transform: capitalize;
+  color: rgb(250, 246, 246);
+  text-decoration: none;
+  font-weight: 300;
+  color: rgb(251, 248, 248);
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #7ea5b5;
+}
+
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 10%;
+  width: 15%;
+  background-color: rgba(#7ea5b5);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #7ea5b5;
+  background-color: #7ea5b5;
+}
+
+.image {
+  width: 35px;
+  margin: 10%;
+  padding: 10%;
+}
+
+/* Ahora pongo el responsive*/
+@media (max-width: 767px) {
+  .footer-col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+
+  .social-links {
+    padding: 150px 20px 50px;
+    flex-direction: column;
+    padding: 10px;
+  }
+}
+
 
 /* Responsive Main Footer*/
 @media all and (max-width:30em) {
@@ -268,4 +454,20 @@ label.radio-buttom {
     display: block;
     margin: 0.4em auto;
   }
+}
+
+/* Responsive Header*/
+@media (max-width: 991px) {
+  header {
+    padding: 10px 20px;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 600px) {
+  header .search {
+    width: 100%;
+  }
+
 }

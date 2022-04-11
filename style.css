@@ -123,7 +123,101 @@ header {
   width: 50%;
 }
 
+/* Steps of form*/
+.form_page {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 50px 50px 20px 50px;
+}
 
+.step { /* Hidden step*/
+  display:none;
+}
+
+.step.active { /* Displayed step*/
+  display: block;
+}
+
+.form-group {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-size: 13px;
+}
+
+form {
+  width: 50%;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group select {
+  display: block;
+  width: 50%;
+  border: 1.5px solid black;
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 12px;
+}
+
+#prefix{
+  display: inline-block;
+  padding: 2px;
+  width: 12%;
+}
+
+#phone {
+  display: inline-block;
+  width: 37%;
+}
+
+#reg-address {
+  display: inline-block;
+  width: 5%;
+  margin-inline-end: 10px;
+  background-color: #eee;
+  height: 15px;
+  border: 0.3px solid black;
+}
+
+#red-address-label {
+  display: inline-block;
+}
+
+.step h4 {
+  margin-top: 25px;
+}
+
+input.radio-buttom,
+label.radio-buttom {
+  display: inline-block;
+  width: 5%;
+}
+
+label.radio-buttom {
+  width: 80%;
+}
+
+.dates-text h6{
+  margin-bottom: 1.5em;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.dates-text p {
+  font-size: 0.8em;
+  margin: 1em 0;
+}
+
+.dates-text span {
+  font-weight: bold;
+}
 
 /* Footer Main Area*/
 .footer-main {

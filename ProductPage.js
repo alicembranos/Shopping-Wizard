@@ -13,6 +13,7 @@ let selectedColor;
 const productDB = {
   size: null,
   color: null,
+  price: null,
 };
 const price = {
   XS: 10.99,
@@ -25,6 +26,13 @@ const price = {
 const { size, color } = productDB;
 const errorMessage =
   'You must pick a color for your shirt before continuing with your purchase';
+
+// setting the coresponding price shirt size
+const getPrice = () => {
+  const sizeVal = sizeSelectionEl.value;
+  const selectionPrice = price[sizeVal];
+  priceEl.innerText = selectionPrice;
+};
 // carousle display image functionallity
 carouselImages.forEach((img) => {
   img.addEventListener('mouseover', () => {
@@ -40,7 +48,6 @@ carouselImages.forEach((img) => {
 });
 
 // Color and Size Selection - DB is represented by an object
-let isColorSelected = false;
 
 colorElements.forEach((colorImg) => {
   colorImg.addEventListener('click', () => {
@@ -50,18 +57,15 @@ colorElements.forEach((colorImg) => {
 });
 
 buyBtn.addEventListener('click', () => {
-  if (color == undefined) {
-    document.querySelector('.error_message h4').textContent = errorMessage;
-  }
   productDB.size = sizeSelectionEl.value;
   productDB.color = selectedColor;
-  productPageContainer.hidden;
+  productDB.price = priceEl.textContent;
+  if (productDB.color == undefined) {
+    document.querySelector('.error_message h4').textContent = errorMessage;
+  } else {
+    productPageContainer.style.display = 'none';
+  }
   console.log(productDB);
 });
-const getPrice = () => {
-  const sizeVal = sizeSelectionEl.value;
-  const selectionPrice = price[sizeVal];
-  priceEl.innerText = selectionPrice;
-};
 
 sizeSelectionEl.addEventListener('change', getPrice);

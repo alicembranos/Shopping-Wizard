@@ -1,0 +1,16 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/seficohen1/js-shopping-wizard-team-grupo-5-assembler.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "Sefi"]
+	remote = origin
+	merge = refs/heads/Sefi
+[branch "Alicia"]
+	remote = origin
+	merge = refs/heads/Alicia

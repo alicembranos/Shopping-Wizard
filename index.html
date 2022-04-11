@@ -1,5 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./ProductPage.js" defer></script>
+  <title>JS Shopping Wizard</title>
+</head>
+<body>
+  <header>
+      <div class="logo">
+        <p>LOGO</p>
+      </div>
+      <div class="status_bar" hidden>
+            <ul class="progress-bar">
+                <li class="active">Step 1</li>
+                <li>Step 2</li>
+                <li>Step 3</li>
+                <li>Step 4</li>
+            </ul>
+      </div>
+  </header>
+  <main>
+    <section class="product_page" >
+      <div class="product_image">
+        <div class="display_content">
+          <img src="" alt="" width="250px" height="250px" hidden>
+        </div>
+        <div class="image_carousel">
+          <ul>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+          </ul>
+        </div>
+        <div class="selected_porduct_image">
+          <img src="./assets/product-img/image2.webp" alt="">
+        </div>
+      </div>
+      <div class="product_details">
+        <h4>Brown t-shirt</h4>
+        <p>Price</p#>
+        <h4 id="price">14.55&#x20AC;</h4>
+        <label for="size">Size:</label><br>
+        <select name="size" id="size">
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+        </select>
+        <div class="color_option">
+          <p>Color</p>
+          <ul>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="red">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="blue">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="yellow">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="brown">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="white">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="black">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="pink">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="orange">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="navy-blue">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="grey">
+            </li>
+          </ul>
+        </div>
+        <div class="error_message">
+          <h4></h4>
+        </div>
+        <button id="buy_btn">Buy</button>
+      </div>
+    </section>
+    <section class="form_page" hidden>
+            <form action="">
+
+              <!-- Form step 1 -->
+              <div class="step-page1"></div>
+                <h1>Profile</h1>
+                <div class="form-group">
+                  <label for="username">Username</label>
+                  <input type="text" name="username" id="username">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" name="email" id="email">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password</label>
+                  <input type="password" name="password" id="password">
+                </div>
+                <div class="product_details">
+                    <h4>Brown t-shirt</h4>
+                    <p>Price</p>
+                    <h4>14.55&#x20AC;</h4>
+                    <label for="size">Size:</label>
+                    <select name="size" id="size">
+                        <option value="xs">XS</option>
+                        <option value="s">S</option>
+                        <option value="m">M</option>
+                        <option value="l">L</option>
+                        <option value="xl">XL</option>
+                    </select>
+                    <div class="color-option">
+                        <p>Color</p>
+                        <ul>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                            <li>
+                                <img src="" alt="" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section class="form_page" hidden>
+                <form action="">
+                    <!-- Form step 1 -->
+                    <div class="step-page1"></div>
+                    <h1>Profile</h1>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" name="username" id="username" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" />
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm password</label>
+                        <input
+                            type="password"
+                            name="confirm-password"
+                            id="confirm-password"
+                        />
+                    </div>
+                    <!-- Form step 2 -->
+                    <div class="step-page2">
+                        <h1>Address</h1>
 
 <head>
   <meta charset="UTF-8">

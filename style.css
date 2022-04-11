@@ -169,10 +169,6 @@ header .search img {
   display: flex;
 }
 
-.image_carousel {
-  /* width: 30%; */
-}
-
 .image_carousel img {
   width: 35px;
   height: 35px;
@@ -183,8 +179,6 @@ header .search img {
   display: flex;
   justify-content: space-evenly;
 }
-
-.selected_porduct_image {}
 
 .selected_porduct_image img {
   width: 100%;

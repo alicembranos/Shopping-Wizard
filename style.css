@@ -548,6 +548,18 @@ footer {
   padding: 10%;
 }
 
+/* Validation messages */ 
+
+/* .validation_error {
+  border: 2px solid red;
+
+}
+#username {
+  border: 2px solid red;
+  -webkit-box-shadow: 2px 0px 18px 11px rgba(191,0,0,0.48); 
+  box-shadow: 2px 0px 18px 11px rgba(191,0,0,0.48);
+} */
+
 /* Ahora pongo el responsive*/
 @media (max-width: 767px) {
   .footer-col {

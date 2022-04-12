@@ -15,8 +15,8 @@ const messagesElements = {
     lastName: '<p></p>',
     birthday: '<p></p>',
     addres1: '<p></p>',
-    address2: '<p></p>', 
-    postalCode : '<p></p>',
+    address2: '<p></p>',
+    postalCode: '<p></p>',
     phone: '<p></p>',
 }
 
@@ -81,6 +81,33 @@ let intervalMinute = setInterval(() => { //Message indicating
     }, timeRedirect);
 }, timeMinute);
 
+
+/********** Calculate date shipment ***********/
+function dateBetween(hours) {
+    const date1 = addHours(hours);
+    const date2 = addHours(hours +24);
+    return `${formatDate(date1)} and ${formatDate(date2)}`;
+}
+
+/* Fucntion to adding hours */
+function addHours (hours) {
+    const newDate = new Date();
+    newDate.setHours(newDate.getHours()+ hours);
+    return newDate;
+};
+
+/* Format Date Time to dd/mm/yyyy hh:mm */
+function formatDate (date) {
+    const dateFormatted = [padTo2digits(date.getDate()), padTo2digits(date.getMonth()+1), padTo2digits(date.getFullYear())].join('/');
+    const hourFormatted = [padTo2digits(date.getHours()), padTo2digits(date.getMinutes())].join(':');
+    return `${dateFormatted} ${hourFormatted}`;
+};
+
+/* Pad with two digits */
+function padTo2digits(num) {
+    return num.toString().padStart(2, '0');
+};
+
 /* Adding eventlisteners keyup and blur to inputs */
 inputs.forEach((input) => {
     input.addEventListener('keyup', );
@@ -90,5 +117,4 @@ inputs.forEach((input) => {
 /* Adding submit functionality to the form */
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-
 });

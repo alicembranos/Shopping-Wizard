@@ -108,6 +108,8 @@ function padTo2digits(num) {
     return num.toString().padStart(2, '0');
 };
 
+/* Add prefix phone when selecting country */
+
 /* Adding eventlisteners keyup and blur to inputs */
 inputs.forEach((input) => {
     input.addEventListener('keyup', );

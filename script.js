@@ -82,16 +82,6 @@ let intervalMinute = setInterval(() => { //Message indicating
 }, timeMinute);
 
 
-<<<<<<< HEAD
-}
-
-let startTime = new Date().getTime();
-
-setTimeout(function () {
-    let endTime = new Date().getTime();
-    console.log("duration [ms] = " + (endTime - startTime));
-}, 1500);
-=======
 /********** Calculate date shipment ***********/
 function dateBetween(hours) {
     const date1 = addHours(hours);
@@ -128,4 +118,3 @@ inputs.forEach((input) => {
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 });
->>>>>>> a8af8574478a59713f95e0aefe9912673c0bc4f6

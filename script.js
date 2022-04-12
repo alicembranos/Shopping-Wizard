@@ -18,7 +18,7 @@ const messagesElements = {
     address2: '<p></p>',
     postalCode: '<p></p>',
     phone: '<p></p>',
-}
+};
 
 /*Array for storing multiple data users*/
 let users = [];

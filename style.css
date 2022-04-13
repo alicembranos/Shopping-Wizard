@@ -11,16 +11,25 @@
 /* Header */
 header {
     position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px 100px;
-    z-index: 10;
+    z-index: 5;
     background-color: #010e20;
+    width: 110%;
+    height: 25vh;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.4;
+    z-index: -1;
+    background: linear-gradient(to right, #1e5799 0%, #3ccdbb 0%, #16c9f6 100%);
 }
 
 header a img {
@@ -29,10 +38,8 @@ header a img {
 }
 
 header .navigation {
-    /* display: flex; */
     justify-content: center;
-    /* flex-wrap: wrap; */
-    margin: 10px 0;
+    margin: 20px 0;
 }
 
 header .navigation li {
@@ -53,19 +60,6 @@ header .navigation li a:hover {
     color: #7ea5b5;
 }
 
-
-
-
-
-
-
-
-header .search {
-    position: relative;
-    width: 300px;
-    height: 40px;
-}
-
 header .search input {
     position: absolute;
     top: 0;
@@ -76,8 +70,7 @@ header .search input {
     background: transparent;
     outline: none;
     border: 1px solid white;
-    border-radius: 4px;
-    padding: 0 10px 0 45px;
+    padding: 0 10px 0 15px;
 }
 
 header .search input::placeholder {
@@ -87,19 +80,34 @@ header .search input::placeholder {
 header .search {
     position: relative;
     width: 300px;
-    height: 40px;
+    height: 45px;
+}
+header li {
+    margin: 0 5px;
+    padding: 10px 10px;
+    outline: none;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
+    text-align: center;
 }
 
-
-
-
-
-
-
-
-
-
-
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+    height: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px #0b1a7d;
+    border-radius: 5px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(1, 50, 124);
+    border-radius: 5px;
+}
 
 /* Progress status bar*/
 .header-main {
@@ -409,10 +417,13 @@ label.radio-buttom {
 
 /* Footer Main Area*/
 .footer-main {
-    height: 90px;
     display: flex;
-    padding: 30px;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    width: 100%;
+    height: 20vh;
+    position: relative;
 }
 
 .footer-main button {
@@ -446,7 +457,7 @@ label.radio-buttom {
 }
 
 /* Footer */
-.container {
+.container-footer {
     display: flex;
     flex-direction: column;
 }
@@ -460,8 +471,13 @@ ul {
 }
 
 footer {
+    position: relative;
+    align-items: center;
+    width: 110%;
+    height: 25vh;
     background-color: #010e20;
     padding: 40px 0;
+    margin: auto;
 }
 
 .footer-col {
@@ -488,7 +504,6 @@ footer {
     box-sizing: border-box;
     width: border;
     background: rgb(109, 169, 253);
-    width: 20px;
 }
 
 .footer-col ul li:not(:last-child) {
@@ -524,14 +539,12 @@ footer {
 }
 
 .footer-col .social-links a:hover {
+    width: 10px;
     color: #7ea5b5;
     background-color: #7ea5b5;
 }
-
-.image {
-    width: 35px;
-    margin: 10%;
-    padding: 10%;
+.footer-col .icon {
+    width: 30px;
 }
 
 /* Validation messages */
@@ -566,37 +579,26 @@ footer {
     }
 }
 
-/* Responsive Main Footer*/
-@media all and (/*max-width: 30em*/
-  max-width: 600px) {
-    .footer-main {
-        display: block;
-    }
-
-    .footer-main button {
-        display: block;
-        margin: 0.4em auto;
-    }
-
-    header {
-        padding: 10px 20px;
-        flex-direction: column;
-        height: 180px;
-    }
+.button-finish {
+    background: transparent;
+    color: rgb(14, 13, 13);
+    border: 2px solid rgb(2, 2, 2);
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding: 25px 80px;
+    text-transform: uppercase;
+    cursor: pointer;
+    display: inline-block;
+    margin: 15px 30px;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
 }
 
-/* Responsive Header
-@media (max-width: 991px) {
-  header {
-    padding: 10px 20px;
-    flex-direction: column;
-  }
-
+.button-finish:hover {
+    background: rgb(17, 16, 16);
+    color: rgb(248, 248, 248);
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
 }
-
-@media (max-width: 600px) {
-  header .search {
-    width: 100%;
-  }
-
-} */

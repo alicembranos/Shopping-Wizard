@@ -210,18 +210,16 @@ header .search img {
   left: -10%;
 }
 
-/* Size seleciton */
-
+/* Size selection */
 .product_details>label {
   font-weight: bold;
 }
-
 
 #size {
   margin-top: 2%;
   width: 20%;
   border: 2px solid black;
-  border-radius: 3px;
+  border-radius: 0.3em;
   text-indent: 5px;
   padding: 3px;
   font-size: 13px
@@ -331,12 +329,12 @@ header .search img {
 #prefix {
   display: inline-block;
   padding: 2px;
-  width: 5em;
+  width: 9em;
 }
 
 #phone {
   display: inline-block;
-  width: 24.7em;
+  width: 21em;
 }
 
 #reg-address {
@@ -353,6 +351,8 @@ header .search img {
   display: inline-block;
 }
 
+
+/* Step 3 CSS*/
 .step h2 {
   margin-top: 25px;
   font-size: 15px;
@@ -395,7 +395,6 @@ label.radio-buttom {
   border: 0.3px solid black;
 }
 
-#red-address-label,
 #gif-option-label {
   display: inline-block;
 }
@@ -411,12 +410,59 @@ label.radio-buttom {
 .gift-container textarea {
   width: 30em;
   border: 1.5px solid black;
-  border-radius: 4px;
+  border-radius: 0.3em;
   padding: 3px 10px;
   font-size: 12px;
   margin-bottom: 15px;
 }
 
+/* Custom input file of gift option*/
+.input-file-trigger {
+  display: block;
+  padding: 10px 45px;
+  text-align: center;
+  background: white;
+  color:#35363a;
+  font-size: 1em;
+  transition: all .4s;
+  cursor: pointer;
+  width: 27.5em;
+  border: 1.5px solid black;
+  border-radius: 5px;
+}
+.input-file {
+  position: absolute;
+  top: 0; left: 0;
+  width: 225px;
+  opacity: 0;
+  padding: 10px 0;
+  cursor: pointer;
+}
+ 
+.input-file:hover + .input-file-trigger,
+.input-file:focus + .input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+  background: #35363a;
+  color: white;
+}
+
+.file-return {
+  margin: 0;
+}
+.file-return:not(:empty) {
+  margin: 1em 0;
+}
+.file-return {
+  font-style: italic;
+  font-size: .9em;
+  font-weight: bold;
+}
+.file-return:not(:empty):before {
+  content: "Selected file: ";
+  font-style: normal;
+  font-weight: normal;
+}
 
 /* Footer Main Area*/
 .footer-main {
@@ -460,8 +506,6 @@ label.radio-buttom {
 .container {
   display: flex;
   flex-direction: column;
-
-
 }
 
 .row {
@@ -523,7 +567,6 @@ footer {
   color: #7ea5b5;
 }
 
-
 .footer-col .social-links a {
   display: inline-block;
   height: 10%;
@@ -548,7 +591,14 @@ footer {
   padding: 10%;
 }
 
-/* Validation messages */ 
+/* Active display*/
+
+.inactive {
+  display: none;
+}
+
+
+/* Validation messages */
 
 /* .validation_error {
   border: 2px solid red;

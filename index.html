@@ -2,337 +2,337 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./script.js" defer></script>
-    <title>JS Shopping Wizard</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="./script.js" defer></script>
+  <title>JS Shopping Wizard</title>
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo"><img src="./assets/corporative/lobito.jpg" alt=""></a>
-        <ul class="navigation">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Woman</a></li>
-            <li><a href="#">Man</a></li>
-            <li><a href="#">Complements</a></li>
-            <li><a href="#">Info</a></li>
-        </ul>
-        <div class="search">
-            <input type="text" placeholder="Search">
-            <img class="image" src="./assets/icons/search1.png" alt="">
+  <header>
+    <a href="#" class="logo"><img src="./assets/corporative/lobito.jpg" alt=""></a>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Woman</a></li>
+      <li><a href="#">Man</a></li>
+      <li><a href="#">Complements</a></li>
+      <li><a href="#">Info</a></li>
+    </ul>
+    <div class="search">
+      <input type="text" placeholder="Search">
+      <img class="image" src="./assets/icons/search1.png" alt="">
+    </div>
+  </header>
+
+
+  <main>
+    <section class="header-main">
+      <ul class="progress-bar">
+        <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/location.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/shipping.png" alt=""></li>
+        <li><img class="icons-bar" src="assets/corporative/ok.png" alt=""></li>
+      </ul>
+    </section>
+
+    <section class="product_page">
+      <div class="product_image">
+        <div class="image_carousel">
+          <ul>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="">
+            </li>
+            <li>
+              <img src="./assets/product-img/image2.webp" alt="">
+            </li>
+          </ul>
         </div>
-    </header>
+        <div class="selected_porduct_image">
+          <img src="./assets/product-img/image2.webp" alt="">
+        </div>
+      </div>
+      <div class="product_details">
+        <h4>Brown t-shirt</h4>
+        <p>Price</p>
+        <h4>14.55$</h4>
+        <label for="size">Size:</label>
+        <select name="size" id="size">
+          <option value="xs">XS</option>
+          <option value="s">S</option>
+          <option value="m">M</option>
+          <option value="l">L</option>
+          <option value="xl">XL</option>
+        </select>
+        <div class="color-option">
+          <p>Color</p>
+          <ul>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+            <li>
+              <img src="" alt="">
+            </li>
+          </ul>
+        </div>
+        <div class="color_option">
+          <p>Color</p>
+          <ul>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="red">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="blue">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="yellow">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="brown">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="white">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="black">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="pink">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="orange">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="navy-blue">
+            </li>
+            <li>
+              <img src="./assets/product-img/image1.webp" alt="" id="grey">
+            </li>
+          </ul>
+        </div>
+        <div class="error_message">
+          <h4></h4>
+        </div>
+        <button id="buy_btn">Buy</button>
+      </div>
+    </section>
+
+    <section class="form_page">
+      <form action="" id="form">
+
+        <!-- Form step 1 -->
+        <div class="step step-page1 active">
+          <h1>Profile</h1>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <div class="form-group">
+            <label for="confirm-password">Confirm password</label>
+            <input type="password" name="confirm-password" id="confirm-password">
+          </div>
+        </div>
+
+        <!-- Form step 2 -->
+        <div class="step step-page2 active">
+          <h1>Address</h1>
+          <div class="form-group">
+            <label for="first-name">First Name</label>
+            <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Fisrt Name">
+          </div>
+          <div class="form-group">
+            <label for="last-name">Last Name</label>
+            <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
+          </div>
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
+          </div>
+          <div class="form-group">
+            <label for="address1">Address 1</label>
+            <input type="text" name="address1" id="address1" class="form-control" placeholder="Address 1">
+          </div>
+          <div class="form-group">
+            <label for="address2">Address 2</label>
+            <input type="text" name="address2" id="address2" class="form-control" placeholder="Address 2">
+          </div>
+          <div class="form-group">
+            <label for="postal-code">Postal Code</label>
+            <input type="number" name="postal-code" id="postal-code" placeholder="Postal Code">
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country">
+              <!-- <option value=""></option>
+              <option value="andorra">Andorra</option>
+              <option value="spain">Spain</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="greece">Greece</option>
+              <option value="israel">Israel</option> -->
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone</label>
+            <select name="prefix" id="prefix">
+              <!-- <option value=""></option>
+              <option value="+376"></option>
+              <option value="+34">SPA</option>
+              <option value="+33">FRA</option>
+              <option value="+49">GER</option>
+              <option value="+30">GRE</option>
+              <option value="+972">ISR</option> -->
+            </select>
+            <input type="tel" name="phone" id="phone" placeholder="Number Phone">
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="reg-address" id="reg-address">
+            <label for="reg-address" id="red-address-label">This is my regular address</label>
+          </div>
+        </div>
+
+        <!-- Form step 3 -->
+        <div class="step step-page3 active">
+          <h1>Shipping</h1>
+          <h4>Shipping type</h4>
+          <div class="form-group">
+            <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
+            <label class="radio-buttom" for="free">Free shipment (72h)</label><br>
+            <input class="radio-buttom" type="radio" id="extra" name="shi_type" value="extra_shipping">
+            <label class="radio-buttom" for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
+            <input class="radio-buttom" type="radio" id="premium" name="shi_type" value="premium">
+            <label class="radio-buttom" for="premium">Premium (24h)<span>9,99€</span></label>
+            <br>
+          </div>
+          <div class="dates-text inactive">
+            <h6>Your order will arrive:</h6>
+            <p>Estimate delivery date:</p>
+            <P>Between <span id="date_shipment"></span></p>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" name="gif-option" id="gif-option">
+            <label for="gif-option" id="gif-option-label">Is it a gift?</label><br>
+            <div class="gift-container inactive">
+              <label for="gift-title">Gift Title</label><br>
+              <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>
+              <label for="gift-message">Gift Message</label><br>
+              <textarea name="gift-message" id="gift-message" cols="30" rows="10"></textarea><br>
+              <label class="input-file-trigger" for="gift-image">Select an image</label><br>
+              <input type="file" class="input-file" name="gift-image" id="gift-image" accept="image/png, image/jpeg">
+              <p class="file-return"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form step 4 -->
+        <div class="step step-page4">
+        </div>
 
 
-    <main>
-        <section class="header-main">
-            <ul class="progress-bar">
-                <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt=""></li>
-                <li><img class="icons-bar" src="assets/corporative/location.png" alt=""></li>
-                <li><img class="icons-bar" src="assets/corporative/shipping.png" alt=""></li>
-                <li><img class="icons-bar" src="assets/corporative/ok.png" alt=""></li>
+
+
+
+
+      </form>
+    </section>
+
+    <section class="footer-main">
+      <button id="clear-form">Clear Form</button>
+      <button id="next-step">Next</button>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#">about us</a></li>
+            <li><a href="#">our services</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">affiliate program</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Shipping</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+            <li><a href="#">Payment Options</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Online Shop</h4>
+          <ul>
+            <li><a href="#">Watch</a></li>
+            <li><a href="#">Bag</a></li>
+            <li><a href="#">Shoes</a></li>
+            <li><a href="#">Dress</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <ul>
+              <li>
+                <a href><img class="image" src="./assets/icons/facebook.png" /></a>
+                <a href><img class="image" src="./assets/icons/instagram.png" /></a>
+                <a href><img class="image" src="./assets/icons/linkedin.png" /></a>
+                <a href><img class="image" src="./assets/icons/twitter.png" /></a>
+              </li>
             </ul>
-        </section>
-
-        <section class="product_page">
-            <div class="product_image">
-                <div class="image_carousel">
-                    <ul>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image2.webp" alt="">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image2.webp" alt="">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image2.webp" alt="">
-                        </li>
-                    </ul>
-                </div>
-                <div class="selected_porduct_image">
-                    <img src="./assets/product-img/image2.webp" alt="">
-                </div>
-            </div>
-            <div class="product_details">
-                <h4>Brown t-shirt</h4>
-                <p>Price</p>
-                <h4>14.55$</h4>
-                <label for="size">Size:</label>
-                <select name="size" id="size">
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="m">M</option>
-                    <option value="l">L</option>
-                    <option value="xl">XL</option>
-                </select>
-                <div class="color-option">
-                    <p>Color</p>
-                    <ul>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                    </ul>
-                </div>
-                <div class="color_option">
-                    <p>Color</p>
-                    <ul>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="red">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="blue">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="yellow">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="brown">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="white">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="black">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="pink">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="orange">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="navy-blue">
-                        </li>
-                        <li>
-                            <img src="./assets/product-img/image1.webp" alt="" id="grey">
-                        </li>
-                    </ul>
-                </div>
-                <div class="error_message">
-                    <h4></h4>
-                </div>
-                <button id="buy_btn">Buy</button>
-            </div>
-        </section>
-
-        <section class="form_page">
-            <form action="" id="form">
-
-                <!-- Form step 1 -->
-                <div class="step step-page1 active">
-                    <h1>Profile</h1>
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" name="username" id="username" >
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" name="email" id="email" >
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" >
-                    </div>
-                    <div class="form-group">
-                        <label for="confirm-password">Confirm password</label>
-                        <input type="password" name="confirm-password" id="confirm-password">
-                    </div>
-                </div>
-
-                <!-- Form step 2 -->
-                <div class="step step-page2 active" >
-                    <h1>Address</h1>
-                    <div class="form-group">
-                        <label for="first-name">First Name</label>
-                        <input type="text" name="first-name" id="first-name" class="form-control"
-                            placeholder="Fisrt Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="last-name">Last Name</label>
-                        <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
-                    </div>
-                    <div class="form-group">
-                        <label for="birthday">Birthday</label>
-                        <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
-                    </div>
-                    <div class="form-group">
-                        <label for="address1">Address 1</label>
-                        <input type="text" name="address1" id="address1" class="form-control" placeholder="Address 1">
-                    </div>
-                    <div class="form-group">
-                        <label for="address2">Address 2</label>
-                        <input type="text" name="address2" id="address2" class="form-control" placeholder="Address 2">
-                    </div>
-                    <div class="form-group">
-                        <label for="postal-code">Postal Code</label>
-                        <input type="number" name="postal-code" id="postal-code" placeholder="Postal Code">
-                    </div>
-                    <div class="form-group">
-                        <label for="country">Country</label>
-                        <select name="country" id="country">
-                            <option value=""></option>
-                            <option value="andorra">Andorra</option>
-                            <option value="spain">Spain</option>
-                            <option value="france">France</option>
-                            <option value="germany">Germany</option>
-                            <option value="greece">Greece</option>
-                            <option value="israel">Israel</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone</label>
-                        <select name="prefix" id="prefix">
-                            <option value=""></option>
-                            <option value="376">AND</option>
-                            <option value="34">SPA</option>
-                            <option value="33">FRA</option>
-                            <option value="49">GER</option>
-                            <option value="30">GRE</option>
-                            <option value="972">ISR</option>
-                        </select>
-                        <input type="tel" name="phone" id="phone" placeholder="Number Phone">
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="reg-address" id="reg-address">
-                        <label for="reg-address" id="red-address-label">This is my regular address</label>
-                    </div>
-                </div>
-
-                <!-- Form step 3 -->
-                <div class="step step-page3 active">
-                    <h1>Shipping</h1>
-                    <h4>Shipping type</h4>
-                    <div class="form-group">
-                        <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
-                        <label class="radio-buttom" for="free">Free shipment (72h)</label><br>
-                        <input class="radio-buttom" type="radio" id="extra" name="shi_type" value="extra_shipping">
-                        <label class="radio-buttom" for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
-                        <input class="radio-buttom" type="radio" id="premium" name="shi_type" value="premium">
-                        <label class="radio-buttom" for="premium">Premium (24h)<span>9,99€</span></label>
-                        <br>
-                    </div>
-                    <div class="dates-text">
-                        <h6>Your order will arrive:</h6>
-                        <p>Estimate delivery date:</p>
-                        <P>Between <span id="date_shipment">something something</span></p>
-                    </div>
-                    <div class="form-group">
-                        <input type="checkbox" name="gif-option" id="gif-option">
-                        <label for="gif-option">Is it gift?</label><br>
-                        <div class="gift-container">
-                            <label for="gift-title">Gift Title</label><br>
-                            <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>
-                            <label for="gift-message">Gift Message</label><br>
-                            <textarea name="gift-message" id="gift-message" cols="30" rows="10"></textarea><br>
-                            <label for="gift-image">Gift wrapper image</label><br>
-                            <input type="file" name="gift-image" id="gift-image" accept="image/png, image/jpeg">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form step 4 -->
-                <div class="step step-page4">
-                </div>
-
-
-
-
-
-
-            </form>
-        </section>
-
-        <section class="footer-main">
-            <button id="clear-form">Clear Form</button>
-            <button id="next-step">Next</button>
-        </section>
-
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="footer-col">
-                    <h4>Company</h4>
-                    <ul>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">our services</a></li>
-                        <li><a href="#">privacy policy</a></li>
-                        <li><a href="#">affiliate program</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Get Help</h4>
-                    <ul>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Shipping</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Order Status</a></li>
-                        <li><a href="#">Payment Options</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Online Shop</h4>
-                    <ul>
-                        <li><a href="#">Watch</a></li>
-                        <li><a href="#">Bag</a></li>
-                        <li><a href="#">Shoes</a></li>
-                        <li><a href="#">Dress</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
-                        <ul>
-                            <li>
-                                <a href><img class="image" src="./assets/icons/facebook.png" /></a>
-                                <a href><img class="image" src="./assets/icons/instagram.png" /></a>
-                                <a href><img class="image" src="./assets/icons/linkedin.png" /></a>
-                                <a href><img class="image" src="./assets/icons/twitter.png" /></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        </div>
-    </footer>
+      </div>
+    </div>
+    </div>
+  </footer>
 </body>
 
 </html>

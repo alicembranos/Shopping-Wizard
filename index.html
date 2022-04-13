@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Thank.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./script.js" defer></script>
+    <script src="./ProductPage.js" defer></script>
     <title>JS Shopping Wizard</title>
 </head>
 
 <body>
     <header>
-        <a href="#" class="logo"><img src="./assets/corporative/lobito.jpg" alt=""></a>
+    <a href="#" class="logo"><img src="./assets/corporative/lobito.jpg" alt=""></a>
         <ul class="navigation">
             <li><a href="#">Home</a></li>
             <li><a href="#">Woman</a></li>
@@ -20,13 +22,39 @@
             <li><a href="#">Complements</a></li>
             <li><a href="#">Info</a></li>
         </ul>
+
+
+
+
+
+
+
+
         <div class="search">
             <input type="text" placeholder="Search">
             <img class="image" src="./assets/icons/search1.png" alt="">
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </header>
-
-
     <main>
         <section class="header-main">
             <ul class="progress-bar">
@@ -36,7 +64,6 @@
                 <li><img class="icons-bar" src="assets/corporative/ok.png" alt=""></li>
             </ul>
         </section>
-
         <section class="product_page">
             <div class="product_image">
                 <div class="image_carousel">
@@ -65,7 +92,7 @@
             <div class="product_details">
                 <h4>Brown t-shirt</h4>
                 <p>Price</p>
-                <h4>14.55$</h4>
+                <h4>14.55&#x20AC;</h4>
                 <label for="size">Size:</label>
                 <select name="size" id="size">
                     <option value="xs">XS</option>
@@ -74,41 +101,6 @@
                     <option value="l">L</option>
                     <option value="xl">XL</option>
                 </select>
-                <div class="color-option">
-                    <p>Color</p>
-                    <ul>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                        <li>
-                            <img src="" alt="">
-                        </li>
-                    </ul>
-                </div>
                 <div class="color_option">
                     <p>Color</p>
                     <ul>
@@ -150,31 +142,28 @@
                 <button id="buy_btn">Buy</button>
             </div>
         </section>
-
         <section class="form_page">
             <form action="" id="form">
-
                 <!-- Form step 1 -->
                 <div class="step step-page1 active">
                     <h1>Profile</h1>
                     <div class="form-group">
                         <label for="username">Username</label>
-                        <input type="text" name="username" id="username">
+                        <input type="text" name="username" id="username" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" name="email" id="email">
+                        <input type="email" name="email" id="email" required>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" name="password" id="password">
+                        <input type="password" name="password" id="password" required>
                     </div>
                     <div class="form-group">
                         <label for="confirm-password">Confirm password</label>
-                        <input type="password" name="confirm-password" id="confirm-password">
+                        <input type="password" name="confirm-password" id="confirm-password" required>
                     </div>
                 </div>
-
                 <!-- Form step 2 -->
                 <div class="step step-page2 active">
                     <h1>Address</h1>
@@ -189,7 +178,7 @@
                     </div>
                     <div class="form-group">
                         <label for="birthday">Birthday</label>
-                        <input type="date" name="birthday" id="birthday" class="form-control" placeholder="Birthday">
+                        <input type="date" name="birthday" id="birthday" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="address1">Address 1</label>
@@ -233,28 +222,27 @@
                         <label for="reg-address" id="red-address-label">This is my regular address</label>
                     </div>
                 </div>
-
                 <!-- Form step 3 -->
                 <div class="step step-page3 active">
                     <h1>Shipping</h1>
-                    <h4>Shipping type</h4>
+                    <h2>Shipping type</h2>
                     <div class="form-group">
                         <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
                         <label class="radio-buttom" for="free">Free shipment (72h)</label><br>
                         <input class="radio-buttom" type="radio" id="extra" name="shi_type" value="extra_shipping">
-                        <label class="radio-buttom" for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
+                        <label class="radio-buttom" for="extra">Extra shipping (48h) <span>4,99€</span></label><br>
                         <input class="radio-buttom" type="radio" id="premium" name="shi_type" value="premium">
-                        <label class="radio-buttom" for="premium">Premium (24h)<span>9,99€</span></label>
+                        <label class="radio-buttom" for="premium">Premium (24h) <span>9,99€</span></label>
                         <br>
                     </div>
                     <div class="dates-text">
-                        <h6>Your order will arrive:</h6>
+                        <h3>Your order will arrive:</h3>
                         <p>Estimate delivery date:</p>
                         <P>Between <span id="date_shipment">something something</span></p>
                     </div>
                     <div class="form-group">
                         <input type="checkbox" name="gif-option" id="gif-option">
-                        <label for="gif-option">Is it gift?</label><br>
+                        <label for="gif-option" id="gif-option-label">Is it gift?</label><br>
                         <div class="gift-container">
                             <label for="gift-title">Gift Title</label><br>
                             <input type="text" name="gift-title" id="gift-title" placeholder="Gift Title"><br>
@@ -266,10 +254,18 @@
                     </div>
                 </div>
                 <!-- Form step 4 -->
+                <div class="step step-page4"></div>
 
-                <div class="step step-page4 active">
-                    <button class="button-finish" onclick="location.href='./ThankyouPage.html'">Finish</button>
-                </div>
+
+
+
+                <button class="button-finish" onclick="location.href='./ThankyouPage.html'">Finish</button>
+
+
+
+
+            </form>
+        </section>
         <section class="footer-main">
             <button id="clear-form">Clear Form</button>
             <button id="next-step">Next</button>
@@ -281,10 +277,10 @@
                 <div class="footer-col">
                     <h4>Company</h4>
                     <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Our services</a></li>
-                        <li><a href="#">Privacy policy</a></li>
-                        <li><a href="#">Afiliate program</a></li>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">

@@ -14,11 +14,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 100px;
-    z-index: 5;
     background-color: #010e20;
     width: 110%;
-    height: 25vh;
+    height: 20vh;
 }
 .header::before {
     content: "";
@@ -476,13 +474,12 @@ footer {
     width: 110%;
     height: 25vh;
     background-color: #010e20;
-    padding: 40px 0;
-    margin: auto;
+    padding: 25px 0;
 }
 
 .footer-col {
     width: 25%;
-    padding: 0 15px;
+    padding: 0 10px;
 }
 
 .footer-col h4 {
@@ -507,7 +504,7 @@ footer {
 }
 
 .footer-col ul li:not(:last-child) {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .footer-col ul li a {

@@ -3,8 +3,6 @@ const form = document.getElementById('form');
 const inputs = document.querySelectorAll("#form input:not([type='checkbox'], [type='radio'])");
 const countryEl = document.getElementById('country');
 // const inputsRequired = document.querySelectorAll("#form input:not([type='checkbox'], [type='radio'])");
-const nextButton = document.getElementById('next-step');
-const clearButton = document.getElementById('clear-form');
 const steps = Array.from(document.querySelectorAll('#form .step'));
 const messageRequired = 'is required';
 const messagesElements = {
@@ -20,6 +18,17 @@ const messagesElements = {
     postalCode: '<p></p>',
     phone: '<p></p>',
 };
+
+/******** Multi Step Form **********/
+const nextButton = document.getElementById('next-step');
+const clearButton = document.getElementById('clear-form');
+const buyButton = document.getElementById('buy_btn');
+const productPage = document.querySelector('.product_page');
+const stepPages = document.querySelectorAll('.step');
+const statusBar = document.querySelector('.header-main');
+const buttonFooter = document.querySelector('.footer-main');
+const iconsStatusBar = statusBar.querySelectorAll('li');
+
 /* Variables to control prefix phone number options */
 const selectCountry = document.getElementById("country");
 const selectPrefix = document.getElementById("prefix");
@@ -52,7 +61,7 @@ let user = {
 /********** Populate select country options and prefix dynamically ***********/
 const countries = ['Select Country', 'Andorra', 'Spain', 'France', 'Germany', 'Greece', 'Isarel'];
 const prefix = [{
-        co: '',
+        co: 'Select Prefix',
         pre: ''
     },
     {
@@ -84,7 +93,7 @@ const prefix = [{
 let optionsCountries = countries.map(country => `<option value=${country}>${country}</option>`);
 selectCountry.innerHTML = optionsCountries;
 let optionsPrefix = prefix.map(pre =>
-    pre.co == "" ? `<option value=""></option>` : `<option value=${pre.pre}>${pre.co} (+${pre.pre})</option>`);
+    pre.pre == "" ? `<option value="">${pre.co}</option>` : `<option value=${pre.pre}>${pre.co} (+${pre.pre})</option>`);
 selectPrefix.innerHTML = optionsPrefix;
 
 /********** Select prefix according to selected country  ***********/
@@ -106,25 +115,6 @@ const expressions = {
     postalCode: /^[0-9]{1,5}$/, //numbers, max5
     phoneNumber: /^[0-9]{1,9}$/, // numbers, max9
 };
-
-/********** Control time out function ***********/
-const timeOutLimit = 300000; //Five minutes
-const timeRedirect = 5000; //Five seconds
-let timeOut = setTimeout(() => {
-    setTimeout(() => {
-        //Message displayed indicating maximum time allowed exceeded
-        //Back to product page
-    }, timeRedirect);
-}, timeOutLimit);
-
-/********** Every Minute Message ***********/
-const timeMinute = 60000; // 1 minute
-let intervalMinute = setInterval(() => {
-    //Message indicating
-    setTimeout(() => {
-        //Message dissapear
-    }, timeRedirect);
-}, timeMinute);
 
 /********** Calculate date shipment ***********/
 function dateBetween(hours) {
@@ -205,9 +195,9 @@ button.addEventListener("click", (e) => {
     fileInput.focus();
     return false;
 });
-fileInput.addEventListener( "change", (e) => {  
-    fileInfo.innerHTML = e.target.value;  
-});  
+fileInput.addEventListener("change", (e) => {
+    fileInfo.innerHTML = e.target.value;
+});
 
 /* Adding eventlisteners keyup and blur to inputs */
 inputs.forEach((input) => {
@@ -284,3 +274,98 @@ function validatePassword() {
         console.log('no match');
     }
 }
+
+/********** Control time out function ***********/
+const timeOutLimit = 3000; //Five minutes
+const timeRedirect = 5000; //Five seconds
+const barSection = document.querySelector('.header-main');
+
+function maxMinutes() {
+    setTimeout(() => {
+        const pElement = document.createElement("p");
+        let text = `<p class="sorry"><img src="assets/icons/reject.png" alt="hourglass">Sorry, the maximum purchase limit time has been exceeded. You will be redirected to the home page.</p>`
+        pElement.innerHTML = text;
+        barSection.appendChild(pElement);
+        setTimeout(() => {
+            //Back to product page
+            stepPages.forEach(sp => {
+                if (sp.classList.contains('active')) {
+                    sp.classList.remove('active');
+                }
+            });
+            resetAll(); //Restore purchase process
+            barSection.lastElementChild.remove();
+        }, timeRedirect);
+    }, timeOutLimit);
+};
+
+/********** Every Minute Message ***********/
+const timeMinute = 60000; // 1 minute
+function minuteMessage() {
+    let downCounter = 4;
+    setInterval(() => {
+        const pElement = document.createElement("p");
+        let text = `<p class="head-up"><img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase</p>`
+        pElement.innerHTML = text;
+        barSection.appendChild(pElement);
+        setTimeout(() => {
+            barSection.lastElementChild.remove();
+        }, timeRedirect);
+        downCounter--;
+    }, timeMinute);
+};
+
+
+// outer2()();
+
+/******** Multi Step Form Implementation**********/
+
+let counter = 0; //Counter to activate and desactivate form steps
+/* Function to launch the purchase process with step forms  */
+buyButton.addEventListener('click', () => {
+    productPage.classList.add('inactive');
+    stepPages[counter].classList.add('active');
+    statusBar.classList.remove('inactive');
+    buttonFooter.classList.remove('inactive');
+    maxMinutes();
+    minuteMessage();
+    counter++;
+});
+
+/* Reset input fields of the current step */
+clearButton.addEventListener('click', () => {
+    const actualInputs = document.querySelectorAll('.step.active input');
+    actualInputs.forEach((input) => {
+        document.getElementById(`${input.id}`).value = "";
+        document.getElementById(`${input.id}`).checked = false; //in case of checkbox input
+    });
+});
+
+/* Manage steps in purchasing process*/
+nextButton.addEventListener('click', updateFormStep);
+
+function updateFormStep() {
+
+    if (counter !== 3) {
+        stepPages[counter].classList.add('active');
+        stepPages[counter - 1].classList.remove('active');
+        iconsStatusBar[counter].classList.add('active');
+        counter++;
+    } else {
+        stepPages[counter].classList.add('active');
+        stepPages[counter - 1].classList.remove('active');
+        buttonFooter.classList.add('inactive');
+        iconsStatusBar[counter].classList.add('active');
+        clearInterval(minuteMessage());
+    }
+}
+
+/* Reset purchase process */
+function resetAll() {
+    productPage.classList.remove('inactive');
+    document.getElementById('form').reset(); //reset form
+    statusBar.classList.add('inactive');
+    buttonFooter.classList.add('inactive');
+    clearInterval(minuteMessage());
+    counter = 0;
+};

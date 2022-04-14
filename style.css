@@ -35,7 +35,6 @@ header {
     width: 100%;
     height: 20vh;
     padding: 10px;
-    border-radius: 50px;
 }
 header a img {
     height: 50px;
@@ -509,7 +508,6 @@ footer {
     width: 100%;
     height: 20vh;
     background-color: #010e20;
-    border-radius: 50px;
     padding: 10px;
 }
 

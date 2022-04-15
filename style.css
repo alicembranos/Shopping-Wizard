@@ -36,6 +36,13 @@ header {
     height: 20vh;
     padding: 10px;
 }
+/* Progress status bar*/
+.header-main {
+    position: relative;
+    width: 100%;
+    padding: 30px 0;
+    margin-top: 50px;
+}
 header a img {
     height: 50px;
     width: 50px;
@@ -72,22 +79,21 @@ header li {
 header .logo {
     float: left;
     position: relative;
-    right: 150px;
+    right: 200px;
+    background-color: white;
 }
 
 /* This is Search Bar */
 .search-btn {
     display: flex;
-    align-items: center;
+    flex: auto;
     color: #ffffff;
-    float: right;
     width: 40px;
     height: 40px;
     border-radius: 50%;
     background: #f8f9fa;
     transition: 0.4s;
     cursor: pointer;
-    text-decoration: none;
 }
 
 .search-box {
@@ -95,7 +101,7 @@ header .logo {
     top: 50%;
     left: 80%;
     transform: translate(-50%, -50%);
-    background: #030c20;
+    background: #030C20;
     height: 40px;
     border-radius: 40px;
     padding: 10px;
@@ -107,7 +113,7 @@ header .logo {
 }
 
 .search-box:hover > .search-btn {
-    background: #030c20;
+    background: #f6f7f8;
     color: rgb(253, 250, 250);
 }
 
@@ -124,30 +130,6 @@ header .logo {
     line-height: 40px;
     width: 0px;
 }
-/* width */
-::-webkit-scrollbar {
-    width: 15px;
-    height: 15px;
-}
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 4px #0b1a7d;
-    border-radius: 5px;
-}
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: rgb(1, 50, 124);
-    border-radius: 5px;
-}
-
-/* Progress status bar*/
-.header-main {
-    position: relative;
-    width: 100%;
-    padding: 30px 0;
-    margin-top: 50px;
-}
-
 .progress-bar {
     counter-reset: step;
     list-style-type: none;
@@ -156,17 +138,14 @@ header .logo {
     justify-content: space-between;
     flex-direction: row;
 }
-
 .progress-bar li {
     width: 23%;
     text-align: center;
 }
-
 .icons-bar {
     height: 25px;
     margin-bottom: 10px;
 }
-
 .progress-bar li:before {
     content: "";
     position: absolute;
@@ -177,11 +156,9 @@ header .logo {
     z-index: -1;
     width: 27%;
 }
-
 .progress-bar li:last-child::before {
     content: none;
 }
-
 .progress-bar li:after {
     content: counter(step);
     counter-increment: step;
@@ -198,40 +175,32 @@ header .logo {
     color: #35363a;
     font-size: 13px;
 }
-
 .progress-bar li.active {
     color: #0b1a7d;
 }
-
 .progress-bar li.active::after {
     border-color: #0b1a7d;
 }
-
 .progress-bar li.active::before {
     background-color: #0b1a7d;
 }
-
 /* Product page */
 .product_page {
     display: flex;
 }
-
 /* Display image */
 .display_content {
     margin-right: 5%;
 }
-
 .image_carousel {
     /* width: 30%; */
     /* position: absolute; */
     margin-right: 5%;
 }
-
 .image_carousel img {
     width: 35px;
     height: 35px;
 }
-
 .product_image {
     width: 50%;
     display: flex;
@@ -239,13 +208,10 @@ header .logo {
     position: relative;
     left: -10%;
 }
-
 /* Size seleciton */
-
 .product_details > label {
     font-weight: bold;
 }
-
 #size {
     margin-top: 2%;
     width: 20%;
@@ -255,42 +221,33 @@ header .logo {
     padding: 3px;
     font-size: 13px;
 }
-
 .selected_porduct_image img {
     width: 100%;
     height: 420px;
 }
-
 .product_details {
     width: 50%;
 }
-
 .product_details p {
     font-weight: bold;
 }
-
 /* Color selection */
 .color_option {
     margin-bottom: 5%;
 }
-
 .color_option ul {
     display: flex;
 }
-
 .color_option img {
     width: 35px;
     height: 35px;
 }
-
 .selected_color {
     border: 2px solid rgb(255, 111, 0);
 }
-
 .error_message {
     color: red;
 }
-
 /* Buy button */
 #buy_btn {
     width: 7%;
@@ -303,50 +260,41 @@ header .logo {
     opacity: 0.8;
     cursor: pointer;
 }
-
 #buy_btn:hover {
     color: black;
     background-color: rgb(255, 111, 0);
 }
-
 #buy_btn:active {
     color: white;
 }
-
 /* Steps of form*/
 #form {
     width: 100%;
 }
-
 .form_page {
     width: 100%;
     display: flex;
     justify-content: flex-start;
     margin: 50px 50px 20px 50px;
 }
-
 .step {
     /* Hidden step*/
     display: none;
 }
-
 .step.active {
     /* Displayed step*/
     display: block;
 }
-
 .form-group {
     width: 100%;
     margin-top: 25px;
     margin-bottom: 15px;
     font-size: 13px;
 }
-
 .form-group label {
     display: block;
     margin-bottom: 10px;
 }
-
 .form-group input,
 .form-group select {
     display: block;
@@ -356,18 +304,15 @@ header .logo {
     padding: 3px 10px;
     font-size: 12px;
 }
-
 #prefix {
     display: inline-block;
     padding: 2px;
     width: 5em;
 }
-
 #phone {
     display: inline-block;
     width: 24.7em;
 }
-
 #reg-address {
     display: inline-block;
     width: 20px;
@@ -377,42 +322,34 @@ header .logo {
     height: 15px;
     border: 0.3px solid black;
 }
-
 #red-address-label {
     display: inline-block;
 }
-
 .step h2 {
     margin-top: 25px;
     font-size: 15px;
 }
-
 input.radio-buttom,
 label.radio-buttom {
     display: inline-block;
     width: 2em;
 }
-
 label.radio-buttom {
     width: 80%;
 }
-
 .dates-text h3 {
     margin-bottom: 1.5em;
     font-weight: bold;
     text-decoration: underline;
     font-size: 10px;
 }
-
 .dates-text p {
     font-size: 0.8em;
     margin: 1em 0;
 }
-
 .dates-text span {
     font-weight: bold;
 }
-
 #reg-address,
 #gif-option {
     display: inline-block;
@@ -423,20 +360,16 @@ label.radio-buttom {
     height: 15px;
     border: 0.3px solid black;
 }
-
 #red-address-label,
 #gif-option-label {
     display: inline-block;
 }
-
 .gift-container {
     margin-top: 25px;
 }
-
 .gift-container label {
     font-weight: bold;
 }
-
 .gift-container textarea {
     width: 30em;
     border: 1.5px solid black;
@@ -445,7 +378,6 @@ label.radio-buttom {
     font-size: 12px;
     margin-bottom: 15px;
 }
-
 /* Footer Main Area*/
 .footer-main {
     display: flex;
@@ -456,7 +388,6 @@ label.radio-buttom {
     padding: 6px 50px;
     border-radius: 20px;
 }
-
 .footer-main button {
     padding: 0.35em 1.2em;
     cursor: pointer;
@@ -471,36 +402,29 @@ label.radio-buttom {
     font-family: "Roboto", sans-serif;
     color: white;
 }
-
 .footer-main button:hover {
     background: white;
     color: #35363a;
 }
-
 #clear-form {
     background: white;
     color: #35363a;
 }
-
 #clear-form:hover {
     background: #35363a;
     color: white;
 }
-
 /* Footer */
 .container-footer {
     display: flex;
     flex-direction: column;
 }
-
 .row {
     display: flex;
 }
-
 ul {
     list-style: none;
 }
-
 footer {
     position: relative;
     align-items: center;
@@ -510,14 +434,11 @@ footer {
     background-color: #010e20;
     padding: 10px;
 }
-
 .footer-col {
     width: 100%;
     padding: 10px;
     margin: 10px;
-    font-size: medium;
 }
-
 .footer-col h4 {
     font-size: 12px;
     color: white;
@@ -526,7 +447,6 @@ footer {
     font-weight: 500;
     position: relative;
 }
-
 .footer-col h4::before {
     content: "";
     position: absolute;
@@ -538,11 +458,9 @@ footer {
     width: border;
     background: rgb(109, 169, 253);
 }
-
 .footer-col ul li:not(:last-child) {
     margin-bottom: 10px;
 }
-
 .footer-col ul li a {
     font-size: 10px;
     text-transform: capitalize;
@@ -553,24 +471,17 @@ footer {
     display: block;
     transition: all 0.3s ease;
 }
-
 .footer-col ul li a:hover {
     color: #7ea5b5;
 }
-
 .footer-col .social-links a {
     display: inline-block;
-    height: 0%;
-    max-width: 50%;
     background-color: rgba(#7ea5b5);
-    margin: 20px 20px 20px 20px;
-    text-align: center;
-    line-height: 50px;
+    margin:0px 0px 15px 15px;
     border-radius: 50%;
     color: white;
     transition: all 1s ease;
 }
-
 .footer-col .social-links a:hover {
     width: 30px;
     color: #7ea5b5;
@@ -579,7 +490,6 @@ footer {
 .footer-col .icon {
     width: 20px;
 }
-
 /* Validation messages */
 
 /* .validation_error {
@@ -592,22 +502,35 @@ footer {
   box-shadow: 2px 0px 18px 11px rgba(191,0,0,0.48);
 } */
 
-/* Ahora pongo el responsive*/
-@media (max-width: 767px) {
-    .footer-col {
-        width: 50%;
-        margin-bottom: 30px;
-    }
+/* Responsive*/
+@media screen and (max-width: 1060px) {
+header {width: 100%; margin:0; border:none;}
+    .progress-bar { width:30%; margin-left:3%;}  
+    .progress-bar li {display: none;}
+    .product_page { width:30%; margin-left:-4%;}
+    .product_image {max-width: 70%;max-height: 70%;}
+    .form_page{width:30%; margin-left:10px;}
+    .footer-col .social-links a {max-width: 5px; max-height: 5px;display: initial;}
+    .footer-col ul li a { font-size: 5px;
+    text-transform: capitalize;
+    color: rgb(250, 246, 246);
+    text-decoration: none;
+    color: rgb(251, 248, 248);
 }
-
-@media (max-width: 574px) {
-    .footer-col {
-        width: 100%;
-    }
-
-    .social-links {
-        padding: 150px 20px 50px;
-        flex-direction: column;
-        padding: 10px;
-    }
+}
+@media screen and (max-width: 768px) {
+    header {width: 100%; margin:0; border:none;}
+    .search-btn { width: 20px; height: 20px;}
+    .search-box {width: 20px; height: 20px;}
+    .progress-bar { width:2%; margin:0; border:none; }
+    .progress-bar li {display: none;}
+    .product_page{ width:250%; margin-left:-4%;}
+    .form_page{width:230%; margin-left:10px;}
+    .footer-col .social-links a {max-width: 5px; max-height: 5px;display: initial;}
+    .footer-col ul li a {
+    font-size: 4px;
+    text-transform: capitalize;
+    color: rgb(250, 246, 246);
+    text-decoration: none;
+}
 }

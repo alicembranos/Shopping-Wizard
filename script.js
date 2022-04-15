@@ -276,16 +276,18 @@ function validatePassword() {
 }
 
 /********** Control time out function ***********/
-const timeOutLimit = 3000; //Five minutes
+const timeOutLimit = 300000; //Five minutes
 const timeRedirect = 5000; //Five seconds
-const barSection = document.querySelector('.header-main');
+const mainNode = document.querySelector('main');
+const barSection = document.querySelectorAll('main > *')[0];
 
 function maxMinutes() {
     setTimeout(() => {
+        clearInterval(minuteMessage());
         const pElement = document.createElement("p");
-        let text = `<p class="sorry"><img src="assets/icons/reject.png" alt="hourglass">Sorry, the maximum purchase limit time has been exceeded. You will be redirected to the home page.</p>`
+        let text = `<p class="popup-end"><img src="assets/icons/reject.png" alt="hourglass">Sorry, the maximum purchase limit time has been exceeded. You will be redirected to the home page.</p>`
         pElement.innerHTML = text;
-        barSection.appendChild(pElement);
+        mainNode.insertBefore(pElement, barSection[0]);
         setTimeout(() => {
             //Back to product page
             stepPages.forEach(sp => {
@@ -294,7 +296,7 @@ function maxMinutes() {
                 }
             });
             resetAll(); //Restore purchase process
-            barSection.lastElementChild.remove();
+            mainNode.removeChild(pElement);
         }, timeRedirect);
     }, timeOutLimit);
 };
@@ -305,11 +307,11 @@ function minuteMessage() {
     let downCounter = 4;
     setInterval(() => {
         const pElement = document.createElement("p");
-        let text = `<p class="head-up"><img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase</p>`
+        let text = `<p class="popup-minute"><img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase</p>`
         pElement.innerHTML = text;
-        barSection.appendChild(pElement);
+        mainNode.insertBefore(pElement, barSection[0]);
         setTimeout(() => {
-            barSection.lastElementChild.remove();
+            mainNode.removeChild(pElement);
         }, timeRedirect);
         downCounter--;
     }, timeMinute);

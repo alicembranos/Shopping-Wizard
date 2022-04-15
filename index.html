@@ -25,8 +25,6 @@
       <img class="image" src="./assets/icons/search1.png" alt="">
     </div>
   </header>
-
-
   <main>
     <section class="header-main inactive">
       <ul class="progress-bar">
@@ -37,7 +35,7 @@
       </ul>
     </section>
 
-    <section class="product_page">
+    <section class="product_page active">
       <div class="product_image">
         <div class="image_carousel">
           <ul>
@@ -157,6 +155,7 @@
         <!-- Form step 1 -->
         <div class="step step-page1">
           <h1>Profile</h1>
+          <hr>
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" name="username" id="username">
@@ -178,6 +177,7 @@
         <!-- Form step 2 -->
         <div class="step step-page2">
           <h1>Address</h1>
+          <hr>
           <div class="form-group">
             <label for="first-name">First Name</label>
             <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Fisrt Name">
@@ -236,6 +236,7 @@
         <!-- Form step 3 -->
         <div class="step step-page3">
           <h1>Shipping</h1>
+          <hr>
           <h4>Shipping type</h4>
           <div class="form-group">
             <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
@@ -267,7 +268,88 @@
         </div>
 
         <!-- Form step 4 -->
-        <div class="step step-page4">
+        <div id="step-page4" class="step">
+          <section class="item left-content">
+            <article class="correct-information">
+              <h2>Hello Ali!</h2>
+              <h3>Is all your information correct?</h3>
+              <p>Before you place your order, please take a moment to review your shipping information</p>
+            </article>
+            <article class="shipment-details">
+              <div class="header">
+                <img src="./assets/icons/checked-icon.png" alt="">
+                <h4>1. SHIPPING</h4>
+              </div>
+              <div class="user-details">
+                <p>First Name Last Name</p>
+                <p>Address1 </p>
+                <p>Country Postal Code</p>
+                <p>Telephone Number</p>
+              </div>
+              <di class="shipment-method">
+                <h5>Shipping Method</h5>
+                <p>Premium </p>
+                <p>Your order will arrive Between xxxx and xxxxx</p>
+              </di>
+            </article>
+            <article class="confirmation">
+              <div class="header">
+                <img src="./assets/icons/checked-icon.png" alt="">
+                <h4>2. REVIEW AND SUBMIT YOUR ORDER</h4>
+              </div>
+              <input type="checkbox" name="final-accept" id="final-accept">
+              <label for="final-accept">I have read and accept the term and conditions</label>
+              <p>By clicking the "Place Order", you confirm that you have read, understood, and accept our <a
+                  href="">Terms and Conditions</a>
+                policy</p>
+              <button id="accept">PLACER ORDER</button>
+            </article>
+          </section>
+          <section class="item right-content">
+            <article class="price-summary">
+              <h4>SUMMARY</h4>
+              <table>
+                <tr>
+                  <td colspan="4">SUBTOTAL<div class="tooltip-item"><img src="./assets/icons/question.png"
+                        alt="Tooltip"><span class="tooltip-text">I think you're rich enough to buy more things...</span>
+                    </div>
+                  </td>
+                  <td>4.00€</td>
+                </tr>
+                <tr>
+                  <td colspan="4">PREMIUM SHIPPING</td>
+                  <td>6.00€</td>
+                </tr>
+                <tr>
+                  <td colspan="4">TOTAL</td>
+                  <td>10.00€</td>
+                </tr>
+              </table>
+            </article>
+            <article class="card-summary">
+              <h4>IN YOUR CART</h4>
+              <h5>ARRIVES 06/04</h5>
+              <hr>
+              <div class="card-product">
+                <img src="./assets/product-img/image1.webp" alt="">
+                <div class="cart-product-details">
+                  <h6>Brown T-Shirt</h6>
+                  <p>Size: <span>M</span></p>
+                  <p>Color: <span>Blue</span></p>
+                  <p></p>
+                </div>
+              </div>
+            </article>
+            <!-- <article class="help">
+              <h5>NEED HELP?</h5>
+              <ul>
+                <li><a href="">Can I modify my shipment details?</a></li>
+                <li><a href="">When I will get my order?</a></li>
+                <li><a href="">How do I get free returns?</a></li>
+              </ul>
+              <p><a href="">More Help</a></p>
+            </article> -->
+          </section>
         </div>
 
 

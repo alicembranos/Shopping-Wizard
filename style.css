@@ -192,7 +192,8 @@ header li {
 
 /* Time messages*/
 
-.popup-minute, .popup-end{
+.popup-minute,
+.popup-end {
   border: 1px solid #888888;
   box-shadow: 5px 10px 18px #888888;
   background-color: white;
@@ -200,10 +201,10 @@ header li {
   padding: 30px 40px;
   position: absolute;
   color: #E6B014;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   left: 70%;
   top: 50%;
-  font-family: "Poppins",sans-serif;
+  font-family: "Poppins", sans-serif;
   text-align: center;
   animation: insideout 1.5s alternate infinite;
   -webkit-animation: insideout 1.5s alternate infinite;
@@ -441,7 +442,7 @@ header li {
   margin: 0 50px;
 }
 
-.step{
+.step {
   /* Hidden step*/
   display: none;
 }
@@ -626,7 +627,9 @@ label.radio-buttom {
 
 /* Step 4 Purchase summary*/
 
-#step-page4{display: none;}
+#step-page4 {
+  display: none;
+}
 
 #step-page4.active {
   display: -webkit-box;
@@ -982,38 +985,38 @@ table img {
 }
 
 /* Footer */
+footer {
+  position: relative;
+  /* height: 25vh; */
+  background-color: #010e20;
+  padding: 70px 0;
+}
+
 .container-footer {
-  display: flex;
-  flex-direction: column;
+  margin: 0 50px;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 ul {
   list-style: none;
 }
 
-footer {
-  position: relative;
-  align-items: center;
-  width: 110%;
-  height: 25vh;
-  background-color: #010e20;
-  padding: 25px 0;
-}
-
 .footer-col {
   width: 25%;
-  padding: 0 10px;
+  padding: 0 15px;
 }
 
 .footer-col h4 {
-  font-size: 12px;
+  font-size: 15px;
   color: white;
   text-transform: capitalize;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
   font-weight: 500;
   position: relative;
 }
@@ -1023,11 +1026,10 @@ footer {
   position: absolute;
   left: 0;
   bottom: -10px;
-  background-color: white;
-  height: 1px;
+  background-color: rgb(109, 169, 253);
+  height: 1.5px;
   box-sizing: border-box;
-  width: border;
-  background: rgb(109, 169, 253);
+  width: 50px;
 }
 
 .footer-col ul li:not(:last-child) {
@@ -1035,7 +1037,7 @@ footer {
 }
 
 .footer-col ul li a {
-  font-size: 10px;
+  font-size: 12px;
   text-transform: capitalize;
   color: rgb(250, 246, 246);
   text-decoration: none;
@@ -1046,36 +1048,23 @@ footer {
 }
 
 .footer-col ul li a:hover {
-  color: #7ea5b5;
+  padding-left: 8px;
 }
 
 .footer-col .social-links a {
   display: inline-block;
   height: 10%;
-  width: 15%;
   background-color: rgba(#7ea5b5);
-  margin: 0 10px 10px 0;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  color: white;
-  transition: all 0.5s ease;
+  margin: 0 20px 10px 0;
+  transition: all 0.3s ease;
 }
 
-.footer-col .social-links a:hover {
-  width: 10px;
-  color: #7ea5b5;
-  background-color: #7ea5b5;
+.footer-col .social-links a img:hover {
+  height: 12%;
 }
 
 .footer-col .icon {
   width: 30px;
-}
-
-.image {
-  width: 35px;
-  margin: 10%;
-  padding: 10%;
 }
 
 /* Active display*/
@@ -1084,8 +1073,38 @@ footer {
   display: none;
 }
 
-
 /* Validation messages */
+.val-inactive {
+  visibility: hidden;
+}
+
+.val-active {
+  visibility: visible;
+}
+
+.validation-info-success {
+  width: 29em;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  color: green;
+  padding-right: 1.5em;
+}
+
+.validation-info-error {
+  width: 29em;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  color: red;
+  padding-right: 1.5em;
+}
+
+.error-marked-field {
+  -webkit-box-shadow: inset 2px 0px 26px 15px rgba(191, 0, 0, 0.36);
+  box-shadow: inset 2px 0px 26px 15px rgba(191, 0, 0, 0.36);
+
+}
 
 /* .validation_error {
   border: 2px solid red;
@@ -1097,10 +1116,9 @@ footer {
   box-shadow: 2px 0px 18px 11px rgba(191,0,0,0.48);
 } */
 
-/* Ahora pongo el responsive*/
-
+/* Responsive*/
 @media (max-width: 1200px) {
-  .left-content{
+  .left-content {
     flex-grow: 1;
   }
 }
@@ -1117,11 +1135,16 @@ footer {
     width: 100%;
   }
 
-  .social-links {
-    padding: 150px 20px 50px;
-    flex-direction: column;
-    padding: 10px;
+  .footer-col {
+    text-align: center;
   }
+
+  .footer-col h4::before {
+    width: 100%;
+    padding: 0 auto;
+
+  }
+
 
   .form-group input,
   .form-group select {

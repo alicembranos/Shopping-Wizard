@@ -314,12 +314,12 @@ function togglePopupEnd() {
 }
 
 /********** Every Minute Message ***********/
-function togglePopupMinute() {
-    let text = `<img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase`
-    popupmessage.innerHTML = text;
-    document.getElementById("popup1").classList.toggle("active");
-    downCounter--;
-}
+// function togglePopupMinute() {
+//     let text = `<img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase`
+//     popupmessage.innerHTML = text;
+//     document.getElementById("popup1").classList.toggle("active");
+//     downCounter--;
+// }
 
 /******** Multi Step Form Implementation**********/
 

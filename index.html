@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous"></script>
   <script src="./script.js" defer></script>
   <title>JS Shopping Wizard</title>
 </head>
@@ -50,31 +51,18 @@
         <div class="image_carousel">
           <ul>
             <li>
-              <img src="./assets/product-img/image1.webp" alt="">
-            </li>
-            <li>
-              <img src="./assets/product-img/image2.webp" alt="">
-            </li>
-            <li>
-              <img src="./assets/product-img/image2.webp" alt="">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="">
-            </li>
-            <li>
-              <img src="./assets/product-img/image2.webp" alt="">
             </li>
           </ul>
         </div>
         <div class="selected_porduct_image">
-          <img src="./assets/product-img/image2.webp" alt="">
+          <img src="" alt="">
         </div>
       </div>
       <div class="product_details">
-        <h4>Brown t-shirt</h4>
+        <h4>Levi's SS Original Hm tee Camiseta para Hombre</h4>
         <p>Price</p>
-        <h4>14.55$</h4>
-        <label for="size">Size:</label>
+        <h4 id="price">10.99&#x20AC;</h4>
+        <label for="size">Size:</label><br>
         <select name="size" id="size">
           <option value="xs">XS</option>
           <option value="s">S</option>
@@ -82,74 +70,10 @@
           <option value="l">L</option>
           <option value="xl">XL</option>
         </select>
-        <div class="color-option">
-          <p>Color</p>
-          <ul>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-            <li>
-              <img src="" alt="">
-            </li>
-          </ul>
-        </div>
         <div class="color_option">
           <p>Color</p>
+          <p id="color"></p>
           <ul>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="red">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="blue">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="yellow">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="brown">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="white">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="black">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="pink">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="orange">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="navy-blue">
-            </li>
-            <li>
-              <img src="./assets/product-img/image1.webp" alt="" id="grey">
-            </li>
           </ul>
         </div>
         <div class="error_message">
@@ -169,18 +93,34 @@
           <div class="form-group">
             <label for="username">Username</label>
             <input type="text" name="username" id="username">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" name="email" id="email">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
             <input type="password" name="password" id="password">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="confirm-password">Confirm password</label>
             <input type="password" name="confirm-password" id="confirm-password">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
         </div>
 
@@ -191,51 +131,65 @@
           <div class="form-group">
             <label for="first-name">First Name</label>
             <input type="text" name="first-name" id="first-name" class="form-control" placeholder="Fisrt Name">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="last-name">Last Name</label>
             <input type="text" name="last-name" id="last-name" class="form-control" placeholder="Last Name">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="birthday">Birthday</label>
             <input type="date" name="birthday" id="birthday" class="form-control">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="address1">Address 1</label>
             <input type="text" name="address1" id="address1" class="form-control" placeholder="Address 1">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="address2">Address 2</label>
             <input type="text" name="address2" id="address2" class="form-control" placeholder="Address 2">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="postal-code">Postal Code</label>
             <input type="number" name="postal-code" id="postal-code" placeholder="Postal Code">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <label for="country">Country</label>
             <select name="country" id="country">
-              <!-- <option value=""></option>
-              <option value="andorra">Andorra</option>
-              <option value="spain">Spain</option>
-              <option value="france">France</option>
-              <option value="germany">Germany</option>
-              <option value="greece">Greece</option>
-              <option value="israel">Israel</option> -->
             </select>
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
             <select name="prefix" id="prefix">
-              <!-- <option value=""></option>
-              <option value="+376"></option>
-              <option value="+34">SPA</option>
-              <option value="+33">FRA</option>
-              <option value="+49">GER</option>
-              <option value="+30">GRE</option>
-              <option value="+972">ISR</option> -->
             </select>
             <input type="tel" name="phone" id="phone" placeholder="Number Phone">
+            <div class="validation-info">
+              <p></p>
+              <i></i>
+            </div>
           </div>
           <div class="form-group">
             <input type="checkbox" name="reg-address" id="reg-address">
@@ -250,11 +204,11 @@
           <h4>Shipping type</h4>
           <div class="form-group">
             <input class="radio-buttom" type="radio" id="free" name="shi_type" value="free_shipment">
-            <label class="radio-buttom" for="free">Free shipment (72h)</label><br>
+            <label class="radio-buttom" for="free">Free shipment (72h) <span> (no extra cost)</span></label><br>
             <input class="radio-buttom" type="radio" id="extra" name="shi_type" value="extra_shipping">
-            <label class="radio-buttom" for="extra">Extra shipping (48h)<span>4,99€</span></label><br>
+            <label class="radio-buttom" for="extra">Extra shipping (48h)<span> 4,99€</span></label><br>
             <input class="radio-buttom" type="radio" id="premium" name="shi_type" value="premium">
-            <label class="radio-buttom" for="premium">Premium (24h)<span>9,99€</span></label>
+            <label class="radio-buttom" for="premium">Premium (24h)<span> 9,99€</span></label>
             <br>
           </div>
           <div class="dates-text inactive">
@@ -281,7 +235,7 @@
         <div id="step-page4" class="step">
           <section class="item left-content">
             <article class="correct-information">
-              <h2>Hello Ali!</h2>
+              <h2></h2>
               <h3>Is all your information correct?</h3>
               <p>Before you place your order, please take a moment to review your shipping information</p>
             </article>
@@ -291,14 +245,14 @@
                 <h4>1. SHIPPING</h4>
               </div>
               <div class="user-details">
-                <p>First Name Last Name</p>
-                <p>Address1 </p>
-                <p>Country Postal Code</p>
-                <p>Telephone Number</p>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
               </div>
               <div class="shipment-method">
                 <h5>Shipping Method</h5>
-                <p>Premium </p>
+                <p></p>
                 <p>Your order will arrive Between xxxx and xxxxx</p>
               </div>
             </article>
@@ -312,7 +266,7 @@
               <p>By clicking the "Place Order", you confirm that you have read, understood, and accept our <a
                   href="">Terms and Conditions</a>
                 policy</p>
-              <button id="accept">PLACER ORDER</button>
+              <button id="accept1">PLACER ORDER</button>
             </article>
           </section>
           <section class="item right-content">
@@ -324,15 +278,15 @@
                         alt="Tooltip"><span class="tooltip-text">I think you're rich enough to buy more things...</span>
                     </div>
                   </td>
-                  <td>4.00€</td>
+                  <td id="pricep-summary"></td>
                 </tr>
                 <tr>
-                  <td colspan="4">PREMIUM SHIPPING</td>
-                  <td>6.00€</td>
+                  <td colspan="4" id ="typeship-summary"></td>
+                  <td id="prices-summary"></td>
                 </tr>
                 <tr>
                   <td colspan="4">TOTAL</td>
-                  <td>10.00€</td>
+                  <td id="pricet-summary"></td>
                 </tr>
               </table>
             </article>
@@ -343,21 +297,35 @@
               <div class="card-product">
                 <img src="./assets/product-img/image1.webp" alt="">
                 <div class="cart-product-details">
-                  <h6>Brown T-Shirt</h6>
+                  <h6>Levi's SS Camiseta</h6>
                   <p>Size: <span>M</span></p>
                   <p>Color: <span>Blue</span></p>
+                  <p>Price: </p>
                 </div>
-                <button id="accept">PLACER ORDER</button>
+                <button id="accept2">PLACER ORDER</button>
               </div>
             </article>
           </section>
+        </div>
+        <div id="thank-you-page" class="step">
+          <div class="background">
+            <img class="tree-img" src="./assets/more img/tree.jpeg" alt="Relax">
+            <section class="buttons">
+              <button class="button-back" id="button-back">Back to Home</button>
+              <button class="button-thank" id="button-thank">Thank
+                You</button>
+            </section>
+          </div>
         </div>
       </form>
     </section>
 
     <section class="footer-main inactive">
-      <button id="clear-form">Clear Form</button>
-      <button id="next-step">Next</button>
+      <p class=".required-messages"></p>
+      <div class="footer-buttons">
+        <button id="clear-form">Clear Form</button>
+        <button id="next-step">Next</button>
+      </div>
     </section>
   </main>
 

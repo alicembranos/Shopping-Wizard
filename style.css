@@ -19,7 +19,6 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #010e20;
-  width: 110%;
   height: 20vh;
 }
 
@@ -97,28 +96,9 @@ header li {
   text-align: center;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 15px;
-  height: 15px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 4px #0b1a7d;
-  border-radius: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: rgb(1, 50, 124);
-  border-radius: 5px;
-}
-
 /* Progress status bar*/
 .header-main {
   position: relative;
-  width: 100%;
   padding: 30px 0 50px 0;
   margin: 50px 50px 0 50px;
   background-color: white;
@@ -191,8 +171,69 @@ header li {
 }
 
 /* Time messages*/
+.popup .overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  display: none;
+}
 
-.popup-minute,
+.popup .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: #fff;
+  width: 450px;
+  z-index: 2;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.popup .content>button {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #35363a;
+  border: 0;
+  color: white;
+  border-radius: 50%;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.popup .content>p{
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  animation: insideout 1.5s alternate infinite;
+  -webkit-animation: insideout 1.5s alternate infinite;
+  -ms-animation: insideout 1.5s alternate infinite;
+}
+
+.popup .content>p>img{
+  width: 1em;
+  margin: 0 1em;
+  animation: rotation 2s linear infinite;
+  -webkit-animation: rotation 2s linear infinite;
+  -ms-animation: rotation 2s linear infinite;
+}
+
+.popup.active .overlay{
+  display: block;
+}
+
+.popup.active .content {
+  transition: all 800ms ease-in-out;
+  transform: translate(-50%, -50%) scale(1);
+}
+/* .popup-minute,
 .popup-end {
   border: 1px solid #888888;
   box-shadow: 5px 10px 18px #888888;
@@ -213,7 +254,7 @@ header li {
 
 .popup-end {
   color: #C91616;
-}
+} */
 
 /* .head-up {
   position: sticky;
@@ -241,7 +282,7 @@ header li {
   -ms-animation: insideout 1.5s alternate infinite;
 } */
 
-.popup-end img {
+/* .popup-end img {
   width: 0.8em;
   margin: 0 1em;
 }
@@ -252,7 +293,7 @@ header li {
   animation: rotation 2s linear infinite;
   -webkit-animation: rotation 2s linear infinite;
   -ms-animation: rotation 2s linear infinite;
-}
+} */
 
 @keyframes insideout {
   from {
@@ -331,7 +372,6 @@ header li {
   background-color: white;
   padding: 7em 3em;
   border-radius: 2em;
-  width: 100%;
 }
 
 /* Display image */
@@ -436,7 +476,6 @@ header li {
 }
 
 .form_page {
-  width: 100%;
   display: flex;
   justify-content: flex-start;
   margin: 0 50px;
@@ -638,21 +677,19 @@ label.radio-buttom {
   display: -webkit-flex;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   background-color: white;
 }
 
 
 
 .item {
-  margin: 10px;
-
+  margin: 10px 0;
 }
 
 .left-content {
   min-height: 200px;
-  width: 55%;
-  flex-grow: 0;
+  /* width: 50%; */
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -727,6 +764,7 @@ label.radio-buttom {
 .confirmation .header {
   border-top-left-radius: 0.8em;
   border-top-right-radius: 0.8em;
+  padding: 0 1em;
 }
 
 .price-summary h4,
@@ -756,7 +794,7 @@ label.radio-buttom {
 .shipment-details img,
 .confirmation img {
   width: 1.5em;
-  margin: 0 1em;
+  margin: 1em 1em 0 1em;
   display: inline-block;
 }
 
@@ -782,20 +820,20 @@ label.radio-buttom {
 }
 
 .confirmation>input {
-  margin: 2em 1em;
+  margin: 1em 1em;
 }
 
 .confirmation>label {
   font-size: 0.9em;
   color: rgb(74, 72, 72);
-
 }
 
 .confirmation>p>a {
   color: black;
 }
 
-.confirmation>button {
+.confirmation>button,
+.card-summary .card-product>button {
   padding: 1em 1.5em;
   cursor: pointer;
   border: none;
@@ -809,6 +847,11 @@ label.radio-buttom {
   font-family: "Roboto", sans-serif;
   color: white;
   font-weight: 600;
+}
+
+.card-summary .card-product>button {
+  align-self: flex-end;
+  margin: 0 auto 0 auto;
 }
 
 .right-content>article {
@@ -883,7 +926,7 @@ table img {
   padding: 0 1em;
   font-size: 0.7em;
 
-  /* Position the tooltip */
+  /* Position of the tooltip */
   position: absolute;
   z-index: 1;
 }
@@ -919,6 +962,7 @@ table img {
 
 .card-summary .card-product .cart-product-details {
   margin: 1.5em;
+
 }
 
 .cart-product-details h6 {
@@ -969,7 +1013,8 @@ table img {
 }
 
 .footer-main button:hover,
-.confirmation>button:hover {
+.confirmation>button:hover,
+.card-summary .card-product>button:hover {
   background: white;
   color: #35363a;
 }
@@ -984,18 +1029,15 @@ table img {
   color: white;
 }
 
-/* Footer */
+/********** Footer ************/
 footer {
   position: relative;
-  /* height: 25vh; */
   background-color: #010e20;
   padding: 70px 0;
 }
 
 .container-footer {
   margin: 0 50px;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 .row {
@@ -1054,8 +1096,7 @@ ul {
 .footer-col .social-links a {
   display: inline-block;
   height: 10%;
-  background-color: rgba(#7ea5b5);
-  margin: 0 20px 10px 0;
+  margin: 0px 20px 10px 0;
   transition: all 0.3s ease;
 }
 
@@ -1118,8 +1159,17 @@ ul {
 
 /* Responsive*/
 @media (max-width: 1200px) {
+  #step-page4.active {
+    flex-wrap: wrap;
+  }
+
   .left-content {
     flex-grow: 1;
+  }
+
+  .confirmation h4 {
+    display: inline;
+    text-align: justify;
   }
 }
 
@@ -1133,27 +1183,38 @@ ul {
 @media (max-width: 574px) {
   .footer-col {
     width: 100%;
-  }
-
-  .footer-col {
     text-align: center;
   }
 
   .footer-col h4::before {
     width: 100%;
     padding: 0 auto;
-
   }
 
+  #form {
+    width: 100%;
+  }
+
+  .form_page {
+    margin: 0;
+  }
 
   .form-group input,
   .form-group select {
-    /* display: block; */
     width: 23em;
-    /* border: 1.5px solid black;
-  border-radius: 4px;
-  padding: 3px 10px;
-  font-size: 12px; */
+  }
+
+  .header-main {
+    margin: 0;
+    border-radius: 0%;
+  }
+
+  .gift-container textarea {
+    width: 23em;
+  }
+
+  .input-file-trigger {
+    width: 21.2em;
   }
 }
 

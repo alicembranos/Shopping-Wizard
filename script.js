@@ -99,9 +99,8 @@ selectPrefix.innerHTML = optionsPrefix;
 /********** Select prefix according to selected country  ***********/
 function addPrefix(e) {
     e.preventDefault();
-
     const position = countries.indexOf(e.target.value);
-    selectPrefix.selectedIndex = position;
+    position == -1 ? selectPrefix.selectedIndex = 0 : selectPrefix.selectedIndex = position;
 }
 
 /********** Regular Expressions ***********/
@@ -275,63 +274,68 @@ function validatePassword() {
     }
 }
 
-/********** Control time out function ***********/
+/********Time functions ********/
+const popup = document.getElementById("popup1");
+const popupmessage = document.getElementById("message");
 const timeOutLimit = 300000; //Five minutes
 const timeRedirect = 5000; //Five seconds
-const mainNode = document.querySelector('main');
-const barSection = document.querySelectorAll('main > *')[0];
+const timeMinute = 60000; // 1 minute
+let downCounter = 4;
 
-function maxMinutes() {
-    setTimeout(() => {
-        clearInterval(minuteMessage());
-        const pElement = document.createElement("p");
-        let text = `<p class="popup-end"><img src="assets/icons/reject.png" alt="hourglass">Sorry, the maximum purchase limit time has been exceeded. You will be redirected to the home page.</p>`
-        pElement.innerHTML = text;
-        mainNode.insertBefore(pElement, barSection[0]);
+function togglePopup() {
+
+    setTimeout(togglePopupEnd, timeOutLimit);
+
+    /********** Every Minute Message ***********/
+    let minuteMessage = setInterval(function () {
+        let text = `<img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase`
+        popupmessage.innerHTML = text;
+        document.getElementById("popup1").classList.toggle("active");
+        downCounter--;
         setTimeout(() => {
-            //Back to product page
-            stepPages.forEach(sp => {
-                if (sp.classList.contains('active')) {
-                    sp.classList.remove('active');
-                }
-            });
-            resetAll(); //Restore purchase process
-            mainNode.removeChild(pElement);
+            document.getElementById("popup1").classList.toggle("active");
         }, timeRedirect);
-    }, timeOutLimit);
-};
+        if (downCounter == 0) {
+            clearInterval(minuteMessage);
+        }
+    }, timeMinute)
+
+}
+
+/********** Control time out function ***********/
+function togglePopupEnd() {
+    let text = `<img src="assets/icons/reject.png" alt="hourglass">Sorry, the maximum purchase limit time has been exceeded. You will be redirected to the home page.`
+    popupmessage.innerHTML = text;
+    document.getElementById("popup1").classList.toggle("active");
+    setTimeout(() => {
+        document.getElementById("popup1").classList.toggle("active");
+        resetAll(); //Restore purchase process
+    }, timeRedirect);
+}
 
 /********** Every Minute Message ***********/
-const timeMinute = 60000; // 1 minute
-function minuteMessage() {
-    let downCounter = 4;
-    setInterval(() => {
-        const pElement = document.createElement("p");
-        let text = `<p class="popup-minute"><img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase</p>`
-        pElement.innerHTML = text;
-        mainNode.insertBefore(pElement, barSection[0]);
-        setTimeout(() => {
-            mainNode.removeChild(pElement);
-        }, timeRedirect);
-        downCounter--;
-    }, timeMinute);
-};
-
-
-// outer2()();
+function togglePopupMinute() {
+    let text = `<img src="assets/icons/hourglass.png" alt="hourglass">Heads up! Only ${downCounter} minutes left to complete the purchase`
+    popupmessage.innerHTML = text;
+    document.getElementById("popup1").classList.toggle("active");
+    downCounter--;
+}
 
 /******** Multi Step Form Implementation**********/
 
 let counter = 0; //Counter to activate and desactivate form steps
 /* Function to launch the purchase process with step forms  */
 buyButton.addEventListener('click', () => {
+
     productPage.classList.add('inactive');
     stepPages[counter].classList.add('active');
     statusBar.classList.remove('inactive');
     buttonFooter.classList.remove('inactive');
-    maxMinutes();
-    minuteMessage();
     counter++;
+
+    //Call popupmessage function
+    togglePopup();
+
 });
 
 /* Reset input fields of the current step */
@@ -358,16 +362,26 @@ function updateFormStep() {
         stepPages[counter - 1].classList.remove('active');
         buttonFooter.classList.add('inactive');
         iconsStatusBar[counter].classList.add('active');
-        clearInterval(minuteMessage());
     }
 }
 
 /* Reset purchase process */
 function resetAll() {
     productPage.classList.remove('inactive');
+    //Back to product page
+    stepPages.forEach(sp => {
+        if (sp.classList.contains('active')) {
+            sp.classList.remove('active');
+        }
+    });
     document.getElementById('form').reset(); //reset form
     statusBar.classList.add('inactive');
     buttonFooter.classList.add('inactive');
-    clearInterval(minuteMessage());
     counter = 0;
+    downCounter = 4;
 };
+
+/* Refresh browser*/
+window.onload = () => {
+    resetAll();
+}

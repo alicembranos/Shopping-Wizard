@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+  <link rel="stylesheet" href="style1.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous"></script>
   <script src="./script.js" defer></script>
@@ -25,28 +26,27 @@
     <div class='search-box'>
       <input class="search-text" type="text" placeholder="Search Anything">
       <a href="#" class="search-btn">
-        <i class="fas fa-search"></i>
       </a>
     </div>
   </header>
   <div class="popup" id=popup1>
     <div class="overlay"></div>
     <div class="content">
-      <button>&times</button>
+      <button>&times;</button>
       <p id="message"></p>
     </div>
   </div>
   <main>
     <section class="header-main inactive">
       <ul class="progress-bar">
-        <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt=""></li>
-        <li><img class="icons-bar" src="assets/corporative/location.png" alt=""></li>
-        <li><img class="icons-bar" src="assets/corporative/shipping.png" alt=""></li>
-        <li><img class="icons-bar" src="assets/corporative/ok.png" alt=""></li>
+        <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt="User"></li>
+        <li><img class="icons-bar" src="assets/corporative/location.png" alt="Location"></li>
+        <li><img class="icons-bar" src="assets/corporative/shipping.png" alt="Shipping"></li>
+        <li><img class="icons-bar" src="assets/corporative/ok.png" alt="Confirmed"></li>
       </ul>
     </section>
 
-    <section class="product_page active">
+    <section class="product_page">
       <div class="product_image">
         <div class="image_carousel">
           <ul>
@@ -55,7 +55,7 @@
           </ul>
         </div>
         <div class="selected_porduct_image">
-          <img src="" alt="">
+          <img src="./assets/product-img/image1.webp" alt="Image">
         </div>
       </div>
       <div class="product_details">
@@ -77,14 +77,14 @@
           </ul>
         </div>
         <div class="error_message">
-          <h4></h4>
+          <p></p>
         </div>
         <button id="buy_btn">Buy</button>
       </div>
     </section>
 
     <section class="form_page">
-      <form action="" id="form">
+      <form action="submit" id="form">
 
         <!-- Form step 1 -->
         <div class="step step-page1">
@@ -235,7 +235,7 @@
         <div id="step-page4" class="step">
           <section class="item left-content">
             <article class="correct-information">
-              <h2></h2>
+              <h2>Username</h2>
               <h3>Is all your information correct?</h3>
               <p>Before you place your order, please take a moment to review your shipping information</p>
             </article>
@@ -267,6 +267,7 @@
                   href="">Terms and Conditions</a>
                 policy</p>
               <button id="accept1">PLACER ORDER</button>
+              <p id="end-message"></p>
             </article>
           </section>
           <section class="item right-content">
@@ -281,7 +282,7 @@
                   <td id="pricep-summary"></td>
                 </tr>
                 <tr>
-                  <td colspan="4" id ="typeship-summary"></td>
+                  <td colspan="4" id="typeship-summary"></td>
                   <td id="prices-summary"></td>
                 </tr>
                 <tr>
@@ -295,12 +296,12 @@
               <h5>ARRIVES 06/04</h5>
               <hr>
               <div class="card-product">
-                <img src="./assets/product-img/image1.webp" alt="">
+                <img src="./assets/product-img/image1.webp" alt="Final Product">
                 <div class="cart-product-details">
-                  <h6>Levi's SS Camiseta</h6>
-                  <p>Size: <span>M</span></p>
-                  <p>Color: <span>Blue</span></p>
-                  <p>Price: </p>
+                  <h6>Levi's SS T-shirt</h6>
+                  <p>Size: <span></span></p>
+                  <p>Color: <span></span></p>
+                  <p>Price: <span></span></p>
                 </div>
                 <button id="accept2">PLACER ORDER</button>
               </div>
@@ -309,7 +310,12 @@
         </div>
         <div id="thank-you-page" class="step">
           <div class="background">
-            <img class="tree-img" src="./assets/more img/tree.jpeg" alt="Relax">
+            <video class="video2" width="900" height="700" controls>
+              <source src="./assets/video/tree1.mp4" type="video/mp4"></video>
+            <iframe class="video" width="500" height="300" src="https://www.youtube.com/embed/4duPBWzf46E"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
             <section class="buttons">
               <button class="button-back" id="button-back">Back to Home</button>
               <button class="button-thank" id="button-thank">Thank
@@ -365,10 +371,10 @@
           <div class="social-links">
             <ul>
               <li>
-                <a href><img class="icon" src="./assets/icons/facebook.png" alt="" /></a>
-                <a href><img class="icon" src="./assets/icons/instagram.png" alt="" /></a>
-                <a href><img class="icon" src="./assets/icons/linkedin.png" alt="" /></a>
-                <a href><img class="icon" src="./assets/icons/twitter.png" alt="" /></a>
+                <a href=""><img class="icon" src="./assets/icons/facebook.png" alt="" /></a>
+                <a href=""><img class="icon" src="./assets/icons/instagram.png" alt="" /></a>
+                <a href=""><img class="icon" src="./assets/icons/linkedin.png" alt="" /></a>
+                <a href=""><img class="icon" src="./assets/icons/twitter.png" alt="" /></a>
               </li>
             </ul>
           </div>

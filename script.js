@@ -1,9 +1,10 @@
 /****************Global Variables*****************/
 const form = document.getElementById('form');
 const inputs = document.querySelectorAll("#form input:not([type='checkbox'], [type='radio'])");
+const inputsOthers = document.querySelectorAll("#form input[type='checkbox'],#form input[type='radio'] ")
 const countryEl = document.getElementById('country');
-// const inputsRequired = document.querySelectorAll("#form input:not([type='checkbox'], [type='radio'])");
 const steps = Array.from(document.querySelectorAll('#form .step'));
+const fieldsNotRequired = ['confirm-password', 'address2', 'reg-address', 'gif-option', 'gift-title', 'gift-message', 'gift-image'];
 const messagesElements = {
     'username': 'Username must contain at min 5 characters and max of 20',
     'email': 'Please enter a valid email addresss',
@@ -11,7 +12,6 @@ const messagesElements = {
     'confirm-password': 'Passwords do not match',
     'first-name': 'Name cannot contain special characters',
     'last-name': 'Last name cannot contain special character',
-    //   birthday: '<p></p>', // not sure if we need it
     'address1': 'You must enter a valid Address - max 50 characters', // not sure if we need it
     'address2': 'You must enter a valid Address - max 50 characters', // not sure if we need it
     'postal-code': 'PC must contain only numbers and max of 5 characters',
@@ -32,6 +32,9 @@ const backToHome = document.getElementById("button-back");
 const buttonThank = document.getElementById("button-thank");
 const accept1 = document.getElementById("accept1");
 const accept2 = document.getElementById("accept2");
+const requiredMessage = document.querySelector('.footer-main>p');
+const requiredFinalMessage = document.getElementById("end-message");
+const finalCheckbox = document.getElementById('final-accept');
 
 /* Variables to control prefix phone number options */
 const selectCountry = document.getElementById("country");
@@ -357,7 +360,7 @@ function onLoad() {
         liEl.appendChild(imgEl);
         liEl.addEventListener('click', (e) => {
             showProductImage(e);
-            document.querySelector('.error_message h4').textContent = '';
+            document.querySelector('.error_message > p').textContent = '';
         });
     });
     shirts[0].imgUrl.forEach((url) => {
@@ -398,6 +401,10 @@ sizeSelectionEl.addEventListener('change', getPrice);
 /* Adding eventlisteners keyup and blur to inputs */
 inputs.forEach((input) => {
     input.addEventListener('blur', validate);
+});
+
+inputsOthers.forEach((input) => {
+    input.addEventListener('change', validateOnChange)
 });
 
 countryEl.addEventListener('change', validate);
@@ -449,8 +456,6 @@ function validate(e) {
         phoneNumber,
     } = expressions;
 
-    // if (!countryEl.value) {}
-    // console.log(isSuccess);
     switch (e.target.name) {
         case 'username':
             if (username.test(value)) {
@@ -507,6 +512,7 @@ function validate(e) {
             }
             break;
         case 'confirm-password':
+            console.log(value.length);
             if (validatePassword()) {
                 isSuccess = true;
                 getValidationMessage(3);
@@ -613,12 +619,15 @@ function validate(e) {
             if (value) {
                 user.country = value;
                 fields.country = true;
+                //select prefix default prefix value
+                user.prefix = prefix[countries.indexOf(value)].pre;
+                fields.prefix = true;
             }
             break;
         case 'prefix':
             if (value) {
                 user.prefix = value;
-                fields.country = true;
+                fields.prefix = true;
             }
             break;
         case 'phone':
@@ -638,6 +647,23 @@ function validate(e) {
                 fields.phone = false;
             }
             break;
+        case 'gift-title':
+            user["gift-title"] = value;
+            break;
+        case 'gift-message':
+            user["gift-message"] = value;
+            break;
+        case 'gift-image':
+            user["gift-image"] = value;
+            break;
+    }
+}
+
+function validateOnChange(e) {
+    const {
+        value
+    } = e.target;
+    switch (e.target.name) {
         case 'reg-address':
             if (e.target.checked) {
                 user["reg-address"] = true;
@@ -646,8 +672,11 @@ function validate(e) {
             }
             break;
         case 'shi_type':
+            console.log('entro');
             for (let i = 0; i < radioButtons.length; i++) {
                 if (radioButtons[i].checked) {
+                    console.log('entro mas dentro');
+                    console.log(radioButtons[i].value);
                     user.shi_type = radioButtons[i].value;
                     fields.shi_type = true;
                     break;
@@ -655,30 +684,23 @@ function validate(e) {
                 user.shi_type = '';
                 fields.shi_type = false;
             }
-            case 'gif-option':
-                if (e.target.checked) {
-                    user["gif-option"] = true;
-                } else if (!e.target.checked) {
-                    user["gif-option"] = false;
-                }
-                break;
-            case 'gift-title':
-                user["gift-title"] = value;
-                break;
-            case 'gift-message':
-                user["gift-message"] = value;
-                break;
-            case 'gift-image':
-                user["gift-image"] = value;
-                break;
+            break;
+        case 'gif-option':
+            if (e.target.checked) {
+                user["gif-option"] = true;
+            } else if (!e.target.checked) {
+                user["gif-option"] = false;
+            }
+            break;
     }
+
 }
 
 function validatePassword() {
     const password1 = document.getElementById('password');
     const password2 = document.getElementById('confirm-password');
 
-    if (password1.value !== password2.value) {
+    if ((password1.value !== password2.value) || (password2.value.length == 0)) {
         return false;
     } else {
         return true;
@@ -692,7 +714,7 @@ const timeOutLimit = 300000; //Five minutes
 const timeRedirect = 5000; //Five seconds
 const timeMinute = 60000; // 1 minute
 let downCounter = 4;
-
+let isCancel = false;
 function togglePopup() {
 
     setTimeout(togglePopupEnd, timeOutLimit);
@@ -731,10 +753,10 @@ let counter = 0; //Counter to activate and desactivate form steps
 buyButton.addEventListener('click', () => {
 
     productDB.size = sizeSelectionEl.value;
-    productDB.price = priceEl.textContent;
+    productDB.price = (priceEl.textContent).substring(0, (priceEl.textContent).length - 1);
 
     if (productDB.color == undefined) {
-        document.querySelector('.error_message h4').textContent = errorMessage;
+        document.querySelector('.error_message > p').textContent = errorMessage;
     } else {
         productPageContainer.style.display = 'none';
 
@@ -756,18 +778,29 @@ clearButton.addEventListener('click', () => {
     const icons = document.querySelectorAll('.step.active div>i');
     //Reset inputs
     actualInputs.forEach((input) => {
-        document.getElementById(`${input.id}`).value = "";
+        document.getElementById(`${input.id}`).textContent = "";
         document.getElementById(`${input.id}`).checked = false; //in case of checkbox input
+        if (document.getElementById(`${input.id}`).name == 'gif-option') {
+            displayGift();
+        }
+        if (fieldsNotRequired.indexOf(input.id) == -1) {
+            fields[input.name] = false;
+        }
+        user[input.name] = '';
     });
     //Reset CSS validations p
     paragraph.forEach((p) => {
-        p.classList='';
-        p.textContent='';
+        p.classList = '';
+        p.textContent = '';
     });
     //Reset CSS validations i
     icons.forEach((i) => {
-        i.classList='';
+        i.classList = '';
     });
+
+    //Reset required final message
+    requiredMessage.classList.remove('required-messages');
+    requiredMessage.textContent = '';
 });
 
 /* Manage steps in purchasing process */
@@ -775,13 +808,14 @@ nextButton.addEventListener('click', updateFormStep);
 
 function updateFormStep() {
 
-    const requiredMessage = document.querySelector('.footer-main>p');
+    console.log(user);
+    console.log(fields);
 
     if (counter < 3) {
         if (!requireFields()) {
             requiredMessage.classList.add('required-messages');
             requiredMessage.textContent = 'Warning! Please make sure all fields are filled in correctly';
-        } else{
+        } else {
             requiredMessage.classList.remove('required-messages');
             requiredMessage.textContent = '';
             stepPages[counter].classList.add('active');
@@ -793,7 +827,7 @@ function updateFormStep() {
         if (!requireFields()) {
             requiredMessage.classList.add('required-messages');
             requiredMessage.textContent = 'Warning! Please make sure all fields are filled in correctly';
-        } else{
+        } else {
             requiredMessage.classList.remove('required-messages');
             requiredMessage.textContent = '';
             stepPages[counter].classList.add('active');
@@ -801,26 +835,54 @@ function updateFormStep() {
             buttonFooter.classList.add('inactive');
             iconsStatusBar[counter].classList.add('active');
             counter++;
-            fillResume();
+            fillSummary();
         }
     } else if (counter == 4) {
-        stepPages[counter - 1].classList.remove('active');
-        stepPages[counter].classList.add('active');
-        statusBar.classList.add('inactive');
+
+        //Terms and conditios confirmation
+        if (finalCheckbox.checked) {
+            stepPages[counter - 1].classList.remove('active');
+            stepPages[counter].classList.add('active');
+            statusBar.classList.add('inactive');
+            //Cancel setTimeout
+
+        } else {
+            requiredFinalMessage.classList.add('end-message');
+            requiredFinalMessage.textContent = 'Warning! Please accept the Terms and Conditions to complete your order';
+        }
     }
 }
 
-function requireFields(){
-    const actualInputs = document.querySelectorAll('.step.active input');
+//Message Terms and conditions required
+finalCheckbox.addEventListener('change', (event) => {
+
+    if (event.currentTarget.checked) {
+        requiredFinalMessage.classList.remove('end-message');
+        requiredFinalMessage.textContent = '';
+    }
+})
+
+/* Check required form field */
+function requireFields() {
+    let required = true;
+    const actualInputs = document.querySelectorAll('.step.active input, .step.active select');
+    console.log(actualInputs);
     actualInputs.forEach((ai) => {
-        if (!fields[ai.name]) {
-            return false;
+        if (!((fields[ai.name]) === undefined)) {
+            if (!(fields[ai.name])) {
+                console.log(ai.name);
+                console.log((fields[ai.name]));
+                console.log('Entro dentro');
+                required = false;
+            }
         }
-    })
-    return true;
+    });
+    console.log(required);
+    return required;
 };
 
-function fillResume () {
+/* Fill Summary Page */
+function fillSummary() {
     //username
     const usernameResume = document.querySelector('.correct-information>h2');
     usernameResume.textContent = `Hello ${user.username}!`
@@ -834,8 +896,8 @@ function fillResume () {
 
     //Shipping Type
     const shippingType = document.querySelectorAll('.shipment-details .shipment-method>p');
-    shippingType[0] = namesShipement[valuesShipement.indexOf(user.shi_type)];
-    shippingType[1] = dateBetween(shippingTime[valuesShipement.indexOf(user.shi_type)]);
+    shippingType[0].textContent = namesShipement[valuesShipement.indexOf(user.shi_type)];
+    shippingType[1].textContent = dateBetween(shippingTime[valuesShipement.indexOf(user.shi_type)]);
 
     //Total price
     const price1 = document.getElementById('pricep-summary');
@@ -844,16 +906,21 @@ function fillResume () {
     const textPrice = document.getElementById('typeship-summary');
     price1.textContent = `${productDB.price}€`;
     price2.textContent = `${costShipement[valuesShipement.indexOf(user.shi_type)]}€`;
-    price3.textContent = `${productDB.price + costShipement[valuesShipement.indexOf(user.shi_type)]}€`;
-    textPrice.textContent = namesShipement[valuesShipement.indexOf(user.shi_type)].toUpperCase;
+    let total = Number.parseFloat(productDB.price) + Number.parseFloat(costShipement[valuesShipement.indexOf(user.shi_type)]);
+    price3.textContent = `${total}€`;
+    textPrice.textContent = namesShipement[valuesShipement.indexOf(user.shi_type)].toUpperCase();
 
+    //Image Product
+    const productImage = document.querySelector('.card-product>img');
+    productImage.src = productDB.imgUrl;
     //Summary Product
-    const productName = document.querySelectorAll('.card-summary.card-product>p>span');
-    productName.textContent[0] = productDB.size;
-    productName.textContent[1] = productDB.color;
-    productName.textContent[2] = `${productDB.price + costShipement[valuesShipement.indexOf(user.shi_type)]}€`;
+    const productName = document.querySelectorAll('.cart-product-details>p>span');
+    productName[0].textContent = productDB.size.toUpperCase();
+    productName[1].textContent = productDB.color;
+    productName[2].textContent = `${total}€`;
 
 }
+
 /* Placer order buttons */
 accept1.addEventListener('click', updateFormStep);
 accept2.addEventListener('click', updateFormStep);
@@ -866,21 +933,5 @@ buttonThank.addEventListener('click', () => {
 
 /* Reset purchase process */
 function resetAll() {
-    productPage.classList.remove('inactive');
-    //Back to product page
-    stepPages.forEach(sp => {
-        if (sp.classList.contains('active')) {
-            sp.classList.remove('active');
-        }
-    });
-    document.getElementById('form').reset(); //reset form
-    statusBar.classList.add('inactive');
-    buttonFooter.classList.add('inactive');
-    counter = 0;
-    downCounter = 4;
+    location.reload();
 };
-
-/* Refresh browser*/
-window.onload = () => {
-    resetAll();
-}

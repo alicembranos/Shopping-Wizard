@@ -710,9 +710,9 @@ function validatePassword() {
 /******** Time functions ********/
 const popup = document.getElementById("popup1");
 const popupmessage = document.getElementById("message");
-const timeOutLimit = 60000; //Five minutes
+const timeOutLimit = 300000; //Five minutes
 const timeRedirect = 5000; //Five seconds
-const timeMinute = 20000; // 1 minute
+const timeMinute = 60000; // 1 minute
 let downCounter = 4;
 
 
@@ -768,9 +768,7 @@ buyButton.addEventListener('click', () => {
         counter++;
 
         //Call popupmessage function
-        // togglePopup();
-        togglePopUp;
-
+        togglePopup();
     }
 });
 
@@ -810,9 +808,6 @@ clearButton.addEventListener('click', () => {
 nextButton.addEventListener('click', updateFormStep);
 
 function updateFormStep() {
-
-    console.log(user);
-    console.log(fields);
 
     if (counter < 3) {
         if (!requireFields()) {
@@ -869,8 +864,9 @@ finalCheckbox.addEventListener('change', (event) => {
 function requireFields() {
     let required = true;
     const actualInputs = document.querySelectorAll('.step.active input, .step.active select');
-    console.log(actualInputs);
     actualInputs.forEach((ai) => {
+        console.log(ai.name);
+        console.log(fields[ai.name]);
         if (!((fields[ai.name]) === undefined)) {
             if (!(fields[ai.name])) {
                 console.log(ai.name);

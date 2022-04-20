@@ -710,11 +710,12 @@ function validatePassword() {
 /******** Time functions ********/
 const popup = document.getElementById("popup1");
 const popupmessage = document.getElementById("message");
-const timeOutLimit = 300000; //Five minutes
+const timeOutLimit = 60000; //Five minutes
 const timeRedirect = 5000; //Five seconds
-const timeMinute = 60000; // 1 minute
+const timeMinute = 20000; // 1 minute
 let downCounter = 4;
-let isCancel = false;
+
+
 function togglePopup() {
 
     setTimeout(togglePopupEnd, timeOutLimit);
@@ -767,7 +768,9 @@ buyButton.addEventListener('click', () => {
         counter++;
 
         //Call popupmessage function
-        togglePopup();
+        // togglePopup();
+        togglePopUp;
+
     }
 });
 

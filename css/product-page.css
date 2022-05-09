@@ -1,6 +1,7 @@
 .product-page__section {
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .product-page-column-1__article {
@@ -55,8 +56,8 @@
 
 .product-page-column-2__article {
     position: sticky;
-    position: sticky;
     top: 200px;
+    width: 40%;
     align-self: flex-start;
     margin-top: 180px;
     padding-left: 7rem;
@@ -79,6 +80,7 @@
 
 .product-description__p {
     margin: 2rem 0;
+    text-align: justify;
     line-height: 2rem;
 }
 

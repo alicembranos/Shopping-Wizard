@@ -14,7 +14,11 @@
 }
 
 .site-footer__column {
-    flex: 0 1 16.67% !important;
+    flex: 0 1 20%;
+}
+
+.site-footer__column:nth-child(4) {
+    flex-grow: 1;
 }
 
 .site-footer__column-txt {
@@ -31,7 +35,7 @@
     font-size: 0.9rem;
     font-weight: 700;
     color: var(--secundary-color);
-    letter-spacing: 0.07rem;
+
 }
 
 .site-footer__columnn-a {
@@ -55,4 +59,79 @@
 .footer-icons:hover {
     color: var(--primary-color);
     transform: scale(1.2);
+}
+
+.site-footer__form {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: 0.5rem 10rem 0.5rem 0;
+    padding: 0.7rem;
+    border: 1px solid var(--secundary-color);
+    background-color: var(--quaternary-color);
+}
+
+.ns_email_submit{
+    border: none;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.ns_email_submit:focus {
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.ns_email_button {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    background-color: rgb(183, 181, 181);
+    font-size: small;
+    font-weight: 700;
+    color: var(--quaternary-color);
+}
+
+.ns_email_button:hover{
+    cursor: pointer;
+    background-color: var(--primary-color);
+}
+
+.site-footer__final {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.footer-1__final {
+    display: flex;
+    flex-direction: row;
+    flex: 0 1 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-1__a{
+    font-size: 0.8rem;
+    color: var(--secundary-color);
+    text-decoration: none;
+}
+
+.footer-1__span {
+    font-size: 0.8rem;
+    color: var(--secundary-color);
+}
+
+.footer-2__final {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    
+}
+
+.icon-footer {
+    margin: 0 3rem;
+    font-size: 1.7rem;
+    color: var(--secundary-color);
 }

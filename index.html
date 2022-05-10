@@ -229,58 +229,59 @@
             </div>
           </article>
           <!-- Form step 4 -->
-          <article id="step-page4" class="step-page__article">
+          <article id="step-page4" class="step-page__article step-page-summary__section">
             <section class="summary-page-left__section">
-              <article class="correct-information__article">
-                <h4 class="correct-information__h4">Thank you for your order, <span class="correct-information__span">
+              <article>
+                <h4 class="correct-information__h4">Thank you for your order, <span id="username-summary">
                     Username</span></h4>
-                <p class="correct-information__h4">Before you place your order, please take a moment to review your
+                <p class="correct-information__p">* Before you place your order, please take a moment to review your
                   shipping information</p>
               </article>
-              <article class="shipment-details__article">
+              <article>
                 <table class="shipment__table">
                   <thead>
-                    <tr class="shipment-details__header">
-                      <img src="./assets/icons/checked-icon.png" class="shipment-details__icon" alt="Confirmation Icon">
-                      <h5 class="shipment-details__h5">SHIPPING</h4>
+                    <tr>
+                      <th class="shipment-table__th">
+                        <img src="./assets/icons/checked-icon.png" class="shipment-details__icon"
+                          alt="Confirmation Icon">
+                        <h5 class="shipment-details__h5">SHIPPING</h5>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="shipment__td">
+                      <td class="shipment-table__td">
                         <p class="user-details__p">Hola</p>
                         <p class="user-details__p">Que tal</p>
                         <p class="user-details__p">hola</p>
                         <p class="user-details__p">que tal</p>
-                      </td>
-                      <td class="shipment__td">
-                        <h6 class="shipment-method__h6">Shipping Method</h5>
-                          <p class="shipment-method__p"></p>
-                          <p class="shipment-method__p">Your order will arrive Between xxxx and xxxxx</p>
+                        <h6 class="shipment-method__h6">Shipping Method: </h6>
+                        <p class="shipment-method__p"></p>
+                        <p class="shipment-method__p">Your order will arrive Between xxxx and xxxxx</p>
                       </td>
                     </tr>
                   </tbody>
                 </table>
               </article>
-              <article class="shipment-confirmation__article">
+              <article>
                 <table class="shipment__table">
                   <thead>
-                    <tr class="shipment__header">
-                      <img src="./assets/icons/checked-icon.png" class="shipment-details__icon" alt="Confirmation Icon">
-                      <h5 class="shipment__h5">REVIEW AND SUBMIT YOUR ORDER</h4>
+                    <tr>
+                      <th class="shipment-table__th"><img src="./assets/icons/checked-icon.png"
+                          class="shipment-details__icon" alt="Confirmation Icon">
+                        <h5 class="shipment-details__h5">REVIEW AND SUBMIT YOUR ORDER</h5>
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td class="shipment__td">
+                      <td class="shipment-table__td">
                         <input type="checkbox" id="final-accept" name="final-accept" class="step-page__checkbox">
                         <label for="final-accept" class="step-page__labelcheckbox">I have read and accept the term and
                           conditions</label>
                         <p class="final-accept__p">By clicking the "Place Order", you confirm that you have read,
                           understood, and accept our <a href="">Terms and Conditions</a>
                           policy</p>
-                        <button id="confirmation__button" class="confirmation__button">PLACER ORDER</button>
-                        <p id="end-message" class="final-accept__p"></p>
                       </td>
                     </tr>
                   </tbody>
@@ -289,30 +290,39 @@
             </section>
             <section class="summary-page-right__section">
               <table class="summary__table">
-                <tr>
-                  <td colspan="4" class="">SUBTOTAL<div class="tooltip-item"><img src="./assets/icons/question.png"
-                        alt="Tooltip"><span class="tooltip-text">I think you're rich enough to buy more
-                        things...</span>
-                    </div>
-                  </td>
-                  <td id="pricep-summary"></td>
-                </tr>
-                <tr>
-                  <td colspan="4" id="typeship-summary"></td>
-                  <td id="prices-summary"></td>
-                </tr>
-                <tr>
-                  <td colspan="4">TOTAL</td>
-                  <td id="pricet-summary"></td>
-                </tr>
+                <tbody>
+                  <tr  class="summary-table__tr">
+                    <td class="summary-table__td">SUBTOTAL<div class="tooltip-item hidden"><img
+                          src="./assets/icons/question.png" alt="Tooltip"><span class="tooltip-text">I think you're rich
+                          enough to buy more
+                          things...</span>
+                      </div>
+                    </td>
+                    <td id="pricep-summary" class="summary-table__td">10€</td>
+                  </tr>
+                  <tr class="summary-table__tr">
+                    <td id="typeship-summary" class="summary-table__td">Premium</td>
+                    <td id="prices-summary" class="summary-table__td">5€</td>
+                  </tr>
+                  <tr class="summary-table__tr">
+                    <td class="summary-table__total">TOTAL</td>
+                    <td id="pricet-summary" class="summary-table__total">15€</td>
+                  </tr>
+                </tbody>
               </table>
+              <article class="product-buyed__article">
+                <h6 class="product-buyed__h6">Chocolate white</h6>
+                <img src="./assets/product-img/white-chocolate/chocolate_white_final.jpg" class="product-buyed__img" alt="Final product">
+                <button id="confirmation__button" class="confirmation__button">PLACER ORDER</button>
+                <p id="end-message" class="final-accept__p"></p>
+              </article>
             </section>
           </article>
         </form>
       </section>
-      <section class="footer-buttons__section">
-          <button id="clear-form" class="footer-buttons__button">Clear Form</button>
-          <button id="next-step" class="footer-buttons__button">Next</button>
+      <section class="footer-buttons__section hidden">
+        <button id="clear-form" class="footer-buttons__button">Clear Form</button>
+        <button id="next-step" class="footer-buttons__button">Next</button>
       </section>
     </main>
   </div>

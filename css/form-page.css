@@ -152,3 +152,141 @@
     font-style: normal;
     font-weight: normal;
 }
+
+.step-page-summary__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.summary-page-left__section,
+.summary-page-right__section {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-page-left__section {
+    width: 60%;
+}
+
+.correct-information__h4 {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.correct-information__p,
+.final-accept__p {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+.shipment__table {
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.shipment-table__th {
+    display: flex;
+    align-items: center;
+    padding-left: 0.5rem;
+}
+
+.shipment-table__th {
+    border-top: 1px solid #e6e5e4;
+}
+
+.shipment-table__td {
+    border-top: 1px solid #e6e5e4;
+    padding-top: 1rem;
+}
+
+.shipment-details__icon {
+    height: 1.3rem;
+    width: 1.3rem;
+    margin-right: 1rem;
+    line-height: 1;
+}
+
+.shipment-details__h5 {
+    font-size: 1.2rem;
+}
+
+.user-details__p,
+.shipment-method__p {
+    margin: 0.5rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.shipment-method__h6 {
+    margin: 1.5rem 0.5rem 1rem 0.5rem;
+    font-size: 0.8rem;
+    text-decoration: underline;
+}
+
+.final-accept__p {
+    padding: 1rem 0;
+    text-align: justify;
+}
+
+.summary-page-right__section {
+    flex-grow: 1;
+    margin-left: 4rem;
+    margin-top: 1.5rem;
+}
+
+.summary__table {
+    margin-top: 14px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+.summary-table__tr {
+    border-top: 1px solid #e6e5e4;
+}
+
+.summary-table__td {
+    padding: 1rem 0.5rem;
+    font-size: 0.8rem;
+}
+
+.summary-table__total {
+    padding: 1rem 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.product-buyed__h6 {
+    margin-bottom: 0.7rem;
+    font-size: 1.2rem;
+}
+
+.product-buyed__article {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.product-buyed__img{
+    height: 300px;
+    width: 225px;
+}
+
+.confirmation__button {
+    margin: 1.5rem 0;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    background-color: white;
+    font-size: 0.8rem;
+}
+
+.confirmation__button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color);
+}

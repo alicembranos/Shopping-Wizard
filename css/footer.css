@@ -88,6 +88,7 @@
     background-color: rgb(183, 181, 181);
     font-size: small;
     font-weight: 700;
+    line-height: 1;
     color: var(--quaternary-color);
 }
 

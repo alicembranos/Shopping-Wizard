@@ -45,15 +45,15 @@
 
   <div class="content-area__div">
     <main id="main" class="site__main">
-      <section class="header-main inactive hidden">
-        <ul class="progress-bar">
+      <section class="header-main inactive">
+        <ul class="progress-bar hidden">
           <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt="User"></li>
           <li><img class="icons-bar" src="assets/corporative/location.png" alt="Location"></li>
           <li><img class="icons-bar" src="assets/corporative/shipping.png" alt="Shipping"></li>
           <li><img class="icons-bar" src="assets/corporative/ok.png" alt="Confirmed"></li>
         </ul>
       </section>
-      <section class="product-page__section">
+      <section class="product-page__section" style="display: none;">
         <article class="product-page-column-1__article">
           <div class="carousel-img__div">
             <img src="./assets/product-img/white-chocolate/chocolate-white-2.jpg" alt="White chocolate 1"
@@ -105,7 +105,215 @@
           </div>
         </article>
       </section>
-
+      <section class="form-page__section">
+        <form action="submit" id="form">
+          <!-- Form step 1 -->
+          <article id="step-page1" class="step-page__article hidden">
+            <h1 class="step-page__h1">Profile</h1>
+            <hr>
+            <div class="form-group">
+              <label for="username" class="step-page__label">Username <span
+                  class="astheristic-required">*</span></label>
+              <input type="text" id="username" name="username" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="email" class="step-page__label">Email <span class="astheristic-required">*</span></label>
+              <input type="email" id="email" name="email" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="password" class="step-page__label">Password <span
+                  class="astheristic-required">*</span></label>
+              <input type="password" id="password" name="password" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="confirm-password" class="step-page__label">Confirm password <span
+                  class="astheristic-required">*</span></label>
+              <input type="password" id="confirm-password" name="confirm-password" class="step-page__input">
+            </div>
+          </article>
+          <!-- Form step 2 -->
+          <article id="step-page2" class="step-page__article hidden">
+            <h1 class="step-page__h1">Address</h1>
+            <hr>
+            <div class="form-group">
+              <label for="first-name" class="step-page__label">First Name <span
+                  class="astheristic-required">*</span></label>
+              <input type="text" id="first-name" name="first-name" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="last-name" class="step-page__label">Last Name <span
+                  class="astheristic-required">*</span></label>
+              <input type="text" id="last-name" name="last-name" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="birthday" class="step-page__label">Birthday <span
+                  class="astheristic-required">*</span></label>
+              <input type="date" id="birthday" name="birthday" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="address1" class="step-page__label">Address 1 <span
+                  class="astheristic-required">*</span></label>
+              <input type="text" id="address1" name="address1" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="address2" class="step-page__label">Address 2</label>
+              <input type="text" id="address2" name="address2" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="postal-code" class="step-page__label">Postal Code <span
+                  class="astheristic-required">*</span></label>
+              <input type="number" id="postal-code" name="postal-code" class="step-page__input">
+            </div>
+            <div class="form-group">
+              <label for="country" class="step-page__label">Country <span class="astheristic-required">*</span></label>
+              <select id="country" name="country" class="step-page__select">
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="phone" class="step-page__label">Phone <span class="astheristic-required">*</span></label>
+              <select id="prefix" name="prefix" class="step-page__select">
+              </select>
+              <input type="tel" id="phone" name="phone" class="step-page__input">
+            </div>
+            <div class="form-group-checkbox">
+              <input type="checkbox" name="reg-address" id="reg-address" class="step-page__checkbox">
+              <label for="reg-address" id="red-address-label">This is my regular
+                address</label>
+            </div>
+          </article>
+          <!-- Form step 3 -->
+          <article id="step-page3" class="step-page__article hidden">
+            <h1 class="step-page__h1">Shipping</h1>
+            <hr>
+            <h2 class="step-page__h2">Shipping type <span class="astheristic-required">*</span></h2>
+            <div class="form-group">
+              <div class="form-button">
+                <input type="radio" id="free" name="shi_type" value="free_shipment" class="step-page__inputbutton">
+                <label for="free" class="step-page__labelbutton">Free shipment (72h) <span> (no extra
+                    cost)</span></label><br>
+              </div>
+              <div class="form-button">
+                <input type="radio" id="extra" name="shi_type" value="extra_shipping" class="step-page__inputbutton">
+                <label for="extra" class="step-page__labelbutton">Extra shipping (48h)<span> 4,99€</span></label><br>
+              </div>
+              <div class="form-button">
+                <input type="radio" id="premium" name="shi_type" value="premium" class="step-page__inputbutton">
+                <label for="premium" class="step-page__labelbutton">Premium (24h)<span> 9,99€</span></label>
+              </div>
+              <br>
+            </div>
+            <div class="dates-text inactive">
+              <h3 class="step-page__h3">Your order will arrive:</h3>
+              <p class="step-page__p">Estimate delivery date:</p>
+              <p class="step-page__p">Between <span id="date_shipment"></span></p>
+            </div>
+            <div class="form-group">
+              <div class="form-button">
+                <input type="checkbox" id="gif-option" name="gif-option" class="step-page__checkbox">
+                <label for="gif-option" id="gif-option-label" class="step-page__labelcheckbox">Is it a gift?</label>
+              </div>
+              <div id="gift-container" class="gift-container inactive">
+                <div class="form-group">
+                  <label for="gift-title" class="step-page__label">Gift Title</label>
+                  <input type="text" id="gift-title" name="gift-title" class="step-page__input">
+                </div>
+                <div class="form-group">
+                  <label for="gift-message" class="step-page__label">Gift Message</label>
+                  <textarea id="gift-message" name="gift-message" class="step-page__input" cols="30"
+                    rows="10"></textarea>
+                </div>
+                <label class="input-file-trigger" for="gift-image">Select an image</label>
+                <input type="file" id="gift-image" name="gift-image" class="input-file" accept="image/png, image/jpeg">
+                <p class="file-return"></p>
+              </div>
+            </div>
+          </article>
+          <!-- Form step 4 -->
+          <article id="step-page4" class="step-page__article">
+            <section class="summary-page-left__section">
+              <article class="correct-information__article">
+                <h4 class="correct-information__h4">Thank you for your order, <span class="correct-information__span">
+                    Username</span></h4>
+                <p class="correct-information__h4">Before you place your order, please take a moment to review your
+                  shipping information</p>
+              </article>
+              <article class="shipment-details__article">
+                <table class="shipment__table">
+                  <thead>
+                    <tr class="shipment-details__header">
+                      <img src="./assets/icons/checked-icon.png" class="shipment-details__icon" alt="Confirmation Icon">
+                      <h5 class="shipment-details__h5">SHIPPING</h4>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="shipment__td">
+                        <p class="user-details__p">Hola</p>
+                        <p class="user-details__p">Que tal</p>
+                        <p class="user-details__p">hola</p>
+                        <p class="user-details__p">que tal</p>
+                      </td>
+                      <td class="shipment__td">
+                        <h6 class="shipment-method__h6">Shipping Method</h5>
+                          <p class="shipment-method__p"></p>
+                          <p class="shipment-method__p">Your order will arrive Between xxxx and xxxxx</p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+              <article class="shipment-confirmation__article">
+                <table class="shipment__table">
+                  <thead>
+                    <tr class="shipment__header">
+                      <img src="./assets/icons/checked-icon.png" class="shipment-details__icon" alt="Confirmation Icon">
+                      <h5 class="shipment__h5">REVIEW AND SUBMIT YOUR ORDER</h4>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="shipment__td">
+                        <input type="checkbox" id="final-accept" name="final-accept" class="step-page__checkbox">
+                        <label for="final-accept" class="step-page__labelcheckbox">I have read and accept the term and
+                          conditions</label>
+                        <p class="final-accept__p">By clicking the "Place Order", you confirm that you have read,
+                          understood, and accept our <a href="">Terms and Conditions</a>
+                          policy</p>
+                        <button id="confirmation__button" class="confirmation__button">PLACER ORDER</button>
+                        <p id="end-message" class="final-accept__p"></p>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </article>
+            </section>
+            <section class="summary-page-right__section">
+              <table class="summary__table">
+                <tr>
+                  <td colspan="4" class="">SUBTOTAL<div class="tooltip-item"><img src="./assets/icons/question.png"
+                        alt="Tooltip"><span class="tooltip-text">I think you're rich enough to buy more
+                        things...</span>
+                    </div>
+                  </td>
+                  <td id="pricep-summary"></td>
+                </tr>
+                <tr>
+                  <td colspan="4" id="typeship-summary"></td>
+                  <td id="prices-summary"></td>
+                </tr>
+                <tr>
+                  <td colspan="4">TOTAL</td>
+                  <td id="pricet-summary"></td>
+                </tr>
+              </table>
+            </section>
+          </article>
+        </form>
+      </section>
+      <section class="footer-buttons__section">
+          <button id="clear-form" class="footer-buttons__button">Clear Form</button>
+          <button id="next-step" class="footer-buttons__button">Next</button>
+      </section>
     </main>
   </div>
 
@@ -133,9 +341,9 @@
           <div class="site-footer__column-txt">
             <h2 class="site-footer__column-txt__h2">SOCIAL</h2>
             <div class="footer-media-icons__div">
-              <a href="" ><i class="fa-brands fa-facebook footer-icons"></i></a>
-              <a href="" ><i class="fa-brands fa-instagram footer-icons"></i></a>
-              <a href="" ><i class="fa-brands fa-twitter footer-icons"></i></a>
+              <a href=""><i class="fa-brands fa-facebook footer-icons"></i></a>
+              <a href=""><i class="fa-brands fa-instagram footer-icons"></i></a>
+              <a href=""><i class="fa-brands fa-twitter footer-icons"></i></a>
             </div>
           </div>
         </article>
@@ -144,7 +352,8 @@
             <h2 class="site-footer__column-txt__h2">SIGN UP FOR OUR NEWSLETTER</h2>
             <form id="nl_singup" action="#" class="site-footer__form">
               <label for="ns_email_submit" class="hidden"></label>
-              <input id="ns_email_submit" name="ns_email_submit" class="ns_email_submit" type="email" placeholder="your@address.com">
+              <input id="ns_email_submit" name="ns_email_submit" class="ns_email_submit" type="email"
+                placeholder="your@address.com">
               <button class="ns_email_button" type="submit">SIGN UP</button>
             </form>
           </div>

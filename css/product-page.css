@@ -163,7 +163,7 @@
     background-color: white;
 }
 
-.product-buy__button:hover{
+.product-buy__button:hover {
     cursor: pointer;
     color: white;
     background-color: var(--primary-color);

@@ -1,0 +1,154 @@
+.form-page__section {
+    margin: 0 250px;
+    padding: 0 100px;
+}
+
+.step-page__h1 {
+    font-size: 1.7rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0;
+}
+
+.step-page__label {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.step-page__input,
+.step-page__select {
+    width: 300px;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid rgba(0, 0, 0, .1);
+    line-height: 1.2rem;
+
+}
+
+.step-page__input:focus {
+    outline: none;
+}
+
+.step-page__select {
+    width: fit-content;
+    margin-bottom: 5px;
+}
+
+.form-group-checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.step-page__checkbox {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    border: 1px solid rgba(0, 0, 0, .1);
+    position: relative;
+    background-color: white;
+    background-image: linear-gradient(to bottom, white 15%, transparent 15%, transparent 85%, white 85%, white 100%), linear-gradient(to right, white 15%, transparent 15%, transparent 85%, white 85%, white 100%);
+    transition: background-color 0.4s ease;
+}
+
+.form-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.7rem 0;
+}
+
+.step-page__inputbutton {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    margin: 0 10px 0 0;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 50%;
+    background-color: white;
+    background-image: radial-gradient(transparent 40%, white 40%);
+}
+
+.step-page__checkbox:checked,
+.step-page__inputbutton:checked {
+    background-color: var(--primary-color);
+}
+
+.step-page__labelbutton {
+    display: inline-block;
+}
+
+.step-page__h2 {
+    margin-top: 2rem;
+}
+
+.gift-container {
+    margin: 1.5rem 0;
+}
+
+.astheristic-required {
+    color: rgba(220, 14, 14, 0.9);
+}
+
+.gift-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom input file of gift option*/
+.input-file-trigger {
+    display: block;
+    padding: 10px 45px;
+    text-align: center;
+    background: white;
+    color: #35363a;
+    font-size: 1rem;
+    transition: all .4s;
+    cursor: pointer;
+    width: 300px;
+    border: 1.5px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.input-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    opacity: 0;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+.input-file:hover+.input-file-trigger,
+.input-file:focus+.input-file-trigger,
+.input-file-trigger:hover,
+.input-file-trigger:focus {
+    background: var(--primary-color);
+    color: white;
+}
+
+.file-return {
+    margin: 0;
+}
+
+.file-return:not(:empty) {
+    margin: 1em 0;
+}
+
+.file-return {
+    font-style: italic;
+    font-size: .9em;
+    font-weight: bold;
+}
+
+.file-return:not(:empty):before {
+    content: "Selected file: ";
+    font-style: normal;
+    font-weight: normal;
+}

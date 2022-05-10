@@ -1,0 +1,21 @@
+.footer-buttons__section {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.footer-buttons__button {
+    margin: 2rem 4rem;
+    padding: 0.6rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 0.5rem;
+    color: var(--primary-color);
+    background-color: white;
+}
+
+.footer-buttons__button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: var(--primary-color);
+}

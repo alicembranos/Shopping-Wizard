@@ -1,5 +1,6 @@
 .sticky{
     position: fixed;
+    top: 0%;
     width: 100%;
     z-index: 1;
 }
@@ -43,7 +44,7 @@
     flex-direction: row;
     align-items: stretch;
     align-content: stretch;
-    justify-content: center;
+    justify-content: space-around;
     font-size: 0.8rem;
     list-style: none;
 }

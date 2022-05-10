@@ -1,0 +1,72 @@
+.header-main {
+    position: relative;
+    padding: 30px 30px 50px 30px;
+    margin: 150px 200px 0 200px;
+    background-color: white;
+    z-index: -1;
+    border-top-left-radius: 2em;
+    border-top-right-radius: 2em;
+}
+
+.progress-bar {
+    counter-reset: step;
+    list-style-type: none;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.progress-bar li {
+    width: 23%;
+    text-align: center;
+}
+
+.icons-bar {
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.progress-bar li:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #ddd;
+    top: 55px;
+    z-index: -1;
+    width: 27%;
+}
+
+.progress-bar li:last-child::before {
+    content: none;
+}
+
+.progress-bar li:after {
+    content: counter(step);
+    counter-increment: step;
+    width: 25px;
+    height: 25px;
+    line-height: 26px;
+    border: 2px solid #ddd;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+    font-weight: 200;
+    color: #35363a;
+    font-size: 13px;
+}
+
+.progress-bar li.active {
+    color: #0b1a7d;
+}
+
+.progress-bar li.active::after {
+    border-color: #0b1a7d;
+}
+
+.progress-bar li.active::before {
+    background-color: #0b1a7d;
+}

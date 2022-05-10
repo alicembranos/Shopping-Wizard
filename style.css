@@ -629,7 +629,7 @@ label.radio-buttom {
   font-size: 1em;
   transition: all .4s;
   cursor: pointer;
-  width: 27.5em;
+  width: 300px;
   border: 1.5px solid black;
   border-radius: 5px;
 }
@@ -638,7 +638,7 @@ label.radio-buttom {
   position: absolute;
   top: 0;
   left: 0;
-  width: 225px;
+  width: 300px;
   opacity: 0;
   padding: 10px 0;
   cursor: pointer;
@@ -662,7 +662,7 @@ label.radio-buttom {
 
 .file-return {
   font-style: italic;
-  font-size: .9em;
+  font-size: 0.9em;
   font-weight: bold;
 }
 

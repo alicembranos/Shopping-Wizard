@@ -14,7 +14,13 @@
 }
 
 .site-footer__column {
-    flex: 0 1 20%;
+    /* flex: 0 1 20%; */
+    flex-basis: 15%;
+}
+
+.site-footer__column-form {
+    flex-grow: 1;
+    align-self: center;
 }
 
 .site-footer__column:nth-child(4) {

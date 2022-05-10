@@ -1,0 +1,26 @@
+/*Desktops, large screens*/
+@media (max-width: 1200px) {
+    .form-page__section {
+        margin: 0 150px;
+        padding: 0 50px;
+    }
+}
+
+/*Small screens and laptots*/
+@media (max-width: 1024px) {
+    .form-page__section {
+        margin: 0 100px;
+        padding: 0 25px;
+    }
+}
+
+/*Tablets and iPads*/
+@media (max-width: 768px) {
+    .form-page__section {
+        margin: 0 50px;
+        padding: 0;
+    }
+}
+
+/*Mobile devices*/
+@media (max-width:480px) {}

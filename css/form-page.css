@@ -1,6 +1,6 @@
 .form-page__section {
-    margin: 0 250px;
-    padding: 0 100px;
+    margin: 0 200px;
+    padding: 0 75px;
 }
 
 .step-page__h1 {
@@ -249,6 +249,10 @@
 .summary-table__td {
     padding: 1rem 0.5rem;
     font-size: 0.8rem;
+}
+
+.summary-table__td2, .summary-table__total2 {
+    text-align: end;
 }
 
 .summary-table__total {

@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/main.css">
   <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous"></script>
-  <script src="./script.js" defer></script>
+  <script src="./js/main.js" type="module"></script>
   <title>JS Shopping Wizard</title>
 </head>
 
@@ -45,7 +45,8 @@
 
   <div class="content-area__div">
     <main id="main" class="site__main">
-      <section class="header-main">
+      <!-- Progress bar -->
+      <section class="header-main hidden">
         <ul class="progress-bar">
           <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt="User"></li>
           <li><img class="icons-bar" src="assets/corporative/location.png" alt="Location"></li>
@@ -53,20 +54,21 @@
           <li><img class="icons-bar" src="assets/corporative/ok.png" alt="Confirmed"></li>
         </ul>
       </section>
-      <section class="product-page__section hidden">
+      <!-- Product Page -->
+      <section class="product-page__section">
         <article class="product-page-column-1__article">
           <div class="carousel-img__div">
-            <img src="./assets/product-img/white-chocolate/chocolate-white-2.jpg" alt="White chocolate 1"
+            <img src="./assets/images/white-chocolate/chocolate-white-1.jpg" alt="White chocolate 1"
               class="carousel__img">
-            <img src="./assets/product-img/white-chocolate/chocolate-white-1.jpg" alt="White chocolate 2"
+            <img src="./assets/images/white-chocolate/chocolate-white-2.jpg" alt="White chocolate 2"
               class="carousel__img">
-            <img src="./assets/product-img/white-chocolate/chocolate-white-3.jpg" alt="White chocolate 3"
+            <img src="./assets/images/white-chocolate/chocolate-white-3.jpg" alt="White chocolate 3"
               class="carousel__img">
           </div>
           <div class="also-like__div">
             <h4 class="also-like__h4">You may also like...</h4>
             <div class="also-like-column__div">
-              <img src="./assets/product-img/bombom.jpg" alt="Bonbon Chocolat" class="selector-product__img">
+              <img src="./assets/images/bombom.jpg" alt="Bonbon Chocolat" class="selector-product__img">
               <div class="also-like-txt__div">
                 <p>BOMBOM</p>
                 <p class="icon-plus">+</p>
@@ -312,7 +314,7 @@
               </table>
               <article class="product-buyed__article">
                 <h6 class="product-buyed__h6">Chocolate white</h6>
-                <img src="./assets/product-img/white-chocolate/chocolate_white_final.jpg" class="product-buyed__img" alt="Final product">
+                <img src="./assets/images/white-chocolate/chocolate_white_final.jpg" class="product-buyed__img" alt="Final product">
                 <button id="confirmation__button" class="confirmation__button">PLACER ORDER</button>
                 <p id="end-message" class="final-accept__p"></p>
               </article>
@@ -320,6 +322,7 @@
           </article>
         </form>
       </section>
+      <!-- Form buttons -->
       <section class="footer-buttons__section hidden">
         <button id="clear-form" class="footer-buttons__button">Clear Form</button>
         <button id="next-step" class="footer-buttons__button">Next</button>

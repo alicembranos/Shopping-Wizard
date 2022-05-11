@@ -4,6 +4,27 @@
         margin: 0 150px;
         padding: 0 50px;
     }
+
+    .site-footer__columns {
+        flex-wrap: wrap-reverse;
+        text-align: center;
+    }
+
+    .site-footer__column-form {
+        padding-bottom: 2rem;
+    }
+
+    .site-footer__form {
+        margin: 0.5rem 0;
+    }
+
+    .ns_email_submit {
+        margin-right: 0;
+    }
+
+    .ns_email_button {
+        margin-top: 0.5rem;
+    }
 }
 
 /*Small screens and laptots*/
@@ -12,15 +33,127 @@
         margin: 0 100px;
         padding: 0 25px;
     }
+
+    .product-page-column-1__article {
+        width: 50%;
+    }
+
+    .product-page-column-2__article {
+        margin-top: 2rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        flex-grow: 1;
+    }
 }
 
 /*Tablets and iPads*/
 @media (max-width: 768px) {
+    .header-main {
+        margin-left: 75px;
+        margin-right: 75px;
+    }
+
     .form-page__section {
         margin: 0 50px;
         padding: 0;
     }
+
+    .product-page__section{
+        flex-direction: column;
+    }
+
+    .product-page-column-1__article {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .product-page-column-2__article {
+        width: 100%;
+        margin-top: 0;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
 }
 
 /*Mobile devices*/
-@media (max-width:480px) {}
+@media (max-width:480px) {
+    .header-main {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .menu__div {
+        display: none;
+    }
+
+    .step-page__input{
+        width: 275px;
+    }
+
+    .summary-page-left__section {
+        width: 100%;
+    }
+
+    .summary-page-right__section {
+        margin-left: 0;
+    }
+
+    .site-footer__section {
+        padding: 2rem 0;
+    }
+
+    .site-footer__columns {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .site-footer__column {
+        width: 100%;
+    }
+
+    .site-footer__column-txt {
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-media-icons__div {
+        justify-content: center;
+    }
+
+    .footer-icons {
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .site-footer__final {
+        flex-direction: column-reverse;
+    }
+
+    .site-footer__form {
+        margin: 0 2rem;
+        width: fit-content;
+    }
+
+    .ns_email_submit {
+        width: 100%;
+    }
+
+    .footer-icons{
+        text-align: center;
+    }
+
+    .site-footer__final {
+        margin-top: 0.5rem;
+    }
+
+    .footer-1__final,
+    .footer-2__final {
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    .step-page-summary__section {
+        flex-direction: column;
+    }
+}

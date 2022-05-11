@@ -13,6 +13,11 @@
     --quaternary-color: rgb(255, 255, 255);
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
 .hidden {
     display: none;
 }

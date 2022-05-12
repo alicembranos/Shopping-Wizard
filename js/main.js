@@ -5,19 +5,6 @@ const inputsOthers = document.querySelectorAll("#form input[type='checkbox'],#fo
 const countryEl = document.getElementById('country');
 const steps = Array.from(document.querySelectorAll('#form .step'));
 const fieldsNotRequired = ['confirm-password', 'address2', 'reg-address', 'gif-option', 'gift-title', 'gift-message', 'gift-image'];
-const messagesElements = {
-    'username': 'Username must contain at min 5 characters and max of 20',
-    'email': 'Please enter a valid email addresss',
-    'password': 'Password must contain at least: 8 characters, lowercase, uppercase, special character and numbers',
-    'confirm-password': 'Passwords do not match',
-    'first-name': 'Name cannot contain special characters',
-    'last-name': 'Last name cannot contain special character',
-    'address1': 'You must enter a valid Address - max 50 characters', // not sure if we need it
-    'address2': 'You must enter a valid Address - max 50 characters', // not sure if we need it
-    'postal-code': 'PC must contain only numbers and max of 5 characters',
-    'phone': 'Phone must contain only numbers and max of 9 characters',
-    'emptyField': 'You must not leave empty fields',
-};
 
 /******** Multi Step Form **********/
 const nextButton = document.getElementById('next-step');
@@ -79,38 +66,6 @@ let fields = {
     'shi-type': false,
 }
 
-/********** Populate select country options and prefix dynamically ***********/
-const countries = ['Select Country', 'Andorra', 'Spain', 'France', 'Germany', 'Greece', 'Isarel'];
-const prefix = [{
-        co: 'Select Prefix',
-        pre: ''
-    },
-    {
-        co: 'AND',
-        pre: 376
-    },
-    {
-        co: 'SPA',
-        pre: 34
-    },
-    {
-        co: 'FRA',
-        pre: 33
-    },
-    {
-        co: 'GER',
-        pre: 49
-    },
-    {
-        co: 'GRE',
-        pre: 30
-    },
-    {
-        co: 'ISR',
-        pre: 972
-    },
-];
-
 let optionsCountries = countries.map(country => `<option value=${country}>${country}</option>`);
 selectCountry.innerHTML = optionsCountries;
 let optionsPrefix = prefix.map(pre =>
@@ -123,18 +78,6 @@ function addPrefix(e) {
     const position = countries.indexOf(e.target.value);
     position == -1 ? selectPrefix.selectedIndex = 0 : selectPrefix.selectedIndex = position;
 }
-
-/********** Regular Expressions ***********/
-const expressions = {
-    username: /^[a-zA-Z0-9.-_]{5,20}$/, //Words, numbers, hyphen and underscore, no spaces, min5, max20
-    email: /^\w+([\.-\_]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, //mail definition max50
-    password: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/, //One number, one UPC, one LOC, one special character, min8, max20
-    firstName: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, //letters, accent  marks letters, spaces, max20
-    lastName: /^[a-zA-ZÀ-ÿ\s]{1,20}$/, //letters, accent  marks letters, spaces, max20
-    address: /^[0-9a-zA-Z\s\.,-º]{1,50}$/, //letters, numbers, dot, dash, comma, spaces, max50
-    postalCode: /^[0-9]{1,5}$/, //numbers, max5
-    phoneNumber: /^[0-9]{1,9}$/, // numbers, max9
-};
 
 /********** Calculate date shipment ***********/
 function dateBetween(hours) {
@@ -243,99 +186,6 @@ const productDB = {
     price: null,
     imgUrl: null,
 };
-const shirts = [{
-        id: 1,
-        color: 'Blue Surf',
-        price: {
-            XS: 10.99,
-            S: 12.99,
-            M: 14.99,
-            L: 15.99,
-            XL: 17.99
-        },
-        imgUrl: [
-            'https://m.media-amazon.com/images/I/81zG+3ursWS._AC_UY879_.jpg',
-            'https://m.media-amazon.com/images/I/71TZ0xJ0IfS._AC_UY879_.jpg',
-            'https://m.media-amazon.com/images/I/91hxZw56vES._AC_UY879_.jpg',
-            'https://m.media-amazon.com/images/I/81mAi5PvM4S._AC_UY879_.jpg',
-        ],
-    },
-    {
-        id: 2,
-        color: 'Patch Dress Blues',
-        price: {
-            XS: 10.99,
-            S: 12.99,
-            M: 14.99,
-            L: 15.99,
-            XL: 17.99
-        },
-        imgUrl: [
-            'https://m.media-amazon.com/images/I/81lZ+iIrErL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81gpN5kBaOL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/71XUcDsMEjL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81gpN5kBaOL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81c1CIYeVQL._AC_SY879._SX._UX._SY._UY_.jpg',
-        ],
-    },
-    {
-        id: 3,
-        color: 'Red Clay',
-        price: {
-            XS: 10.99,
-            S: 12.99,
-            M: 14.99,
-            L: 15.99,
-            XL: 17.99
-        },
-        imgUrl: [
-            'https://m.media-amazon.com/images/I/814TCHUlChL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/71GN8H2NxAL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81jUk2IJGBL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/91zLKDG2WoL._AC_SY879._SX._UX._SY._UY_.jpg',
-        ],
-    },
-    {
-        id: 4,
-        color: 'Pineneedle',
-        price: {
-            XS: 10.99,
-            S: 12.99,
-            M: 14.99,
-            L: 15.99,
-            XL: 17.99
-        },
-        imgUrl: [
-            'https://m.media-amazon.com/images/I/710N8jLzg5L._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/A1vbLy0pa5L._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81u4OxQTv6L._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/71GkJkz-sKL._AC_SY879._SX._UX._SY._UY_.jpg',
-        ],
-    },
-    {
-        id: 5,
-        color: 'Cotton + Patch Black',
-        price: {
-            XS: 10.99,
-            S: 12.99,
-            M: 14.99,
-            L: 15.99,
-            XL: 17.99
-        },
-        imgUrl: [
-            'https://m.media-amazon.com/images/I/81d7e4oi2PL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/81ScAVoWMcL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/91bHbGotnbL._AC_SY879._SX._UX._SY._UY_.jpg',
-            'https://m.media-amazon.com/images/I/717DlXxOcNL._AC_SY879._SX._UX._SY._UY_.jpg',
-        ],
-    },
-];
-const {
-    size,
-    color
-} = productDB;
-const errorMessage =
-    'You must pick a color for your shirt before continuing with your purchase';
 
 // setting the coresponding price shirt size
 const getPrice = () => {

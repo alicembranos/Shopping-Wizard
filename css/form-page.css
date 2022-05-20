@@ -294,3 +294,7 @@
     color: white;
     background-color: var(--primary-color);
 }
+
+input:focus{
+    border: 2px solid var(--secundary-color);
+}

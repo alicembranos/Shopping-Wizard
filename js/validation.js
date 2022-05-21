@@ -1,10 +1,11 @@
-import { messagesElements, expressions, requiredFields } from "./utils.js";
+import { messagesElements, expressions, requiredFields, user } from "./utils.js";
 
 const form = document.getElementById("form");
 const inputsToValidate = form.querySelectorAll(
   "input:not([type='checkbox']):not([type='radio'])"
 );
 
+//Set required fields
 const setRequiredFields = (inputs) => {
   Array.from(inputs).map((input) => {
     if (requiredFields.includes(input.name)) {
@@ -109,23 +110,27 @@ const validationInputForm = (inputValue, inputName, formGroup, regexp) => {
     const inputIncorrect = `<p class='input-invalid'>${message}.</p>`;
     formGroup.insertAdjacentHTML("beforeend", inputIncorrect);
     formGroup.dataset.invalid = true;
+    user.inputName = "";
   } else {
     formGroup.dataset.invalid = false;
+    user.inputName = inputValue;
   }
 };
 
 //Validate password
 const validatePassword = (formGroup) => {
-  const password1 = document.getElementById("password");
-  const password2 = document.getElementById("confirm-password");
-  if (password2.value !== "") {
-    if (password1.value !== password2.value) {
+  const password1 = document.getElementById("password").value;
+  const password2 = document.getElementById("confirm-password").value;
+  if (password2 !== "") {
+    if (password1 !== password2) {
       const inputIncorrect = `<p class='confirmation-invalid'>The confirm password does not match.</p>`;
       formGroup.insertAdjacentHTML("beforeend", inputIncorrect);
       formGroup.dataset.invalid = true;
+      user.password = "";
     }
   } else {
     formGroup.dataset.invalid = false;
+    user.password = password1;
   }
 };
 
@@ -143,6 +148,9 @@ const validateBirthday = (formGroup, date) => {
     const inputIncorrect = `<p class='input-invalid'>Age must more than 18 years old.</p>`;
     formGroup.insertAdjacentHTML("beforeend", inputIncorrect);
     formGroup.dataset.invalid = true;
+  } else {
+    //Save birthday
+    user.birthday = date;
   }
 };
 
@@ -157,6 +165,7 @@ const getAge = (date) => {
   }
   return age;
 };
+
 //Remove error message
 const removeErrorMessage = (formGroup, errorType) => {
   const errorMessage = formGroup.querySelector(`.${errorType}`);

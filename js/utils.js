@@ -126,4 +126,27 @@ const requiredFields = [
   "phone",
   "shi-type",
 ];
-export { messagesElements, expressions, requiredFields };
+
+/*Data user object*/
+let user = {
+  username: "",
+  email: "",
+  password: "",
+  "first-name": "",
+  "last-name": "",
+  birthday: "",
+  address1: "",
+  address2: "",
+  "postal-code": 0,
+  country: "",
+  prefix: "",
+  phone: "",
+  "reg-address": false,
+  "shi-type": "",
+  "gif-option": false,
+  "gift-title": "",
+  "gift-message": "",
+  "gift-image": "",
+};
+
+export { messagesElements, expressions, requiredFields, user };

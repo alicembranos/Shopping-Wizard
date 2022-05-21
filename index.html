@@ -1,41 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <script
+      src="https://kit.fontawesome.com/ae63adffc0.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/main.js" type="module"></script>
+    <title>JS Shopping Wizard</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/main.css">
-  <script src="https://kit.fontawesome.com/ae63adffc0.js" crossorigin="anonymous"></script>
-  <script src="./js/main.js" type="module"></script>
-  <title>JS Shopping Wizard</title>
-</head>
-
-<body>
-  <header class="sticky hidden">
-    <section class="infobar__section">
-      <article class="infobar-txt__article">
-        <i class="showtext">Free shipping within Europe!</i>
-        <i class="showtext hidden">All products 100% bio</i>
-        <i class="showtext hidden">Made in France</i>
-        <i class="showtext hidden">100% responsible cocoa</i>
-      </article>
-    </section>
-    <section class="site-logo-nav__section">
-      <a href="" class="site-logolink"><img src="./assets/corporative/logo.png" alt=""></a>
-      <nav class="site-nav__nav">
-        <ul class="menu__div">
-          <li class="menu-item__li"><a href="" class="menu-item__a">PRODUCTS</a></li>
-          <li class="menu-item__li"><a href="" class="menu-item__a">GIFTS</a></li>
-          <li class="menu-item__li"><a href="" class="menu-item__a">LIMITED</a></li>
-          <li class="menu-item__li"><a href="" class="menu-item__a">OUR WORLD</a></li>
-          <li class="menu-item__li"><a href="" class="menu-item__a">ACCOUNT</a></li>
-          <li class="menu-item__li"><a href="" class="menu-item__a">CART<span id="quantity_cart"></span></a></li>
-        </ul>
-      </nav>
-    </section>
-  </header>
-  <!-- <div class="popup" id=popup1>
+  <body>
+    <header class="sticky hidden">
+      <section class="infobar__section">
+        <article class="infobar-txt__article">
+          <i class="showtext">Free shipping within Europe!</i>
+          <i class="showtext hidden">All products 100% bio</i>
+          <i class="showtext hidden">Made in France</i>
+          <i class="showtext hidden">100% responsible cocoa</i>
+        </article>
+      </section>
+      <section class="site-logo-nav__section">
+        <a href="" class="site-logolink"
+          ><img src="./assets/corporative/logo.png" alt=""
+        /></a>
+        <nav class="site-nav__nav">
+          <ul class="menu__div">
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a">PRODUCTS</a>
+            </li>
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a">GIFTS</a>
+            </li>
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a">LIMITED</a>
+            </li>
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a">OUR WORLD</a>
+            </li>
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a">ACCOUNT</a>
+            </li>
+            <li class="menu-item__li">
+              <a href="" class="menu-item__a"
+                >CART<span id="quantity_cart"></span
+              ></a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </header>
+    <!-- <div class="popup" id=popup1>
     <div class="overlay"></div>
     <div class="content">
       <button>&times;</button>
@@ -43,349 +61,618 @@
     </div>
   </div> -->
 
-  <div class="content-area__div">
-    <main id="main" class="site__main">
-      <!-- Progress bar -->
-      <section class="header-main hidden">
-        <ul class="progress-bar">
-          <li class="active"><img class="icons-bar" src="assets/corporative/user.png" alt="User"></li>
-          <li><img class="icons-bar" src="assets/corporative/location.png" alt="Location"></li>
-          <li><img class="icons-bar" src="assets/corporative/shipping.png" alt="Shipping"></li>
-          <li><img class="icons-bar" src="assets/corporative/ok.png" alt="Confirmed"></li>
-        </ul>
-      </section>
-      <!-- Product Page -->
-      <section class="product-page__section  hidden">
-        <article class="product-page-column-1__article">
-          <div class="carousel-img__div">
-            <img src="./assets/images/white-chocolate/chocolate-white-1.jpg" alt="White chocolate 1"
-              class="carousel__img">
-            <img src="./assets/images/white-chocolate/chocolate-white-2.jpg" alt="White chocolate 2"
-              class="carousel__img">
-            <img src="./assets/images/white-chocolate/chocolate-white-3.jpg" alt="White chocolate 3"
-              class="carousel__img">
-          </div>
-          <div class="also-like__div">
-            <h4 class="also-like__h4">You may also like...</h4>
-            <div class="also-like-column__div">
-              <img src="./assets/images/bombom.jpg" alt="Bonbon Chocolat" class="selector-product__img">
-              <div class="also-like-txt__div">
-                <p>BOMBOM</p>
-                <p class="icon-plus">+</p>
-              </div>
+    <div class="content-area__div">
+      <main id="main" class="site__main">
+        <!-- Progress bar -->
+        <section class="header-main hidden">
+          <ul class="progress-bar">
+            <li class="active">
+              <img
+                class="icons-bar"
+                src="assets/corporative/user.png"
+                alt="User"
+              />
+            </li>
+            <li>
+              <img
+                class="icons-bar"
+                src="assets/corporative/location.png"
+                alt="Location"
+              />
+            </li>
+            <li>
+              <img
+                class="icons-bar"
+                src="assets/corporative/shipping.png"
+                alt="Shipping"
+              />
+            </li>
+            <li>
+              <img
+                class="icons-bar"
+                src="assets/corporative/ok.png"
+                alt="Confirmed"
+              />
+            </li>
+          </ul>
+        </section>
+        <!-- Product Page -->
+        <section class="product-page__section">
+          <article class="product-page-column-1__article">
+            <div class="carousel-img__div">
+              <img
+                src="./assets/images/white-chocolate/chocolate-white-1.jpg"
+                alt="White chocolate 1"
+                class="carousel__img"
+              />
+              <img
+                src="./assets/images/white-chocolate/chocolate-white-2.jpg"
+                alt="White chocolate 2"
+                class="carousel__img"
+              />
+              <img
+                src="./assets/images/white-chocolate/chocolate-white-3.jpg"
+                alt="White chocolate 3"
+                class="carousel__img"
+              />
             </div>
-          </div>
-        </article>
-        <article class="product-page-column-2__article">
-          <h1 class="product-page-column-2__h2">Le Chocolat Blanc</h1>
-          <p class="product-price__p"><span class="product-price__span">€</span>15,00</p>
-          <p class="product-description__p">Bar of homemade white chocolate infused with Madagascan vanilla and topped
-            off with a pinch of Maldon sea salt.</p>
-          <div class="type-product__div">
-            <p><span id="type-product" class="type-product__span">Type:</span>White</p>
-            <ul id="type_product__ul" class="type_product__ul">
-              <li class="type-product__li white"><span class="type_chocolate_white"></span></li>
-              <li class="type-product__li milk"><span class="type_chocolate_milk"></span></li>
-              <li class="type-product__li dark"><span class="type_chocolate_dark"></span></li>
-            </ul>
-          </div>
-          <div class="product-quantity-counter__div">
-            <p class="product-quantity-counter__p">Quantity:</p>
-            <button class="product-quantity-counter__btn">-</button>
-            <h2 class="product-amount">1</h2>
-            <button class="product-quantity-counter__btn">+</button>
-          </div>
-          <button type="button" class="product-buy__button">ADD TO CART</button>
-          <div class="product-info__div">
-            <h3>Product info</h3>
-            <p class="product-info__p">This bar of homemade white chocolate is an ode to sweetness! Very low sugar white
-              chocolate containing 40% cocoa butter, 25% sugar and 35% milk powder.</p>
-            <p class="product-info__p">It is infused with Madagascan
-              vanilla and topped off with a pinch of sea salt.</p>
-            <p class="product-info__p">Ingredients: Cocoa butter, cream milk powder, sugar, fresh vanilla from
-              Madagascar, salt, sunflower lecithin.</p>
-          </div>
-        </article>
-      </section>
-      <section class="form-page__section">
-        <form action="submit" id="form">
-          <!-- Form step 1 -->
-          <article id="step-page1" class="step-page__article ">
-            <h1 class="step-page__h1">Profile</h1>
-            <hr>
-            <div class="form-group">
-              <label for="username" class="step-page__label">Username <span
-                  class="astheristic-required">*</span></label>
-              <input type="text" id="username" name="username" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="email" class="step-page__label">Email <span class="astheristic-required">*</span></label>
-              <input type="email" id="email" name="email" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="password" class="step-page__label">Password <span
-                  class="astheristic-required">*</span></label>
-              <input type="password" id="password" name="password" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="confirm-password" class="step-page__label">Confirm password <span
-                  class="astheristic-required">*</span></label>
-              <input type="password" id="confirm-password" name="confirm-password" class="step-page__input">
-            </div>
-          </article>
-          <!-- Form step 2 -->
-          <article id="step-page2" class="step-page__article ">
-            <h1 class="step-page__h1">Address</h1>
-            <hr>
-            <div class="form-group">
-              <label for="first-name" class="step-page__label">First Name <span
-                  class="astheristic-required">*</span></label>
-              <input type="text" id="first-name" name="first-name" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="last-name" class="step-page__label">Last Name <span
-                  class="astheristic-required">*</span></label>
-              <input type="text" id="last-name" name="last-name" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="birthday" class="step-page__label">Birthday <span
-                  class="astheristic-required">*</span></label>
-              <input type="date" id="birthday" name="birthday" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="address1" class="step-page__label">Address 1 <span
-                  class="astheristic-required">*</span></label>
-              <input type="text" id="address1" name="address1" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="address2" class="step-page__label">Address 2</label>
-              <input type="text" id="address2" name="address2" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="postal-code" class="step-page__label">Postal Code <span
-                  class="astheristic-required">*</span></label>
-              <input type="number" id="postal-code" name="postal-code" class="step-page__input">
-            </div>
-            <div class="form-group">
-              <label for="country" class="step-page__label">Country <span class="astheristic-required">*</span></label>
-              <select id="country" name="country" class="step-page__select">
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="phone" class="step-page__label">Phone <span class="astheristic-required">*</span></label>
-              <select id="prefix" name="prefix" class="step-page__select">
-              </select>
-              <input type="tel" id="phone" name="phone" class="step-page__input">
-            </div>
-            <div class="form-group-checkbox">
-              <input type="checkbox" name="reg-address" id="reg-address" class="step-page__checkbox">
-              <label for="reg-address" id="red-address-label">This is my regular
-                address</label>
-            </div>
-          </article>
-          <!-- Form step 3 -->
-          <article id="step-page3" class="step-page__article ">
-            <h1 class="step-page__h1">Shipping</h1>
-            <hr>
-            <h2 class="step-page__h2">Shipping type <span class="astheristic-required">*</span></h2>
-            <div class="form-group">
-              <div class="form-button">
-                <input type="radio" id="free" name="shi_type" value="free_shipment" class="step-page__inputbutton">
-                <label for="free" class="step-page__labelbutton">Free shipment (72h) <span> (no extra
-                    cost)</span></label><br>
-              </div>
-              <div class="form-button">
-                <input type="radio" id="extra" name="shi_type" value="extra_shipping" class="step-page__inputbutton">
-                <label for="extra" class="step-page__labelbutton">Extra shipping (48h)<span> 4,99€</span></label><br>
-              </div>
-              <div class="form-button">
-                <input type="radio" id="premium" name="shi_type" value="premium" class="step-page__inputbutton">
-                <label for="premium" class="step-page__labelbutton">Premium (24h)<span> 9,99€</span></label>
-              </div>
-              <br>
-            </div>
-            <div class="dates-text inactive">
-              <h3 class="step-page__h3">Your order will arrive:</h3>
-              <p class="step-page__p">Estimate delivery date:</p>
-              <p class="step-page__p">Between <span id="date_shipment"></span></p>
-            </div>
-            <div class="form-group">
-              <div class="form-button">
-                <input type="checkbox" id="gif-option" name="gif-option" class="step-page__checkbox">
-                <label for="gif-option" id="gif-option-label" class="step-page__labelcheckbox">Is it a gift?</label>
-              </div>
-              <div id="gift-container" class="gift-container inactive">
-                <div class="form-group">
-                  <label for="gift-title" class="step-page__label">Gift Title</label>
-                  <input type="text" id="gift-title" name="gift-title" class="step-page__input">
+            <div class="also-like__div">
+              <h4 class="also-like__h4">You may also like...</h4>
+              <div class="also-like-column__div">
+                <img
+                  src="./assets/images/bombom.jpg"
+                  alt="Bonbon Chocolat"
+                  class="selector-product__img"
+                />
+                <div class="also-like-txt__div">
+                  <p>BOMBOM</p>
+                  <p class="icon-plus">+</p>
                 </div>
-                <div class="form-group">
-                  <label for="gift-message" class="step-page__label">Gift Message</label>
-                  <textarea id="gift-message" name="gift-message" class="step-page__input" cols="30"
-                    rows="10"></textarea>
-                </div>
-                <label class="input-file-trigger" for="gift-image">Select an image</label>
-                <input type="file" id="gift-image" name="gift-image" class="input-file" accept="image/png, image/jpeg">
-                <p class="file-return"></p>
               </div>
             </div>
           </article>
-          <!-- Form step 4 -->
-          <article id="step-page4" class="step-page__article step-page-summary__section hidden">
-            <section class="summary-page-left__section">
-              <article>
-                <h4 class="correct-information__h4">Thank you for your order, <span id="username-summary">
-                    Username</span></h4>
-                <p class="correct-information__p">* Before you place your order, please take a moment to review your
-                  shipping information</p>
-              </article>
-              <article>
-                <table class="shipment__table">
-                  <thead>
-                    <tr>
-                      <th class="shipment-table__th">
-                        <img src="./assets/icons/checked-icon.png" class="shipment-details__icon"
-                          alt="Confirmation Icon">
-                        <h5 class="shipment-details__h5">SHIPPING</h5>
-                      </th>
-                    </tr>
-                  </thead>
+          <article class="product-page-column-2__article">
+            <h1 class="product-page-column-2__h2">Le Chocolat Blanc</h1>
+            <p class="product-price__p">
+              <span class="product-price__span" data-price="15,00">€</span>15,00
+            </p>
+            <p class="product-description__p">
+              Bar of homemade white chocolate infused with Madagascan vanilla
+              and topped off with a pinch of Maldon sea salt.
+            </p>
+            <div class="type-product__div">
+              <p>
+                <span id="type-product" class="type-product__span">Type:</span
+                >White
+              </p>
+              <ul id="type_product__ul" class="type_product__ul">
+                <li class="type-product__li white" data-product="white">
+                  <span></span>
+                </li>
+                <li class="type-product__li milk" data-product="milk">
+                  <span></span>
+                </li>
+                <li class="type-product__li dark" data-product="dark">
+                  <span></span>
+                </li>
+              </ul>
+            </div>
+            <div class="product-quantity-counter__div">
+              <p class="product-quantity-counter__p">Quantity:</p>
+              <button class="product-quantity-counter__btn" id="reduceQty">
+                -
+              </button>
+              <h2 class="product-amount" id="productQuantity">1</h2>
+              <button class="product-quantity-counter__btn" id="addQty">
+                +
+              </button>
+            </div>
+            <button type="button" class="product-buy__button">
+              ADD TO CART
+            </button>
+            <div class="product-info__div">
+              <h3>Product info</h3>
+              <p class="product-info__p">
+                This bar of homemade white chocolate is an ode to sweetness!
+                Very low sugar white chocolate containing 40% cocoa butter, 25%
+                sugar and 35% milk powder.
+              </p>
+              <p class="product-info__p">
+                It is infused with Madagascan vanilla and topped off with a
+                pinch of sea salt.
+              </p>
+              <p class="product-info__p">
+                Ingredients: Cocoa butter, cream milk powder, sugar, fresh
+                vanilla from Madagascar, salt, sunflower lecithin.
+              </p>
+            </div>
+          </article>
+        </section>
+        <section class="form-page__section">
+          <form action="submit" id="form">
+            <!-- Form step 1 -->
+            <article id="step-page1" class="step-page__article hidden">
+              <h1 class="step-page__h1">Profile</h1>
+              <hr />
+              <div class="form-group">
+                <label for="username" class="step-page__label"
+                  >Username <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email" class="step-page__label"
+                  >Email <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="password" class="step-page__label"
+                  >Password <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirm-password" class="step-page__label"
+                  >Confirm password
+                  <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  class="step-page__input"
+                />
+              </div>
+            </article>
+            <!-- Form step 2 -->
+            <article id="step-page2" class="step-page__article hidden">
+              <h1 class="step-page__h1">Address</h1>
+              <hr />
+              <div class="form-group">
+                <label for="first-name" class="step-page__label"
+                  >First Name <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="first-name"
+                  name="first-name"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="last-name" class="step-page__label"
+                  >Last Name <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="last-name"
+                  name="last-name"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="birthday" class="step-page__label"
+                  >Birthday <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="date"
+                  id="birthday"
+                  name="birthday"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="address1" class="step-page__label"
+                  >Address 1 <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="text"
+                  id="address1"
+                  name="address1"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="address2" class="step-page__label">Address 2</label>
+                <input
+                  type="text"
+                  id="address2"
+                  name="address2"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="postal-code" class="step-page__label"
+                  >Postal Code
+                  <span class="astheristic-required">*</span></label
+                >
+                <input
+                  type="number"
+                  id="postal-code"
+                  name="postal-code"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group">
+                <label for="country" class="step-page__label"
+                  >Country <span class="astheristic-required">*</span></label
+                >
+                <select
+                  id="country"
+                  name="country"
+                  class="step-page__select"
+                ></select>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="step-page__label"
+                  >Phone <span class="astheristic-required">*</span></label
+                >
+                <select
+                  id="prefix"
+                  name="prefix"
+                  class="step-page__select"
+                ></select>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="step-page__input"
+                />
+              </div>
+              <div class="form-group-checkbox">
+                <input
+                  type="checkbox"
+                  name="reg-address"
+                  id="reg-address"
+                  class="step-page__checkbox"
+                />
+                <label for="reg-address" id="red-address-label"
+                  >This is my regular address</label
+                >
+              </div>
+            </article>
+            <!-- Form step 3 -->
+            <article id="step-page3" class="step-page__article hidden">
+              <h1 class="step-page__h1">Shipping</h1>
+              <hr />
+              <h2 class="step-page__h2">
+                Shipping type <span class="astheristic-required">*</span>
+              </h2>
+              <div class="form-group">
+                <div class="form-button">
+                  <input
+                    type="radio"
+                    id="free"
+                    name="shi_type"
+                    value="free_shipment"
+                    class="step-page__inputbutton"
+                  />
+                  <label for="free" class="step-page__labelbutton"
+                    >Free shipment (72h) <span> (no extra cost)</span></label
+                  ><br />
+                </div>
+                <div class="form-button">
+                  <input
+                    type="radio"
+                    id="extra"
+                    name="shi_type"
+                    value="extra_shipping"
+                    class="step-page__inputbutton"
+                  />
+                  <label for="extra" class="step-page__labelbutton"
+                    >Extra shipping (48h)<span> 4,99€</span></label
+                  ><br />
+                </div>
+                <div class="form-button">
+                  <input
+                    type="radio"
+                    id="premium"
+                    name="shi_type"
+                    value="premium"
+                    class="step-page__inputbutton"
+                  />
+                  <label for="premium" class="step-page__labelbutton"
+                    >Premium (24h)<span> 9,99€</span></label
+                  >
+                </div>
+                <br />
+              </div>
+              <div class="dates-text inactive">
+                <h3 class="step-page__h3">Your order will arrive:</h3>
+                <p class="step-page__p">Estimate delivery date:</p>
+                <p class="step-page__p">
+                  Between <span id="date_shipment"></span>
+                </p>
+              </div>
+              <div class="form-group">
+                <div class="form-button">
+                  <input
+                    type="checkbox"
+                    id="gif-option"
+                    name="gif-option"
+                    class="step-page__checkbox"
+                  />
+                  <label
+                    for="gif-option"
+                    id="gif-option-label"
+                    class="step-page__labelcheckbox"
+                    >Is it a gift?</label
+                  >
+                </div>
+                <div id="gift-container" class="gift-container inactive">
+                  <div class="form-group">
+                    <label for="gift-title" class="step-page__label"
+                      >Gift Title</label
+                    >
+                    <input
+                      type="text"
+                      id="gift-title"
+                      name="gift-title"
+                      class="step-page__input"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="gift-message" class="step-page__label"
+                      >Gift Message</label
+                    >
+                    <textarea
+                      id="gift-message"
+                      name="gift-message"
+                      class="step-page__input"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+                  <label class="input-file-trigger" for="gift-image"
+                    >Select an image</label
+                  >
+                  <input
+                    type="file"
+                    id="gift-image"
+                    name="gift-image"
+                    class="input-file"
+                    accept="image/png, image/jpeg"
+                  />
+                  <p class="file-return"></p>
+                </div>
+              </div>
+            </article>
+            <!-- Form step 4 -->
+            <article
+              id="step-page4"
+              class="step-page__article step-page-summary__section hidden"
+            >
+              <section class="summary-page-left__section">
+                <article>
+                  <h4 class="correct-information__h4">
+                    Thank you for your order,
+                    <span id="username-summary"> Username</span>
+                  </h4>
+                  <p class="correct-information__p">
+                    * Before you place your order, please take a moment to
+                    review your shipping information
+                  </p>
+                </article>
+                <article>
+                  <table class="shipment__table">
+                    <thead>
+                      <tr>
+                        <th class="shipment-table__th">
+                          <img
+                            src="./assets/icons/checked-icon.png"
+                            class="shipment-details__icon"
+                            alt="Confirmation Icon"
+                          />
+                          <h5 class="shipment-details__h5">SHIPPING</h5>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="shipment-table__td">
+                          <p class="user-details__p">Hola</p>
+                          <p class="user-details__p">Que tal</p>
+                          <p class="user-details__p">hola</p>
+                          <p class="user-details__p">que tal</p>
+                          <h6 class="shipment-method__h6">Shipping Method:</h6>
+                          <p class="shipment-method__p"></p>
+                          <p class="shipment-method__p">
+                            Your order will arrive Between xxxx and xxxxx
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </article>
+                <article>
+                  <table class="shipment__table">
+                    <thead>
+                      <tr>
+                        <th class="shipment-table__th">
+                          <img
+                            src="./assets/icons/checked-icon.png"
+                            class="shipment-details__icon"
+                            alt="Confirmation Icon"
+                          />
+                          <h5 class="shipment-details__h5">
+                            REVIEW AND SUBMIT YOUR ORDER
+                          </h5>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="shipment-table__td">
+                          <input
+                            type="checkbox"
+                            id="final-accept"
+                            name="final-accept"
+                            class="step-page__checkbox"
+                          />
+                          <label
+                            for="final-accept"
+                            class="step-page__labelcheckbox"
+                            >I have read and accept the term and
+                            conditions</label
+                          >
+                          <p class="final-accept__p">
+                            By clicking the "Place Order", you confirm that you
+                            have read, understood, and accept our
+                            <a href="">Terms and Conditions</a> policy
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </article>
+              </section>
+              <section class="summary-page-right__section">
+                <table class="summary__table">
                   <tbody>
-                    <tr>
-                      <td class="shipment-table__td">
-                        <p class="user-details__p">Hola</p>
-                        <p class="user-details__p">Que tal</p>
-                        <p class="user-details__p">hola</p>
-                        <p class="user-details__p">que tal</p>
-                        <h6 class="shipment-method__h6">Shipping Method: </h6>
-                        <p class="shipment-method__p"></p>
-                        <p class="shipment-method__p">Your order will arrive Between xxxx and xxxxx</p>
+                    <tr class="summary-table__tr">
+                      <td class="summary-table__td">
+                        SUBTOTAL
+                        <div class="tooltip-item hidden">
+                          <img
+                            src="./assets/icons/question.png"
+                            alt="Tooltip"
+                          /><span class="tooltip-text"
+                            >I think you're rich enough to buy more
+                            things...</span
+                          >
+                        </div>
+                      </td>
+                      <td id="pricep-summary" class="summary-table__td2">
+                        10€
+                      </td>
+                    </tr>
+                    <tr class="summary-table__tr">
+                      <td id="typeship-summary" class="summary-table__td">
+                        Premium
+                      </td>
+                      <td id="prices-summary" class="summary-table__td2">5€</td>
+                    </tr>
+                    <tr class="summary-table__tr">
+                      <td class="summary-table__total">TOTAL</td>
+                      <td id="pricet-summary" class="summary-table__total2">
+                        15€
                       </td>
                     </tr>
                   </tbody>
                 </table>
-              </article>
-              <article>
-                <table class="shipment__table">
-                  <thead>
-                    <tr>
-                      <th class="shipment-table__th"><img src="./assets/icons/checked-icon.png"
-                          class="shipment-details__icon" alt="Confirmation Icon">
-                        <h5 class="shipment-details__h5">REVIEW AND SUBMIT YOUR ORDER</h5>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td class="shipment-table__td">
-                        <input type="checkbox" id="final-accept" name="final-accept" class="step-page__checkbox">
-                        <label for="final-accept" class="step-page__labelcheckbox">I have read and accept the term and
-                          conditions</label>
-                        <p class="final-accept__p">By clicking the "Place Order", you confirm that you have read,
-                          understood, and accept our <a href="">Terms and Conditions</a>
-                          policy</p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </article>
-            </section>
-            <section class="summary-page-right__section">
-              <table class="summary__table">
-                <tbody>
-                  <tr  class="summary-table__tr">
-                    <td class="summary-table__td">SUBTOTAL<div class="tooltip-item hidden"><img
-                          src="./assets/icons/question.png" alt="Tooltip"><span class="tooltip-text">I think you're rich
-                          enough to buy more
-                          things...</span>
-                      </div>
-                    </td>
-                    <td id="pricep-summary" class="summary-table__td2">10€</td>
-                  </tr>
-                  <tr class="summary-table__tr">
-                    <td id="typeship-summary" class="summary-table__td">Premium</td>
-                    <td id="prices-summary" class="summary-table__td2">5€</td>
-                  </tr>
-                  <tr class="summary-table__tr">
-                    <td class="summary-table__total">TOTAL</td>
-                    <td id="pricet-summary" class="summary-table__total2">15€</td>
-                  </tr>
-                </tbody>
-              </table>
-              <article class="product-buyed__article">
-                <h6 class="product-buyed__h6">Chocolate white</h6>
-                <img src="./assets/images/white-chocolate/chocolate_white_final.jpg" class="product-buyed__img" alt="Final product">
-                <button id="confirmation__button" class="confirmation__button">PLACER ORDER</button>
-                <p id="end-message" class="final-accept__p"></p>
-              </article>
-            </section>
-          </article>
-        </form>
-      </section>
-      <!-- Form buttons -->
-      <section class="footer-buttons__section hidden">
-        <button id="clear-form" class="footer-buttons__button">Clear Form</button>
-        <button id="next-step" class="footer-buttons__button">Next</button>
-      </section>
-    </main>
-  </div>
+                <article class="product-buyed__article">
+                  <h6 class="product-buyed__h6">Chocolate white</h6>
+                  <img
+                    src="./assets/images/white-chocolate/chocolate_white_final.jpg"
+                    class="product-buyed__img"
+                    alt="Final product"
+                  />
+                  <button
+                    id="confirmation__button"
+                    class="confirmation__button"
+                  >
+                    PLACER ORDER
+                  </button>
+                  <p id="end-message" class="final-accept__p"></p>
+                </article>
+              </section>
+            </article>
+          </form>
+        </section>
+        <!-- Form buttons -->
+        <section class="footer-buttons__section hidden">
+          <button id="clear-form" class="footer-buttons__button">
+            Clear Form
+          </button>
+          <button id="next-step" class="footer-buttons__button">Next</button>
+        </section>
+      </main>
+    </div>
 
-  <footer>
-    <section class="site-footer__section">
-      <section class="site-footer__columns">
-        <article class="site-footer__column">
-          <div class="site-footer__column-txt">
-            <h2 class="site-footer__column-txt__h2">ABOUT US</h2>
-            <a href="" class="site-footer__columnn-a">Store Locator</a>
-            <a href="" class="site-footer__columnn-a">Journal</a>
-            <a href="" class="site-footer__columnn-a">Contact</a>
-            <a href="" class="site-footer__columnn-a">Gift Card</a>
-          </div>
-        </article>
-        <article class="site-footer__column">
-          <div class="site-footer__column-txt">
-            <h2 class="site-footer__column-txt__h2">FAQ</h2>
-            <a href="" class="site-footer__columnn-a">Terms & Conditions</a>
-            <a href="" class="site-footer__columnn-a">Privacy & Cookies</a>
-            <a href="" class="site-footer__columnn-a">Returns & Exchanges</a>
-          </div>
-        </article>
-        <article class="site-footer__column">
-          <div class="site-footer__column-txt">
-            <h2 class="site-footer__column-txt__h2">SOCIAL</h2>
-            <div class="footer-media-icons__div">
-              <a href=""><i class="fa-brands fa-facebook footer-icons"></i></a>
-              <a href=""><i class="fa-brands fa-instagram footer-icons"></i></a>
-              <a href=""><i class="fa-brands fa-twitter footer-icons"></i></a>
+    <footer>
+      <section class="site-footer__section">
+        <section class="site-footer__columns">
+          <article class="site-footer__column">
+            <div class="site-footer__column-txt">
+              <h2 class="site-footer__column-txt__h2">ABOUT US</h2>
+              <a href="" class="site-footer__columnn-a">Store Locator</a>
+              <a href="" class="site-footer__columnn-a">Journal</a>
+              <a href="" class="site-footer__columnn-a">Contact</a>
+              <a href="" class="site-footer__columnn-a">Gift Card</a>
             </div>
+          </article>
+          <article class="site-footer__column">
+            <div class="site-footer__column-txt">
+              <h2 class="site-footer__column-txt__h2">FAQ</h2>
+              <a href="" class="site-footer__columnn-a">Terms & Conditions</a>
+              <a href="" class="site-footer__columnn-a">Privacy & Cookies</a>
+              <a href="" class="site-footer__columnn-a">Returns & Exchanges</a>
+            </div>
+          </article>
+          <article class="site-footer__column">
+            <div class="site-footer__column-txt">
+              <h2 class="site-footer__column-txt__h2">SOCIAL</h2>
+              <div class="footer-media-icons__div">
+                <a href=""
+                  ><i class="fa-brands fa-facebook footer-icons"></i
+                ></a>
+                <a href=""
+                  ><i class="fa-brands fa-instagram footer-icons"></i
+                ></a>
+                <a href=""><i class="fa-brands fa-twitter footer-icons"></i></a>
+              </div>
+            </div>
+          </article>
+          <article class="site-footer__column-form">
+            <div class="site-footer__column-txt">
+              <h2 class="site-footer__column-txt__h2">
+                SIGN UP FOR OUR NEWSLETTER
+              </h2>
+              <form id="nl_singup" action="#" class="site-footer__form">
+                <label for="ns_email_submit" class="hidden"></label>
+                <input
+                  id="ns_email_submit"
+                  name="ns_email_submit"
+                  class="ns_email_submit"
+                  type="email"
+                  placeholder="your@address.com"
+                />
+                <button class="ns_email_button" type="submit">SIGN UP</button>
+              </form>
+            </div>
+          </article>
+        </section>
+        <section class="site-footer__final">
+          <div class="footer-1__final">
+            <a href="" class="footer-1__a">Website by Alicia Cembranos</a>
+            <span class="footer-1__span">|</span>
+            <a href="" class="footer-1__a"
+              >© 2022 Le Chocolat. All rights reserved</a
+            >
           </div>
-        </article>
-        <article class="site-footer__column-form">
-          <div class="site-footer__column-txt">
-            <h2 class="site-footer__column-txt__h2">SIGN UP FOR OUR NEWSLETTER</h2>
-            <form id="nl_singup" action="#" class="site-footer__form">
-              <label for="ns_email_submit" class="hidden"></label>
-              <input id="ns_email_submit" name="ns_email_submit" class="ns_email_submit" type="email"
-                placeholder="your@address.com">
-              <button class="ns_email_button" type="submit">SIGN UP</button>
-            </form>
+          <div class="footer-2__final">
+            <i class="fa-brands fa-cc-paypal icon-footer"></i>
+            <i class="fa-brands fa-cc-visa icon-footer"></i>
+            <i class="fa-brands fa-cc-mastercard icon-footer"></i>
           </div>
-        </article>
+        </section>
       </section>
-      <section class="site-footer__final">
-        <div class="footer-1__final">
-          <a href="" class="footer-1__a">Website by Alicia Cembranos</a>
-          <span class="footer-1__span">|</span>
-          <a href="" class="footer-1__a">© 2022 Le Chocolat. All rights reserved</a>
-        </div>
-        <div class="footer-2__final">
-          <i class="fa-brands fa-cc-paypal icon-footer"></i>
-          <i class="fa-brands fa-cc-visa icon-footer"></i>
-          <i class="fa-brands fa-cc-mastercard icon-footer"></i>
-        </div>
-      </section>
-    </section>
-  </footer>
-</body>
-
+    </footer>
+  </body>
 </html>

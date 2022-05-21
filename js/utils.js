@@ -10,7 +10,7 @@ const data = [{
       info1: "This bar of homemade white chocolate is an ode to sweetness! Very low sugar white chocolate containing 40% cocoa butter, 25% sugar and 35% milk powder.. It is infused with Madagascan vanilla and topped off with a pinch of sea salt.",
       info2: "It is infused with Madagascan vanilla and topped off with a pinch of sea salt.",
       info3: "Ingredients: Cocoa butter, cream milk powder, sugar, fresh vanilla from Madagascar, salt, sunflower lecithin.",
-    }, 
+    },
     images: {
       image1: "./assets/images/white-chocolate/chocolate-white-1.jpg",
       image2: "./assets/images/white-chocolate/chocolate-white-2.jpg",
@@ -63,12 +63,12 @@ const expressions = {
   username: /^[a-zA-Z0-9.-_]{5,20}$/, //Words, numbers, hyphen and underscore, no spaces, min5, max20
   email: /^\w+([\.-\_]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, //mail definition max50
   password: /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/, //One number, one UPC, one LOC, one special character, min8, max20
-  "first-name": /^[a-zA-Z0-9\s.,'-º]{0,20}$/, //letters, accent  marks letters, spaces, max20
-  "last-name": /^[a-zA-Z0-9\s.,'-º]{0,20}$/, //letters, accent  marks letters, spaces, max20
+  "first-name": /^[a-zA-Z0-9\s]{0,20}$/, //letters, accent  marks letters, spaces, max20
+  "last-name": /^[a-zA-Z0-9\s]{0,20}$/, //letters, accent  marks letters, spaces, max20
   address1: /^[0-9a-zA-Z\s\.,-º]{0,50}$/, //letters, numbers, dot, dash, comma, spaces, max50
   address2: /^[0-9a-zA-Z\s\.,-º]{0,50}$/, //letters, numbers, dot, dash, comma, spaces, max50
   "postal-code": /^[0-9]{1,5}$/, //numbers, max5
-  phone: /^[0-9]{1,9}$/, // numbers, max9
+  phone: /^[0-9]{9}$/, // numbers, max9
 };
 
 //Countries and prefix
@@ -81,6 +81,7 @@ const countries = [
   "Greece",
   "Isarel",
 ];
+
 const prefix = [{
     co: "Select Prefix",
     pre: "",
@@ -144,7 +145,7 @@ const requiredFields = [
 
 /*Data user object*/
 let user = {
-  product:"",
+  product: "",
   username: "",
   email: "",
   password: "",
@@ -161,12 +162,42 @@ let user = {
   "shi-type": "",
   "gif-option": false,
   "gift-title": "",
-  "gift-message": "",
-  "gift-image": "",
 };
+
+const shipmentTypes = [
+  {
+    type:'free',
+    name: 'Free Shipment',
+    time: 72,
+    price: 0
+  },
+  {
+    type:'extra',
+    name: 'Extra Shipmentt',
+    time: 48,
+    price: 4.99
+  },
+  {
+    type:'premium',
+    name: 'Premium Shipment',
+    time: 24,
+    price: 9.99
+  }];
 
 const capitalizeString = (word) => {
   return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
+const toogleDisplay = (element) => {
+  element.classList.toggle("hidden");
+}
+
+const toggleBoolen = (element) => {
+  if (element){
+    return false;
+  }else{
+    return true;
+  }
 }
 
 export {
@@ -175,5 +206,10 @@ export {
   requiredFields,
   user,
   data,
-  capitalizeString
+  capitalizeString,
+  countries,
+  prefix,
+  shipmentTypes,
+  toogleDisplay,
+  toggleBoolen
 };

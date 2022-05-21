@@ -58,18 +58,18 @@
   <div class="content-area__div">
     <main class="site__main" id="main">
       <!-- Progress bar -->
-      <section class="header-main hidden">
+      <section class="header-main hidden" id="progressBar">
         <ul class="progress-bar">
-          <li class="active">
+          <li class="progress-bar__li-filled active">
             <img class="icons-bar" src="assets/corporative/user.png" alt="User">
           </li>
-          <li>
+          <li class="progress-bar__li-filled">
             <img class="icons-bar" src="assets/corporative/location.png" alt="Location">
           </li>
-          <li>
+          <li class="progress-bar__li-filled">
             <img class="icons-bar" src="assets/corporative/shipping.png" alt="Shipping">
           </li>
-          <li>
+          <li class="progress-bar__li-filled">
             <img class="icons-bar" src="assets/corporative/ok.png" alt="Confirmed">
           </li>
         </ul>
@@ -94,7 +94,7 @@
           </div>
         </article>
         <article class="product-page-column-2__article">
-          <h1 class="product-page-column-2__h2" id="nameProduct">Le Chocolat Blanc</h1>
+          <h1 class="product-page-column-2__h2" id="nameProduct">Le chocolate blanc</h1>
           <p class="product-price__p" data-price="15,00">
             <span class="product-price__span">€</span>15,00
           </p>
@@ -107,13 +107,13 @@
               <span class="type-product__span">Type:</span>White
             </p>
             <ul class="type_product__ul" id="products">
-              <li class="type-product__li white" data-product=1>
+              <li class="type-product__li white" data-product="1" data-select>
                 <span></span>
               </li>
-              <li class="type-product__li milk" data-product=2>
+              <li class="type-product__li milk" data-product="2">
                 <span></span>
               </li>
-              <li class="type-product__li dark" data-product=3>
+              <li class="type-product__li dark" data-product="3">
                 <span></span>
               </li>
             </ul>
@@ -128,7 +128,7 @@
               +
             </button>
           </div>
-          <button class="product-buy__button" type="button">
+          <button class="product-buy__button" id="addtoCartButton" type="button">
             ADD TO CART
           </button>
           <div class="product-info__div">
@@ -223,27 +223,27 @@
             <h2 class="step-page__h2">
               Shipping type <span class="astheristic-required">*</span>
             </h2>
-            <div class="form-group">
+            <div class="form-group" id="shipmentContainer">
               <div class="form-button">
-                <input class="step-page__inputbutton" id="free" name="shi_type" type="radio" value="free_shipment">
+                <input class="step-page__inputbutton" id="free" name="shi-type" type="radio" value="free">
                 <label class="step-page__labelbutton" for="free">Free shipment (72h) <span> (no extra
                     cost)</span></label><br>
               </div>
               <div class="form-button">
-                <input class="step-page__inputbutton" id="extra" name="shi_type" type="radio" value="extra_shipping">
+                <input class="step-page__inputbutton" id="extra" name="shi-type" type="radio" value="extra">
                 <label class="step-page__labelbutton" for="extra">Extra shipping (48h)<span> 4,99€</span></label><br>
               </div>
               <div class="form-button">
-                <input class="step-page__inputbutton" id="premium" name="shi_type" type="radio" value="premium">
+                <input class="step-page__inputbutton" id="premium" name="shi-type" type="radio" value="premium">
                 <label class="step-page__labelbutton" for="premium">Premium (24h)<span> 9,99€</span></label>
               </div>
               <br>
             </div>
-            <div class="dates-text inactive">
+            <div class="dates-text hidden">
               <h3 class="step-page__h3">Your order will arrive:</h3>
               <p class="step-page__p">Estimate delivery date:</p>
               <p class="step-page__p">
-                Between <span id="date_shipment"></span>
+                Between <span class="dates-text_delivery" id="date_shipment"></span>
               </p>
             </div>
             <div class="form-group">
@@ -251,7 +251,7 @@
                 <input class="step-page__checkbox" id="gif-option" name="gif-option" type="checkbox">
                 <label class="step-page__labelcheckbox" id="gif-option-label" for="gif-option">Is it a gift?</label>
               </div>
-              <div class="gift-container inactive" id="gift-container">
+              <div class="gift-container hidden" id="gift-container">
                 <div class="form-group">
                   <label class="step-page__label" for="gift-title">Gift Title</label>
                   <input class="step-page__input" id="gift-title" name="gift-title" type="text">
@@ -378,11 +378,12 @@
         </form>
       </section>
       <!-- Form buttons -->
-      <section class="footer-buttons__section hidden">
+      <section class="footer-buttons__section hidden" id="formButtons">
+        <button class="footer-buttons__button" id="previousStep">Previuos</button>
         <button class="footer-buttons__button" id="clear-form">
           Clear Form
         </button>
-        <button class="footer-buttons__button" id="next-step">Next</button>
+        <button class="footer-buttons__button" id="nextStep">Next</button>
       </section>
     </main>
   </div>

@@ -95,6 +95,18 @@
     color: rgba(220, 14, 14, 0.9);
 }
 
+.dates-text {
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.dates-text_delivery{
+    font-weight: 700;
+    color: rgba(220, 14, 14, 0.9);
+    font-size: 1rem;
+}
+
 .gift-container {
     display: flex;
     flex-direction: column;

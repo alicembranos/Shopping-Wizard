@@ -15,6 +15,7 @@
 .carousel__img {
     height: 35%;
     width: 100%;
+    opacity: 0.85;
 }
 
 .also-like__div {

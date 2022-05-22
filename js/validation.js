@@ -15,7 +15,7 @@ import {
   confirmationOrderButton,
 } from "./main.js";
 
-//Variables declaration
+/* GENERAL VARIABLES */
 const form = document.getElementById("form");
 const inputsToValidate = form.querySelectorAll(
   "input:not([type='checkbox']):not([type='radio'])"

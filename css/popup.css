@@ -1,0 +1,36 @@
+.popup {
+    position: fixed;
+    top: 200px;
+    right: 10%;
+    width: 300px;
+    padding: 0.5rem;
+    z-index: 1;
+    border: 1px solid var(--special-color);
+    background-color: var(--quaternary-color);
+}
+
+.content {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--special-color);
+    word-wrap: break-word;
+}
+
+.popup__button {
+    height: 1rem;
+    width: 1rem;
+    border-radius: 50%;
+    border: none;
+}
+
+.popup__message {
+    margin: 0;
+    padding: 0.3rem 0.5rem;
+    text-align: center;
+}

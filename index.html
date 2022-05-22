@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <header class="sticky hidden">
+  <header class="sticky">
     <section class="infobar__section">
       <article class="infobar-txt__article">
         <i class="showtext">Free shipping within Europe!</i>
@@ -47,13 +47,12 @@
       </nav>
     </section>
   </header>
-  <!-- <div class="popup" id=popup1>
-    <div class="overlay"></div>
+  <div class="popup hidden" id="popup">
     <div class="content">
-      <button>&times;</button>
-      <p id="message"></p>
+      <button class ="popup__button" >&times;</button>
+      <p class="popup__message" id="message">fhscxvccdgdbfd dfvfdbfdgbffbfd bdfvbdfbdbdjfhskf adfskhfksdh</p>
     </div>
-  </div> -->
+  </div>
 
   <div class="content-area__div">
     <main class="site__main" id="main">
@@ -78,9 +77,12 @@
       <section class="product-page__section">
         <article class="product-page-column-1__article">
           <div class="carousel-img__div">
-            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-1.jpg" alt="White chocolate 1">
-            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-2.jpg" alt="White chocolate 2">
-            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-3.jpg" alt="White chocolate 3">
+            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-1.jpg"
+              alt="White chocolate 1">
+            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-2.jpg"
+              alt="White chocolate 2">
+            <img class="carousel__img" src="./assets/images/white-chocolate/chocolate-white-3.jpg"
+              alt="White chocolate 3">
           </div>
           <div class="also-like__div">
             <h4 class="also-like__h4">You may also like...</h4>
@@ -156,7 +158,8 @@
             <h1 class="step-page__h1">Profile</h1>
             <hr>
             <div class="form-group">
-              <label class="step-page__label" for="username">Username <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="username">Username <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="username" name="username" type="text">
             </div>
             <div class="form-group">
@@ -164,7 +167,8 @@
               <input class="step-page__input" id="email" name="email" type="email">
             </div>
             <div class="form-group">
-              <label class="step-page__label" for="password">Password <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="password">Password <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="password" name="password" type="password">
             </div>
             <div class="form-group">
@@ -178,19 +182,23 @@
             <h1 class="step-page__h1">Address</h1>
             <hr>
             <div class="form-group">
-              <label class="step-page__label" for="first-name">First Name <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="first-name">First Name <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="first-name" name="first-name" type="text">
             </div>
             <div class="form-group">
-              <label class="step-page__label" for="last-name">Last Name <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="last-name">Last Name <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="last-name" name="last-name" type="text">
             </div>
             <div class="form-group">
-              <label class="step-page__label" for="birthday">Birthday <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="birthday">Birthday <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="birthday" name="birthday" type="date">
             </div>
             <div class="form-group">
-              <label class="step-page__label" for="address1">Address 1 <span class="astheristic-required">*</span></label>
+              <label class="step-page__label" for="address1">Address 1 <span
+                  class="astheristic-required">*</span></label>
               <input class="step-page__input" id="address1" name="address1" type="text">
             </div>
             <div class="form-group">
@@ -258,7 +266,8 @@
                 </div>
                 <div class="form-group">
                   <label class="step-page__label" for="gift-message">Gift Message</label>
-                  <textarea class="step-page__input" id="gift-message" name="gift-message" cols="30" rows="10"></textarea>
+                  <textarea class="step-page__input" id="gift-message" name="gift-message" cols="30"
+                    rows="10"></textarea>
                 </div>
                 <label class="input-file-trigger" for="gift-image">Select an image</label>
                 <input class="input-file" id="gift-image" name="gift-image" type="file" accept="image/png, image/jpeg">
@@ -284,7 +293,8 @@
                   <thead>
                     <tr>
                       <th class="shipment-table__th">
-                        <img class="shipment-details__icon" src="./assets/icons/checked-icon.png" alt="Confirmation Icon">
+                        <img class="shipment-details__icon" src="./assets/icons/checked-icon.png"
+                          alt="Confirmation Icon">
                         <h5 class="shipment-details__h5">SHIPPING</h5>
                       </th>
                     </tr>
@@ -309,7 +319,8 @@
                   <thead>
                     <tr>
                       <th class="shipment-table__th">
-                        <img class="shipment-details__icon" src="./assets/icons/checked-icon.png" alt="Confirmation Icon">
+                        <img class="shipment-details__icon" src="./assets/icons/checked-icon.png"
+                          alt="Confirmation Icon">
                         <h5 class="shipment-details__h5">
                           REVIEW AND SUBMIT YOUR ORDER
                         </h5>
@@ -354,7 +365,8 @@
               </table>
               <article class="product-buyed__article">
                 <h6 class="product-buyed__h6" id="orderProduct"></h6>
-                <img class="product-buyed__img" id="orderImageProduct" src="./assets/images/white-chocolate/chocolate_white_final.jpg" alt="Final product">
+                <img class="product-buyed__img" id="orderImageProduct"
+                  src="./assets/images/white-chocolate/chocolate_white_final.jpg" alt="Final product">
                 <button class="confirmation__button" id="confirmation__button" type="button">
                   PLACER ORDER
                 </button>
@@ -365,7 +377,8 @@
               </article>
             </section>
           </article>
-          <p class="thankyou__p hidden" id="thankYouSummary">Thanks for your purchase, your order has been succesfully processed.</p>
+          <p class="thankyou__p hidden" id="thankYouSummary">Thanks for your purchase, your order has been succesfully
+            processed.</p>
         </form>
       </section>
       <!-- Form buttons -->
@@ -415,7 +428,8 @@
             </h2>
             <form class="site-footer__form" id="nl_singup" action="#">
               <label class="hidden" for="ns_email_submit"></label>
-              <input class="ns_email_submit" id="ns_email_submit" name="ns_email_submit" type="email" placeholder="your@address.com">
+              <input class="ns_email_submit" id="ns_email_submit" name="ns_email_submit" type="email"
+                placeholder="your@address.com">
               <button class="ns_email_button" type="submit">SIGN UP</button>
             </form>
           </div>

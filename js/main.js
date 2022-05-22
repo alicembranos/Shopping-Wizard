@@ -23,7 +23,14 @@ import {
     selectRegularAddress,
     resetFormInputs
 } from "./formfunctions.js";
-import { reset } from "./utils.js";
+import {
+    reset
+} from "./utils.js";
+import {
+    initiateOrder,
+    interval,
+    timeout
+} from "./intervalfunction.js"
 
 /* GENERAL VARIABLES */
 const inputs = form.querySelectorAll("input, select");
@@ -101,6 +108,7 @@ fileInput.addEventListener("change", (e) => {
 
 //initiate purchase order process
 addtoCartButton.addEventListener("click", (e) => {
+    initiateOrder();
     navigateStepsForm(counter, e);
 });
 
@@ -116,7 +124,11 @@ nextStepButton.addEventListener("click", (e) => {
 clearForm.addEventListener("click", resetFormInputs);
 
 //final order acceptation
-confirmationOrderButton.addEventListener("click", finalOrderAccept);
+confirmationOrderButton.addEventListener("click", () => {
+    clearInterval(interval);
+    clearTimeout(timeout);
+    finalOrderAccept();
+});
 
 //come back to start process purchase order
 backHomeButton.addEventListener("click", reset);

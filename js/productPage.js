@@ -3,6 +3,7 @@ import {
     capitalizeString
 } from "./utils.js";
 
+/* GENERAL VARIABLES */
 const productQuantity = document.getElementById("productQuantity");
 
 //Update product details in product page

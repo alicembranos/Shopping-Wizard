@@ -3,20 +3,26 @@ import {
   expressions,
   requiredFields,
   user,
+  toogleDisplay,
 } from "./utils.js";
 import {
   counter,
   navigateStepsForm,
   updateSummaryPage
 } from "./formfunctions.js";
+import {
+  backHomeButton,
+  confirmationOrderButton,
+} from "./main.js";
 
+//Variables declaration
 const form = document.getElementById("form");
 const inputsToValidate = form.querySelectorAll(
   "input:not([type='checkbox']):not([type='radio'])"
 );
 const finalAcceptCheckbox = document.getElementById("final-accept");
 
-//Set required fields
+//set required fields
 const setRequiredFields = (inputs) => {
   Array.from(inputs).map((input) => {
     if (requiredFields.includes(input.name)) {
@@ -47,13 +53,20 @@ const nextPageValidation = (sectionParent, e) => {
 
 };
 
-//validation final order acceptation
+//validation final order submit
 const finalOrderAccept = () => {
-  if(!finalAcceptCheckbox.checked){
-    
-  }else{
 
+  const thanksSummarySentence = document.getElementById("thankYouSummary");
+  if(!finalAcceptCheckbox.checked){
+    finalAcceptCheckbox.dataset.required = true;
+    thanksSummarySentence.textContent ="Please, accept the conditions to submit the purchase order."
+  }else{
+    thanksSummarySentence.textContent = "Thanks for your purchase, your order has been succesfully processed!";
+    toogleDisplay(confirmationOrderButton);
+    toogleDisplay(backHomeButton);
   }
+  
+  if (thanksSummarySentence.classList.contains("hidden")) toogleDisplay(thanksSummarySentence);
 }
 
 //validation required fields
@@ -234,4 +247,5 @@ export {
   validation,
   setRequiredFields,
   nextPageValidation,
+  finalOrderAccept
 };

@@ -200,6 +200,10 @@ const toggleBoolen = (element) => {
   }
 }
 
+const reset = () => {
+  location.reload(true); //refresh browser
+}
+
 export {
   messagesElements,
   expressions,
@@ -211,5 +215,6 @@ export {
   prefix,
   shipmentTypes,
   toogleDisplay,
-  toggleBoolen
+  toggleBoolen,
+  reset
 };

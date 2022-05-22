@@ -101,7 +101,7 @@
     font-style: italic;
 }
 
-.dates-text_delivery{
+.dates-text_delivery {
     font-weight: 700;
     color: rgba(220, 14, 14, 0.9);
     font-size: 1rem;
@@ -263,7 +263,8 @@
     font-size: 0.8rem;
 }
 
-.summary-table__td2, .summary-table__total2 {
+.summary-table__td2,
+.summary-table__total2 {
     text-align: end;
 }
 
@@ -286,12 +287,13 @@
     height: 100%;
 }
 
-.product-buyed__img{
+.product-buyed__img {
     height: 300px;
     width: 225px;
 }
 
-.confirmation__button {
+.confirmation__button,
+.backHome__button {
     margin: 1.5rem 0;
     padding: 0.5rem 1.2rem;
     border: 1px solid var(--primary-color);
@@ -301,12 +303,39 @@
     font-size: 0.8rem;
 }
 
-.confirmation__button:hover{
+.confirmation__button:hover,
+.backHome__button:hover {
     cursor: pointer;
     color: white;
     background-color: var(--primary-color);
 }
 
-input:focus{
+.backHome__button {
+    border: 1px solid var(--special-color);
+    color: var(--special-color);
+}
+
+.backHome__button:hover {
+    border: 1px solid var(--special-color);
+    background-color: var(--special-color);
+}
+
+input:focus {
     border: 2px solid var(--secundary-color);
+}
+
+.thankyou__p {
+    text-align: center;
+    color: rgb(158, 34, 34);
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+.input-invalid,
+.input-required,
+.confirmation-invalid {
+    padding: 0;
+    color: red;
+    font-size: 0.8rem;
+    font-style: italic;
 }

@@ -5,17 +5,18 @@ import {
     shipmentTypes,
     toogleDisplay,
     toggleBoolen,
-    data
+    data,
+    requiredFields
 }
 from "./utils.js"
-
-import {confirmationOrderButton} from "./main.js";
 
 /* GENERAL VARIABLES */
 const selectPrefix = document.getElementById("prefix");
 const stepPages = document.querySelectorAll('.step-page__article');
 const progressBar = document.getElementById("progressBar");
 const iconsStatusBar = document.querySelectorAll('.progress-bar__li-filled');
+const divDates = document.querySelector(".dates-text");
+const giftContainer = document.getElementById("gift-container");
 var counter = 0; //Counter to activate and desactivate form steps
 
 //fill country select element
@@ -69,7 +70,6 @@ function shipmentMethod(e) {
     })
 
     const dateShipment = document.getElementById("date_shipment");
-    const divDates = document.querySelector(".dates-text");
     const shipmentType = shipmentTypes.find(shipType => {
         return shipType.type == e.target.value
     })
@@ -118,12 +118,40 @@ const selectionGift = (e) => {
     user[`${e.target.name}`] = toggleBoolen(user[`${e.target.name}`]);
 }
 
+const resetFormInputs = () => {
+    const stepFormContainer = document.querySelector(".step-page__article:not(.hidden)");
+    const inputsFields = stepFormContainer.querySelectorAll("input, select, textarea");
+    console.log(inputsFields);
+    Array.from(inputsFields).map(input => {
+        if (input.localName == "select") {
+            input.selectedIndex = 0;
+            input.parentElement.dataset.required = true;
+            input.parentElement.removeAttribute("data-invalid");
+        } else if (input.type == "radio") {
+            input.checked = false;
+            divDates.classList.add("hidden");
+        } else if (input.type == "checkbox") {
+            console.log(input.checked);
+            console.log(input);
+            input.checked = false;
+            if (input.id == "gif-option") {
+                toogleDisplay(giftContainer);
+            }
+        } else {
+            input.value = "";
+            if(requiredFields[`${input.name}`]) input.parentElement.dataset.required = true;
+            input.parentElement.removeAttribute("data-invalid");
+        }
+    });
+
+};
+
+//navigate between form step pages
 const navigateStepsForm = (i, e) => {
 
     const formButtons = document.getElementById("formButtons");
     const thankYouSummary = document.getElementById("thankYouSummary");
 
-    console.log('counter ' + counter);
     switch (i) {
         case 0:
             //save product and move to step form 1
@@ -155,14 +183,6 @@ const navigateStepsForm = (i, e) => {
             toogleDisplay(stepPages[i - 1]);
             toogleDisplay(stepPages[i]);
             toogleDisplay(formButtons);
-            counter++;
-            break;
-        case 4:
-            //move to step thankyou page
-            toogleDisplay(progressBar);
-            toogleDisplay(thankYouSummary);
-            toogleDisplay(confirmationOrderButton);
-            counter = -1;
             break;
         default:
             break;
@@ -171,7 +191,7 @@ const navigateStepsForm = (i, e) => {
 
 //update values in summary page order
 const updateSummaryPage = () => {
-    console.log('entra');
+
     const summaryUser = document.getElementById("username-summary");
     const summaryName = document.getElementById("fullName");
     const summaryAddress = document.getElementById("finalAddress");
@@ -207,7 +227,7 @@ const updateSummaryPage = () => {
     orderPriceProduct.textContent = orderPrice + "€";
     orderShipPrice.textContent = priceShipment + "€";
     const totalOrderPrice = parseFloat(orderPrice.replace(/,/g, ".")) + parseFloat(priceShipment);
-    orderSummaryPrice.textContent = totalOrderPrice + "€";
+    orderSummaryPrice.textContent = totalOrderPrice.toString().substring(0, 5) + "€";
     orderNameShip.textContent = shipmentTypes.find(shipType => {
         return (shipType.type == user["shi-type"])
     }).name;
@@ -233,5 +253,6 @@ export {
     counter,
     navigateStepsForm,
     selectRegularAddress,
-    updateSummaryPage
+    updateSummaryPage,
+    resetFormInputs
 };

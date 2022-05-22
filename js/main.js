@@ -2,7 +2,8 @@ import {
     inputsToValidate,
     validation,
     setRequiredFields,
-    nextPageValidation
+    nextPageValidation,
+    finalOrderAccept
 } from "./validation.js";
 import {
     updateProduct,
@@ -20,7 +21,9 @@ import {
     navigateStepsForm,
     counter,
     selectRegularAddress,
+    resetFormInputs
 } from "./formfunctions.js";
+import { reset } from "./utils.js";
 
 /* GENERAL VARIABLES */
 const inputs = form.querySelectorAll("input, select");
@@ -35,10 +38,11 @@ const giftCheckbox = document.getElementById("gif-option");
 const fileInput = document.querySelector(".input-file");
 const buttonFileInput = document.querySelector(".input-file-trigger");
 const fileInfo = document.querySelector(".file-return");
-const previousStepButton = document.getElementById("previousStep");
 const nextStepButton = document.getElementById("nextStep");
 const addtoCartButton = document.getElementById("addtoCartButton");
 const confirmationOrderButton = document.getElementById("confirmation__button");
+const backHomeButton = document.getElementById("backHome__button");
+const clearFormButton = document.getElementById("clearForm");
 
 //Product picker functionality
 Array.from(listProducts).map((product) => {
@@ -107,10 +111,17 @@ nextStepButton.addEventListener("click", (e) => {
     nextPageValidation(stepFormContainer, e);
 });
 
-confirmationOrderButton.addEventListener("click", () => {
 
-})
+//clear form input fiels
+clearForm.addEventListener("click", resetFormInputs);
+
+//final order acceptation
+confirmationOrderButton.addEventListener("click", finalOrderAccept);
+
+//come back to start process purchase order
+backHomeButton.addEventListener("click", reset);
 
 export {
-    confirmationOrderButton
+    confirmationOrderButton,
+    backHomeButton
 }

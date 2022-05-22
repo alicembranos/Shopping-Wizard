@@ -14,6 +14,7 @@ const form = document.getElementById("form");
 const inputsToValidate = form.querySelectorAll(
   "input:not([type='checkbox']):not([type='radio'])"
 );
+const finalAcceptCheckbox = document.getElementById("final-accept");
 
 //Set required fields
 const setRequiredFields = (inputs) => {
@@ -26,7 +27,6 @@ const setRequiredFields = (inputs) => {
 
 //control step to next page form
 const nextPageValidation = (sectionParent, e) => {
-  console.log('section parent id ' + sectionParent.id);
   if (sectionParent.id == "step-page3") { //control if step 3 form, validation is different from the others
     validateShipmentSelect(e);
   } else {
@@ -47,7 +47,16 @@ const nextPageValidation = (sectionParent, e) => {
 
 };
 
-//Validation required fields
+//validation final order acceptation
+const finalOrderAccept = () => {
+  if(!finalAcceptCheckbox.checked){
+    
+  }else{
+
+  }
+}
+
+//validation required fields
 const validationRequired = (sectionParent) => {
   const fieldsRequired = sectionParent.querySelectorAll(
     "[data-required='true']"

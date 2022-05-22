@@ -9,6 +9,8 @@ import {
 }
 from "./utils.js"
 
+import {confirmationOrderButton} from "./main.js";
+
 /* GENERAL VARIABLES */
 const selectPrefix = document.getElementById("prefix");
 const stepPages = document.querySelectorAll('.step-page__article');
@@ -119,6 +121,8 @@ const selectionGift = (e) => {
 const navigateStepsForm = (i, e) => {
 
     const formButtons = document.getElementById("formButtons");
+    const thankYouSummary = document.getElementById("thankYouSummary");
+
     console.log('counter ' + counter);
     switch (i) {
         case 0:
@@ -150,12 +154,16 @@ const navigateStepsForm = (i, e) => {
             iconsStatusBar[i].classList.add("active");
             toogleDisplay(stepPages[i - 1]);
             toogleDisplay(stepPages[i]);
+            toogleDisplay(formButtons);
             counter++;
             break;
         case 4:
             //move to step thankyou page
+            toogleDisplay(progressBar);
+            toogleDisplay(thankYouSummary);
+            toogleDisplay(confirmationOrderButton);
+            counter = -1;
             break;
-
         default:
             break;
     }
@@ -184,45 +192,34 @@ const updateSummaryPage = () => {
     summaryAddress.textContent = `${user.address1}`;
     summaryPhone.textContent = `${user.prefix} ${user.phone}`;
     summaryCountry.textContent = `${user["postal-code"]} ${user.country}`;
-    summaryShipType.textContent = shipmentTypes.map(shipType => {
-        if (shipType.type == user["shi-type"]) {
-            return shipType.name;
-        }
-    });
-    summaryDeliveryDates.textContent = dateBetween(shipmentTypes.map(shipType => {
-        if (shipType.type == user["shi-type"]) {
-            return shipType.time;
-        }
-    }));
+    summaryShipType.textContent = shipmentTypes.find(shipType => {
+        return (shipType.type == user["shi-type"])
+    }).name;
+    summaryDeliveryDates.textContent = dateBetween(shipmentTypes.find(shipType => {
+        return (shipType.type == user["shi-type"])
+    }).time);
 
     //update price product breakdown
     const orderPrice = document.querySelector("[data-price]").childNodes[2].textContent;
-    const priceShipment = shipmentTypes.map(shipType => {
-        if (shipType.type == user["shi-type"]) {
-            return shipType.price;
-        }
-    });
+    const priceShipment = shipmentTypes.find(shipType => {
+        return (shipType.type == user["shi-type"])
+    }).price;
     orderPriceProduct.textContent = orderPrice + "€";
     orderShipPrice.textContent = priceShipment + "€";
-    const totalOrderPrice = parseFloat(orderPrice.replace(/,/g, ".")) + priceShipment;
+    const totalOrderPrice = parseFloat(orderPrice.replace(/,/g, ".")) + parseFloat(priceShipment);
     orderSummaryPrice.textContent = totalOrderPrice + "€";
-    orderNameShip.textContent = shipmentTypes.map(shipType => {
-        if (shipType.type == user["shi-type"]) {
-            return shipType.name;
-        }
-    });
+    orderNameShip.textContent = shipmentTypes.find(shipType => {
+        return (shipType.type == user["shi-type"])
+    }).name;
 
     //update summary product
-    summaryOrderProduct.textContent = data.map(product => {
-        if (product.id == user.product) {
-            return product.name;
-        }
-    });
-    summaryImageProduct.src = data.map(product => {
-        if (product.id == user.product) {
-            return product.finalimage;
-        }
-    });
+    summaryOrderProduct.textContent = data.find(product => {
+        return (product.id == user.product)
+    }).name;
+
+    summaryImageProduct.src = data.find(product => {
+        return (product.id == user.product)
+    }).finalimage;
 }
 
 export {

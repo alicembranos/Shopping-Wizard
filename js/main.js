@@ -19,7 +19,7 @@ import {
     selectionGift,
     navigateStepsForm,
     counter,
-    selectRegularAddress
+    selectRegularAddress,
 } from "./formfunctions.js";
 
 /* GENERAL VARIABLES */
@@ -38,6 +38,7 @@ const fileInfo = document.querySelector(".file-return");
 const previousStepButton = document.getElementById("previousStep");
 const nextStepButton = document.getElementById("nextStep");
 const addtoCartButton = document.getElementById("addtoCartButton");
+const confirmationOrderButton = document.getElementById("confirmation__button");
 
 //Product picker functionality
 Array.from(listProducts).map((product) => {
@@ -86,7 +87,7 @@ buttonFileInput.addEventListener("keyDown", (e) => {
         fileInput.focus();
     }
 });
-buttonFileInput.addEventListener("click", (e) => {
+buttonFileInput.addEventListener("click", () => {
     fileInput.focus();
     return false;
 });
@@ -103,7 +104,13 @@ addtoCartButton.addEventListener("click", (e) => {
 //Navigate between form pages
 nextStepButton.addEventListener("click", (e) => {
     const stepFormContainer = document.querySelector(".step-page__article:not(.hidden)");
-    console.log(stepFormContainer);
     nextPageValidation(stepFormContainer, e);
 });
 
+confirmationOrderButton.addEventListener("click", () => {
+
+})
+
+export {
+    confirmationOrderButton
+}

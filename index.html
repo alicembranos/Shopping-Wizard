@@ -267,12 +267,12 @@
             </div>
           </article>
           <!-- Form step 4 -->
-          <article class="step-page__article step-page-summary__section hidden" id="step-page4">
+          <article class="step-page__article hidden" id="step-page4">
             <section class="summary-page-left__section">
               <article>
                 <h4 class="correct-information__h4">
                   Thank you for your order,
-                  <span id="username-summary"> Username</span>
+                  <span id="username-summary"></span>
                 </h4>
                 <p class="correct-information__p">
                   * Before you place your order, please take a moment to
@@ -292,15 +292,13 @@
                   <tbody>
                     <tr>
                       <td class="shipment-table__td">
-                        <p class="user-details__p">Hola</p>
-                        <p class="user-details__p">Que tal</p>
-                        <p class="user-details__p">hola</p>
-                        <p class="user-details__p">que tal</p>
+                        <p class="user-details__p" id="fullName"></p>
+                        <p class="user-details__p" id="finalAddress"></p>
+                        <p class="user-details__p" id="finalPhone"></p>
+                        <p class="user-details__p" id="countryPost"></p>
                         <h6 class="shipment-method__h6">Shipping Method:</h6>
-                        <p class="shipment-method__p"></p>
-                        <p class="shipment-method__p">
-                          Your order will arrive Between xxxx and xxxxx
-                        </p>
+                        <p class="shipment-method__p" id="finalShipType"></p>
+                        <p class="shipment-method__p" id="finalDeliveryDates"></p>
                       </td>
                     </tr>
                   </tbody>
@@ -341,33 +339,22 @@
                   <tr class="summary-table__tr">
                     <td class="summary-table__td">
                       SUBTOTAL
-                      <div class="tooltip-item hidden">
-                        <img src="./assets/icons/question.png" alt="Tooltip"><span class="tooltip-text">I think you're
-                          rich enough to buy more
-                          things...</span>
-                      </div>
                     </td>
-                    <td class="summary-table__td2" id="pricep-summary">
-                      10€
-                    </td>
+                    <td class="summary-table__td2" id="pricep-summary"></td>
                   </tr>
                   <tr class="summary-table__tr">
-                    <td class="summary-table__td" id="typeship-summary">
-                      Premium
-                    </td>
-                    <td class="summary-table__td2" id="prices-summary">5€</td>
+                    <td class="summary-table__td" id="typeship-summary"></td>
+                    <td class="summary-table__td2" id="prices-summary"></td>
                   </tr>
                   <tr class="summary-table__tr">
                     <td class="summary-table__total">TOTAL</td>
-                    <td class="summary-table__total2" id="pricet-summary">
-                      15€
-                    </td>
+                    <td class="summary-table__total2" id="pricet-summary"></td>
                   </tr>
                 </tbody>
               </table>
               <article class="product-buyed__article">
-                <h6 class="product-buyed__h6">Chocolate white</h6>
-                <img class="product-buyed__img" src="./assets/images/white-chocolate/chocolate_white_final.jpg" alt="Final product">
+                <h6 class="product-buyed__h6" id="orderProduct"></h6>
+                <img class="product-buyed__img" id="orderImageProduct" src="./assets/images/white-chocolate/chocolate_white_final.jpg" alt="Final product">
                 <button class="confirmation__button" id="confirmation__button">
                   PLACER ORDER
                 </button>

@@ -4,11 +4,10 @@ import {
     user,
     shipmentTypes,
     toogleDisplay,
-    toggleBoolen
+    toggleBoolen,
+    data
 }
 from "./utils.js"
-
-import {validateShipmentSelect} from "./validation.js"
 
 /* GENERAL VARIABLES */
 const selectPrefix = document.getElementById("prefix");
@@ -45,13 +44,17 @@ const updateCountry = (e) => {
     user.country = e.target.value;
     //update prefix
     user.prefix = prefix.value;
-    console.log(user);
 }
 
 //update user country value when country select
 const updatePrefix = (e) => {
     user.prefix = e.target.value;
-    console.log(user);
+}
+
+//regular address selection and update user value
+const selectRegularAddress = (e) => {
+    toggleBoolen(e.target.checked);
+    user["reg-address"] = e.target.checked;
 }
 
 //calculate delivery dates, save and display result in form page
@@ -59,7 +62,6 @@ function shipmentMethod(e) {
     //Set data required to false for all radio buttons inputs
     const containerRadioButtons = (e.target.parentElement.parentElement);
     const dataRequiredElements = containerRadioButtons.querySelectorAll("[data-required]");
-    console.log(dataRequiredElements);
     Array.from(dataRequiredElements).map((radioContainer) => {
         radioContainer.dataset.required = false;
     })
@@ -73,7 +75,6 @@ function shipmentMethod(e) {
     divDates.classList.remove('hidden');
     dateShipment.textContent = dateBetween(shipmentType.time);
     user["shi-type"] = e.target.value;
-    console.log(user);
 }
 
 //calculate date shipment
@@ -109,17 +110,16 @@ function padTo2digits(num) {
     return num.toString().padStart(2, '0');
 }
 
-//display container gift and set yuser value gift option
-const displayGift = (e) => {
+//display container gift and set user value gift option
+const selectionGift = (e) => {
     toogleDisplay(e.target.parentElement.nextElementSibling);
     user[`${e.target.name}`] = toggleBoolen(user[`${e.target.name}`]);
-    console.log(user);
 }
 
 const navigateStepsForm = (i, e) => {
 
     const formButtons = document.getElementById("formButtons");
-
+    console.log('counter ' + counter);
     switch (i) {
         case 0:
             //save product and move to step form 1
@@ -140,7 +140,6 @@ const navigateStepsForm = (i, e) => {
             break;
         case 2:
             //move to step form 3
-            //validate shipment type
             iconsStatusBar[i].classList.add("active");
             toogleDisplay(stepPages[i - 1]);
             toogleDisplay(stepPages[i]);
@@ -148,6 +147,10 @@ const navigateStepsForm = (i, e) => {
             break;
         case 3:
             //move to step form 4
+            iconsStatusBar[i].classList.add("active");
+            toogleDisplay(stepPages[i - 1]);
+            toogleDisplay(stepPages[i]);
+            counter++;
             break;
         case 4:
             //move to step thankyou page
@@ -158,6 +161,69 @@ const navigateStepsForm = (i, e) => {
     }
 }
 
+//update values in summary page order
+const updateSummaryPage = () => {
+    console.log('entra');
+    const summaryUser = document.getElementById("username-summary");
+    const summaryName = document.getElementById("fullName");
+    const summaryAddress = document.getElementById("finalAddress");
+    const summaryPhone = document.getElementById("finalPhone");
+    const summaryCountry = document.getElementById("countryPost");
+    const summaryShipType = document.getElementById("finalShipType");
+    const summaryDeliveryDates = document.getElementById("finalDeliveryDates");
+    const orderPriceProduct = document.getElementById("pricep-summary");
+    const orderShipPrice = document.getElementById("prices-summary");
+    const orderSummaryPrice = document.getElementById("pricet-summary");
+    const orderNameShip = document.getElementById("typeship-summary");
+    const summaryOrderProduct = document.getElementById("orderProduct");
+    const summaryImageProduct = document.getElementById("orderImageProduct");
+
+    //update user information order
+    summaryUser.textContent = user.username;
+    summaryName.textContent = `${user["first-name"]} ${user["last-name"]}`;
+    summaryAddress.textContent = `${user.address1}`;
+    summaryPhone.textContent = `${user.prefix} ${user.phone}`;
+    summaryCountry.textContent = `${user["postal-code"]} ${user.country}`;
+    summaryShipType.textContent = shipmentTypes.map(shipType => {
+        if (shipType.type == user["shi-type"]) {
+            return shipType.name;
+        }
+    });
+    summaryDeliveryDates.textContent = dateBetween(shipmentTypes.map(shipType => {
+        if (shipType.type == user["shi-type"]) {
+            return shipType.time;
+        }
+    }));
+
+    //update price product breakdown
+    const orderPrice = document.querySelector("[data-price]").childNodes[2].textContent;
+    const priceShipment = shipmentTypes.map(shipType => {
+        if (shipType.type == user["shi-type"]) {
+            return shipType.price;
+        }
+    });
+    orderPriceProduct.textContent = orderPrice + "€";
+    orderShipPrice.textContent = priceShipment + "€";
+    const totalOrderPrice = parseFloat(orderPrice.replace(/,/g, ".")) + priceShipment;
+    orderSummaryPrice.textContent = totalOrderPrice + "€";
+    orderNameShip.textContent = shipmentTypes.map(shipType => {
+        if (shipType.type == user["shi-type"]) {
+            return shipType.name;
+        }
+    });
+
+    //update summary product
+    summaryOrderProduct.textContent = data.map(product => {
+        if (product.id == user.product) {
+            return product.name;
+        }
+    });
+    summaryImageProduct.src = data.map(product => {
+        if (product.id == user.product) {
+            return product.finalimage;
+        }
+    });
+}
 
 export {
     fillCountrySelect,
@@ -166,7 +232,9 @@ export {
     updateCountry,
     updatePrefix,
     shipmentMethod,
-    displayGift,
+    selectionGift,
     counter,
-    navigateStepsForm
+    navigateStepsForm,
+    selectRegularAddress,
+    updateSummaryPage
 };

@@ -173,7 +173,7 @@ const shipmentTypes = [
   },
   {
     type:'extra',
-    name: 'Extra Shipmentt',
+    name: 'Extra Shipment',
     time: 48,
     price: 4.99
   },

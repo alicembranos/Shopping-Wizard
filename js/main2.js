@@ -362,7 +362,6 @@ function validate(e) {
             }
             break;
         case 'confirm-password':
-            console.log(value.length);
             if (validatePassword()) {
                 isSuccess = true;
                 getValidationMessage(3);
@@ -525,8 +524,6 @@ function validateOnChange(e) {
             console.log('entro');
             for (let i = 0; i < radioButtons.length; i++) {
                 if (radioButtons[i].checked) {
-                    console.log('entro mas dentro');
-                    console.log(radioButtons[i].value);
                     user.shi_type = radioButtons[i].value;
                     fields.shi_type = true;
                     break;

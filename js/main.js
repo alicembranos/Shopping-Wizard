@@ -16,9 +16,10 @@ import {
     updateCountry,
     updatePrefix,
     shipmentMethod,
-    displayGift,
+    selectionGift,
     navigateStepsForm,
-    counter
+    counter,
+    selectRegularAddress
 } from "./formfunctions.js";
 
 /* GENERAL VARIABLES */
@@ -28,6 +29,7 @@ const reduceQty = document.getElementById("reduceQty");
 const listProducts = document.getElementById("products").children;
 const countrySelect = document.getElementById("country");
 const prefixSelect = document.getElementById("prefix");
+const regularAddressCheckbox = document.getElementById("reg-address");
 const radioButtonsDates = document.querySelectorAll("input[type=radio]");
 const giftCheckbox = document.getElementById("gif-option");
 const fileInput = document.querySelector(".input-file");
@@ -70,8 +72,13 @@ Array.from(radioButtonsDates).map((rb) => {
     rb.addEventListener('change', shipmentMethod);
 });
 
+//regular address checkbox
+regularAddressCheckbox.addEventListener("change", (e) => {
+    selectRegularAddress(e);
+})
+
 //gift option functionality
-giftCheckbox.addEventListener('change', displayGift);
+giftCheckbox.addEventListener('change', selectionGift);
 
 //input file implementation
 buttonFileInput.addEventListener("keyDown", (e) => {
@@ -99,3 +106,4 @@ nextStepButton.addEventListener("click", (e) => {
     console.log(stepFormContainer);
     nextPageValidation(stepFormContainer, e);
 });
+

@@ -2,11 +2,12 @@ import {
   messagesElements,
   expressions,
   requiredFields,
-  user
+  user,
 } from "./utils.js";
 import {
   counter,
-  navigateStepsForm
+  navigateStepsForm,
+  updateSummaryPage
 } from "./formfunctions.js";
 
 const form = document.getElementById("form");
@@ -25,31 +26,35 @@ const setRequiredFields = (inputs) => {
 
 //control step to next page form
 const nextPageValidation = (sectionParent, e) => {
-  const containerInvalid = sectionParent.querySelectorAll(
-    "[data-invalid='true']"
-  );
-  console.log(containerInvalid);
-  validationRequired(sectionParent);
-  if (!(containerInvalid.length > 0)) {
-    console.log('entra');
-    const containerRequired = sectionParent.querySelectorAll(
-      "[data-required='true']"
+  console.log('section parent id ' + sectionParent.id);
+  if (sectionParent.id == "step-page3") { //control if step 3 form, validation is different from the others
+    validateShipmentSelect(e);
+  } else {
+    const containerInvalid = sectionParent.querySelectorAll(
+      "[data-invalid='true']"
     );
-    if (!(containerRequired.length > 0)) {
-      //Navigate to next page
-      navigateStepsForm(counter, e);
+    validationRequired(sectionParent);
+    if (!(containerInvalid.length > 0)) {
+      const containerRequired = sectionParent.querySelectorAll(
+        "[data-required='true']"
+      );
+      if (!(containerRequired.length > 0)) {
+        //Navigate to next page
+        navigateStepsForm(counter, e);
+      }
     }
   }
+
 };
 
 //Validation required fields
 const validationRequired = (sectionParent) => {
-  const fieldsRequired = sectionParent.querySelectorAll("[data-required='true']");
+  const fieldsRequired = sectionParent.querySelectorAll(
+    "[data-required='true']"
+  );
   const inputIncorrect = `<p class='input-required'>This field is required.</p>`;
   Array.from(fieldsRequired).map((field) => {
     removeErrorMessage(field, "input-required");
-    console.log('name ' + field.children[1].name);
-    console.log('value ' + field.children[1].value);
     if (field.children[1].value.length == 0) {
       field.insertAdjacentHTML("beforeend", inputIncorrect);
     } else {
@@ -58,18 +63,20 @@ const validationRequired = (sectionParent) => {
   });
 };
 
-//validate shipment type 
-const validateShipmentSelect = () => {
+//validate shipment type selection
+const validateShipmentSelect = (e) => {
   const shipmentContainer = document.getElementById("shipmentContainer");
   const inputIncorrect = `<p class='input-required'>This field is required.</p>`;
   removeErrorMessage(shipmentContainer, "input-required");
   if (user["shi-type"].length == 0) {
-    field.insertAdjacentHTML("beforeend", inputIncorrect);
+    shipmentContainer.insertAdjacentHTML("beforeend", inputIncorrect);
     shipmentContainer.dataset.required = true;
   } else {
     shipmentContainer.dataset.required = false;
+    updateSummaryPage();
+    navigateStepsForm(counter, e);
   }
-}
+};
 
 //Validation form fields
 const validation = (e) => {
@@ -136,7 +143,6 @@ const validation = (e) => {
 
 //Validate regular expressions and required fields
 const validationInputForm = (inputValue, inputName, formGroup, regexp) => {
-  console.log(regexp.test(inputValue));
   if (!regexp.test(inputValue)) {
     const message = getErrorMessage(inputName);
     const inputIncorrect = `<p class='input-invalid'>${message}.</p>`;
@@ -146,7 +152,6 @@ const validationInputForm = (inputValue, inputName, formGroup, regexp) => {
   } else {
     formGroup.dataset.invalid = false;
     user[`${inputName}`] = inputValue;
-    console.log(user);
   }
 };
 
@@ -183,7 +188,6 @@ const validateBirthday = (formGroup, date) => {
     //Save birthday
     user.birthday = date;
     formGroup.dataset.invalid = false;
-    console.log(user);
   }
 };
 
@@ -221,5 +225,4 @@ export {
   validation,
   setRequiredFields,
   nextPageValidation,
-  validateShipmentSelect
 };
